@@ -233,17 +233,38 @@
         "5": true,
         "6": true
       }
+    },
+    "phase20": {
+      "tasks": {
+        "0": false,
+        "1": false,
+        "2": false,
+        "3": false,
+        "4": false,
+        "5": false,
+        "6": false,
+        "7": false,
+        "8": false,
+        "9": false,
+        "10": false,
+        "11": false,
+        "12": false,
+        "13": false,
+        "14": false,
+        "15": false,
+        "16": false,
+        "17": false,
+        "18": false,
+        "19": false,
+        "20": false
+      },
+      "milestones": {
+        "0": false,
+        "1": false
+      }
     }
   },
-  "artifacts": {
-    "ontology_engine_pdca": "done",
-    "multi_agent_router_pdca": "done",
-    "hybrid_search_pdca": "done",
-    "nl2sql_vanna_pdca": "done",
-    "phase1_glossary_rag": "done",
-    "phase1_query_router_v3_1": "done",
-    "phase1_datahub_client": "done"
-  },
+  "artifacts": {},
   "phaseTitles": {
     "phase0": "로컬 환경 준비",
     "phase05": "Foundation + 온톨로지 PoC",
@@ -251,10 +272,43 @@
     "phase1": "NL2SQL PoC",
     "phase1_mvp_core": "MVP 핵심 개발",
     "phase2": "Track 0 — Benchmark Validation",
-    "phase_mvp_b": "MVP-b 데모 완성/검증"
+    "phase_mvp_b": "MVP-b 데모 완성/검증",
+    "phase20": "Phase 1.5 포함 범위 + Phase 2.0 자동화 고도화"
   },
   "meta": {
     "completionLabel": "MVP-b 데모 범위 체크리스트 완료율",
     "completionNote": "제품 출시 준비율(private alpha/GA)은 별도 roadmap 기준으로 측정"
+  },
+  "scopes": {
+    "dashboard": {
+      "label": "Phase 2.0까지 계획 태스크 완료율",
+      "phaseIds": [
+        "phase0",
+        "phase05",
+        "phase07",
+        "phase1_mvp_core",
+        "phase2",
+        "phase_mvp_b",
+        "phase20"
+      ],
+      "tasks": {
+        "done": 77,
+        "total": 107
+      },
+      "milestones": {
+        "done": 24,
+        "total": 26
+      }
+    },
+    "raw": {
+      "tasks": {
+        "done": 127,
+        "total": 160
+      },
+      "milestones": {
+        "done": 52,
+        "total": 54
+      }
+    }
   }
 }
