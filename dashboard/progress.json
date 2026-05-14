@@ -264,7 +264,31 @@
       }
     }
   },
-  "artifacts": {},
+  "artifacts": {
+    "ontology_engine_pdca": "done",
+    "multi_agent_router_pdca": "done",
+    "hybrid_search_pdca": "done",
+    "nl2sql_vanna_pdca": "done",
+    "glossary_yaml": "done",
+    "cq_matrix": "done",
+    "nl2sql_test_set": "done",
+    "postgresql_ddl": "done",
+    "baseline_ex": "done",
+    "treatment_ex": "done",
+    "ab_report": "done",
+    "cq_pytest": "done",
+    "bird_baseline": "done",
+    "bird_treatment": "done",
+    "benchmark_report": "done",
+    "phase1_glossary_rag": "done",
+    "phase1_query_router_v3_1": "done",
+    "phase1_datahub_client": "done",
+    "mvpb_schema_enforcer_tests": "done",
+    "mvpb_cq_quality_guard": "done",
+    "mvpb_data_prep": "done",
+    "mvpb_chat_ui_demo": "done",
+    "mvpb_evidence_package": "done"
+  },
   "phaseTitles": {
     "phase0": "로컬 환경 준비",
     "phase05": "Foundation + 온톨로지 PoC",
