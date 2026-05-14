@@ -59,14 +59,11 @@
         "10": true,
         "11": true,
         "12": true,
-        "13": true
+        "13": true,
+        "14": true,
+        "15": true
       },
-      "milestones": {
-        "0": true,
-        "1": true,
-        "2": true,
-        "3": true
-      }
+      "milestones": {}
     },
     "phase07": {
       "tasks": {
@@ -80,6 +77,30 @@
       "milestones": {
         "0": true,
         "1": true
+      }
+    },
+    "phase1_mvp_core": {
+      "tasks": {
+        "0": true,
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true,
+        "6": true,
+        "7": true,
+        "8": true,
+        "9": true,
+        "10": true,
+        "11": true,
+        "12": true,
+        "13": true
+      },
+      "milestones": {
+        "0": true,
+        "1": true,
+        "2": true,
+        "3": true
       }
     },
     "phase2": {
@@ -222,5 +243,18 @@
     "phase1_glossary_rag": "done",
     "phase1_query_router_v3_1": "done",
     "phase1_datahub_client": "done"
+  },
+  "phaseTitles": {
+    "phase0": "로컬 환경 준비",
+    "phase05": "Foundation + 온톨로지 PoC",
+    "phase07": "NL2SQL 벤치마크 검증 (Phase 0.7)",
+    "phase1": "NL2SQL PoC",
+    "phase1_mvp_core": "MVP 핵심 개발",
+    "phase2": "Track 0 — Benchmark Validation",
+    "phase_mvp_b": "MVP-b 데모 완성/검증"
+  },
+  "meta": {
+    "completionLabel": "MVP-b 데모 범위 체크리스트 완료율",
+    "completionNote": "제품 출시 준비율(private alpha/GA)은 별도 roadmap 기준으로 측정"
   }
 }
