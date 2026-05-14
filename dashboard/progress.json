@@ -125,7 +125,7 @@
         "8": true,
         "9": true,
         "10": true,
-        "11": false,
+        "11": true,
         "12": false
       },
       "milestones": {
@@ -135,7 +135,7 @@
         "3": true,
         "4": true,
         "5": true,
-        "6": false
+        "6": true
       }
     }
   },
