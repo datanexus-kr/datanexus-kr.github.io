@@ -220,11 +220,13 @@
         "17": true,
         "18": true,
         "19": true,
-        "20": false,
-        "21": false,
-        "22": false,
-        "23": false,
-        "24": false
+        "20": true,
+        "21": true,
+        "22": true,
+        "23": true,
+        "24": true,
+        "25": false,
+        "26": false
       },
       "milestones": {
         "0": true,
@@ -238,7 +240,7 @@
     },
     "phase20": {
       "tasks": {
-        "0": false,
+        "0": true,
         "1": false,
         "2": false,
         "3": false,
@@ -318,7 +320,7 @@
         "phase20"
       ],
       "tasks": {
-        "done": 77,
+        "done": 78,
         "total": 107
       },
       "milestones": {
@@ -328,8 +330,8 @@
     },
     "raw": {
       "tasks": {
-        "done": 132,
-        "total": 162
+        "done": 138,
+        "total": 164
       },
       "milestones": {
         "done": 52,
