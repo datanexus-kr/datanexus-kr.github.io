@@ -33,7 +33,7 @@ GA4 Dashboard</a></div><script>(function(){var t,n="1022",e="dn-admin";function 
 BIRD와 Spider를 돌리고 모델도 바꿔보면서 오답을 COLUMN_BINDING, VALUE_BINDING, DERIVED_METRIC 같은 유형으로 나눴다. SQL 오답을 계속 살펴보다 보니 질문이 바뀌었다.
 그렇다면 생성된 SQL과 답변의 근거는 화면에서 어떻게 보여야 할까.
 정확도 중심으로 테스트하다 보니 화면에서 사용자가 무엇을 확인하는지 놓쳤다. 업무에서 쓰는 데이터 분석 AI라면 숫자가 어디서 왔는지 바로 드러내야 한다. 근거를 확인할 길이 없으면 숫자가 맞아 보여도 결국 SQL을 다시 돌린다.
-DataNexus Chat UI에서는 답변 문장을 매끄럽게 쓰는 것만으로는 부족했다. 숫자와 문장에는 사용자가 확인할 근거를 함께 보여줘야 했다.
+DataNexus Chat UI에서는 답변 문장을 매끄럽게 쓰는 것만으로는 부족했다. 숫자와 문장 옆에 SQL과 출처, 권한 범위와 검증 상태, fallback 여부를 함께 배치했다. 그래야 사용자가 이 값을 회의자료나 운영 판단에 써도 되는지 결정한다.
 ...</p></div><footer class=entry-footer><span title='2026-05-23 00:00:00 +0000 UTC'>5월 23, 2026</span>&nbsp;·&nbsp;19 분&nbsp;·&nbsp;Junho Lee</footer><a class=entry-link aria-label="post link to 11. 틀릴 수 있는 AI 답변, 화면에서는 어떻게 보여야 할까" href=https://datanexus-kr.github.io/posts/datanexus/011-chat-ui-trust-design/></a></article><article class="post-entry tag-entry"><header class=entry-header><h2 class=entry-hint-parent>10. Spider 72%, 모델보다 데이터셋이 오답을 결정</h2></header><div class=entry-content><p>9편에서 multi-candidate 실험 세 건이 전부 효과 없이 끝났지만 Schema Binding Plan으로 넘어가기 전에 확인하고 싶은 게 하나 더 있었다.
 모델 성능이 문제가 되는 건 아닐까. Gemini flash-lite 대신 Pro급으로 바꾸면 현재 56%가 달라질 가능성이 있어 보였다. 그 과정에서 오답 유형 분류와 Spider 실험도 함께 진행했다.
 Pro 모델로 바꿨더니 오히려 정확도가 떨어졌다 모델만 교체하고 동일한 BIRD 50문항을 돌려봤다(프롬프트, 컨텍스트, 파이프라인은 그대로). 지표는 EX(Execution Accuracy), 생성된 SQL을 실제로 실행했을 때 정답과 같은 결과가 나오는지 확인하는 방식이다.
