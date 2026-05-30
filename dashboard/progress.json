@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-05-27",
+  "lastUpdated": "2026-05-30",
   "currentPhase": "phase_mvp_b",
   "phases": {
     "phase0": {
@@ -249,9 +249,9 @@
         "5": true,
         "6": false,
         "7": false,
-        "8": false,
-        "9": false,
-        "10": false,
+        "8": true,
+        "9": true,
+        "10": true,
         "11": false,
         "12": false,
         "13": false,
@@ -263,7 +263,9 @@
         "19": false,
         "20": false,
         "21": false,
-        "22": false
+        "22": false,
+        "23": false,
+        "24": false
       },
       "milestones": {
         "0": false,
@@ -325,8 +327,8 @@
         "phase20"
       ],
       "tasks": {
-        "done": 83,
-        "total": 109
+        "done": 86,
+        "total": 111
       },
       "milestones": {
         "done": 24,
@@ -335,8 +337,8 @@
     },
     "raw": {
       "tasks": {
-        "done": 147,
-        "total": 167
+        "done": 150,
+        "total": 169
       },
       "milestones": {
         "done": 52,
