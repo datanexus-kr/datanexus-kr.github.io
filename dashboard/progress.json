@@ -300,7 +300,15 @@
     "mvpb_chat_ui_demo": "done",
     "mvpb_evidence_package": "done",
     "glossary_skos_export": "done",
-    "glossary_gs1_gr_import": "done"
+    "glossary_gs1_gr_import": "done",
+    "p15_skos_layer": "done",
+    "p15_shaper_integration": "done",
+    "p15_dashboard_promotion": "done",
+    "p20_shaper_pdf": "done",
+    "p20_full_lineage": "done",
+    "p20_staleness_detection": "done",
+    "p20_query_log_pipeline": "done",
+    "p20_alive_full_opik": "done"
   },
   "phaseTitles": {
     "phase0": "로컬 환경 준비",
