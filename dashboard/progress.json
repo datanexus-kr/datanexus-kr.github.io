@@ -262,12 +262,12 @@
         "18": true,
         "19": true,
         "20": true,
-        "21": false,
+        "21": true,
         "22": true,
         "23": true,
         "24": true,
-        "25": false,
-        "26": false
+        "25": true,
+        "26": true
       },
       "milestones": {
         "0": false,
@@ -318,7 +318,7 @@
         "phase20"
       ],
       "tasks": {
-        "done": 149,
+        "done": 152,
         "total": 155
       },
       "milestones": {
@@ -328,7 +328,7 @@
     },
     "raw": {
       "tasks": {
-        "done": 165,
+        "done": 168,
         "total": 171
       },
       "milestones": {
