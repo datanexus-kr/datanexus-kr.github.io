@@ -218,9 +218,9 @@
         "19": true,
         "20": true,
         "21": true,
-        "22": true,
-        "23": true,
-        "24": true,
+        "22": false,
+        "23": false,
+        "24": false,
         "25": true,
         "26": true,
         "27": true,
@@ -545,7 +545,8 @@
     "p20_alive_observability": "done",
     "p20_automation_design_snapshot": "done",
     "p20_query_ledger_cache": "done",
-    "p20_shaper_auto_report": "done"
+    "p20_shaper_auto_report": "done",
+    "p20_phase20_closeout_package": "done"
   },
   "phaseTitles": {
     "phase0": "로컬 환경 준비",
@@ -559,7 +560,9 @@
   },
   "meta": {
     "completionLabel": "MVP-b 데모 범위 체크리스트 완료율",
-    "completionNote": "제품 출시 준비율(private alpha/GA)은 별도 roadmap 기준으로 측정"
+    "completionNote": "제품 출시 준비율(private alpha/GA)은 별도 roadmap 기준으로 측정",
+    "completionLabelEn": "MVP-b demo-scope checklist completion rate",
+    "completionNoteEn": "Private alpha / GA readiness is tracked on a separate roadmap."
   },
   "scopes": {
     "dashboard": {
@@ -574,17 +577,18 @@
         "phase20"
       ],
       "tasks": {
-        "done": 155,
+        "done": 152,
         "total": 155
       },
       "milestones": {
         "done": 53,
         "total": 54
-      }
+      },
+      "labelEn": "Planned task completion through Phase 2.0"
     },
     "raw": {
       "tasks": {
-        "done": 171,
+        "done": 168,
         "total": 171
       },
       "milestones": {
