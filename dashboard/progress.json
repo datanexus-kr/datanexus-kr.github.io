@@ -218,9 +218,9 @@
         "19": true,
         "20": true,
         "21": true,
-        "22": false,
-        "23": false,
-        "24": false,
+        "22": true,
+        "23": true,
+        "24": true,
         "25": true,
         "26": true,
         "27": true,
@@ -560,9 +560,7 @@
   },
   "meta": {
     "completionLabel": "MVP-b 데모 범위 체크리스트 완료율",
-    "completionNote": "제품 출시 준비율(private alpha/GA)은 별도 roadmap 기준으로 측정",
-    "completionLabelEn": "MVP-b demo-scope checklist completion rate",
-    "completionNoteEn": "Private alpha / GA readiness is tracked on a separate roadmap."
+    "completionNote": "제품 출시 준비율(private alpha/GA)은 별도 roadmap 기준으로 측정"
   },
   "scopes": {
     "dashboard": {
@@ -577,18 +575,17 @@
         "phase20"
       ],
       "tasks": {
-        "done": 152,
+        "done": 155,
         "total": 155
       },
       "milestones": {
         "done": 53,
         "total": 54
-      },
-      "labelEn": "Planned task completion through Phase 2.0"
+      }
     },
     "raw": {
       "tasks": {
-        "done": 168,
+        "done": 171,
         "total": 171
       },
       "milestones": {
