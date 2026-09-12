@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="660" viewBox="0 0 800 660" role="img" aria-labelledby="title desc">
+<title id="title">같은 고객 등급 변경, 다른 저장 방식</title><desc id="desc">고객 C01이 09-03에 일반에서 VIP로 변경된 예시. SCD2는 변경 시 새 행을 저장하고, 일별 스냅샷은 매일 그날의 상태를 저장한다. 일별 스냅샷은 하루 안의 변경을 모두 보존하지 않는다.</desc>
+<rect width="800" height="660" rx="16" fill="#ffffff"/>
+<text x="30" y="46.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="24" fill="#1e1e1e">같은 등급 변경, 다른 저장 방식</text>
+<text x="30" y="78.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="16" fill="#757575">예시: 고객 C01은 09-01과 09-02는 일반, 09-03부터 VIP</text>
+<text x="30" y="130.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="20" fill="#1e1e1e">SCD Type 2  ·  변경 시 새 행 저장</text>
+<rect x="26" y="151" width="748" height="175" rx="12" fill="#e8f4ff" stroke="#4a9eed" stroke-width="2"/>
+<text x="48" y="186.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="18" fill="#1e1e1e">고객</text>
+<text x="215" y="186.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="18" fill="#1e1e1e">등급</text>
+<text x="382" y="186.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="18" fill="#1e1e1e">시작일</text>
+<text x="549" y="186.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="18" fill="#1e1e1e">종료일</text>
+<text x="48" y="226.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="18" fill="#1e1e1e">C01</text>
+<text x="215" y="226.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="18" fill="#1e1e1e">일반</text>
+<text x="382" y="226.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="18" fill="#1e1e1e">09-01</text>
+<text x="549" y="226.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="18" fill="#1e1e1e">09-03</text>
+<text x="48" y="256.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="18" fill="#1e1e1e">C01</text>
+<text x="215" y="256.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="18" fill="#1e1e1e">VIP</text>
+<text x="382" y="256.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="18" fill="#1e1e1e">09-03</text>
+<text x="549" y="256.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="18" fill="#1e1e1e">NULL</text>
+<text x="48" y="293.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="16" fill="#757575">이 예시는 시작일 포함·종료일 제외, NULL은 현재 유효</text>
+<text x="30" y="370.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="20" fill="#1e1e1e">일별 스냅샷  ·  매일 그날의 상태 저장</text>
+<rect x="26" y="394" width="236" height="120" rx="12" fill="#c3fae8" stroke="#22c55e" stroke-width="2"/>
+<text x="46" y="428.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="18" fill="#1e1e1e">ds = 09-01</text>
+<text x="46" y="478.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="20" fill="#1e1e1e">C01  ·  일반</text>
+<rect x="282" y="394" width="236" height="120" rx="12" fill="#c3fae8" stroke="#22c55e" stroke-width="2"/>
+<text x="302" y="428.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="18" fill="#1e1e1e">ds = 09-02</text>
+<text x="302" y="478.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="20" fill="#1e1e1e">C01  ·  일반</text>
+<rect x="538" y="394" width="236" height="120" rx="12" fill="#c3fae8" stroke="#22c55e" stroke-width="2"/>
+<text x="558" y="428.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="18" fill="#1e1e1e">ds = 09-03</text>
+<text x="558" y="478.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="20" fill="#1e1e1e">C01  ·  VIP</text>
+<text x="30" y="564.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="18" fill="#1e1e1e">SCD2: 조회 시점이 유효 기간에 속하는지 확인</text>
+<text x="30" y="598.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="18" fill="#1e1e1e">스냅샷: 필요한 날짜의 파티션과 고객 키로 조회</text>
+<text x="30" y="637.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="15" fill="#757575">일별 스냅샷만으로 하루 안의 모든 상태 변화를 구분할 수는 없습니다.</text>
+</svg>
