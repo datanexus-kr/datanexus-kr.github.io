@@ -1,41 +1,55 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="660" viewBox="0 0 800 660" role="img" aria-labelledby="title desc">
-<title id="title">같은 매출, 서로 다른 그레인</title><desc id="desc">예시 매출 4,000원을 상품 항목 3행, 영수증 2행, 매장별 일별 합계 1행으로 저장한 비교. 합계에서 상품별 상세 내역은 복원할 수 없다.</desc>
-<rect width="800" height="660" rx="16" fill="#ffffff"/>
-<text x="30" y="46.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="24" fill="#1e1e1e">같은 매출, 서로 다른 그레인</text>
-<text x="30" y="77.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="16" fill="#757575">예시: 한 매장에서 하루 동안 발생한 매출 4,000원</text>
-<rect x="26" y="104" width="748" height="155" rx="12" fill="#e8f4ff" stroke="#4a9eed" stroke-width="2"/>
-<text x="46" y="140.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="20" fill="#1e1e1e">1. 영수증 내 상품 항목</text>
-<text x="46" y="177.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="18" fill="#1e1e1e">한 행 = 상품 항목 하나</text>
-<text x="46" y="202.2" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="18" fill="#1e1e1e">상품별 매출 조회 가능</text>
-<text x="414" y="138.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="18" fill="#1e1e1e">영수증</text>
-<text x="510" y="138.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="18" fill="#1e1e1e">상품</text>
-<text x="640" y="138.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="18" fill="#1e1e1e">금액</text>
-<text x="414" y="172.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="17" fill="#1e1e1e">R1</text>
-<text x="510" y="172.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="17" fill="#1e1e1e">삼각김밥</text>
-<text x="640" y="172.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="17" fill="#1e1e1e">1,000원</text>
-<text x="414" y="198.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="17" fill="#1e1e1e">R1</text>
-<text x="510" y="198.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="17" fill="#1e1e1e">생수</text>
-<text x="640" y="198.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="17" fill="#1e1e1e">2,000원</text>
-<text x="414" y="224.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="17" fill="#1e1e1e">R2</text>
-<text x="510" y="224.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="17" fill="#1e1e1e">삼각김밥</text>
-<text x="640" y="224.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="17" fill="#1e1e1e">1,000원</text>
-<text x="44" y="287.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="16" fill="#757575">↓ 영수증별 합산</text>
-<rect x="26" y="309" width="748" height="123" rx="12" fill="#fff3bf" stroke="#f59e0b" stroke-width="2"/>
-<text x="46" y="347.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="20" fill="#1e1e1e">2. 영수증</text>
-<text x="46" y="386.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="18" fill="#1e1e1e">한 행 = 영수증 한 장</text>
-<text x="414" y="345.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="17" fill="#1e1e1e">R1</text>
-<text x="510" y="345.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="17" fill="#1e1e1e">합계</text>
-<text x="640" y="345.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="17" fill="#1e1e1e">3,000원</text>
-<text x="414" y="376.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="17" fill="#1e1e1e">R2</text>
-<text x="510" y="376.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="17" fill="#1e1e1e">합계</text>
-<text x="640" y="376.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="17" fill="#1e1e1e">1,000원</text>
-<text x="44" y="460.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="16" fill="#757575">↓ 매장별·일별 합산</text>
-<rect x="26" y="482" width="748" height="104" rx="12" fill="#c3fae8" stroke="#22c55e" stroke-width="2"/>
-<text x="46" y="518.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="20" fill="#1e1e1e">3. 매장별 하루 합계</text>
-<text x="46" y="558.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="18" fill="#1e1e1e">한 행 = 매장 × 날짜</text>
-<text x="414" y="534.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="17" fill="#1e1e1e">A매장</text>
-<text x="510" y="534.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="17" fill="#1e1e1e">09-01</text>
-<text x="640" y="534.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="17" fill="#1e1e1e">4,000원</text>
-<text x="30" y="623.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="18" fill="#1e1e1e">합계는 같아도 답할 수 있는 질문은 다릅니다.</text>
-<text x="30" y="648.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="15" fill="#757575">집계한 합계만으로 상품별 상세 내역을 복원할 수는 없습니다.</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="684" viewBox="0 0 800 684" role="img" aria-labelledby="title desc">
+<title id="title">그레인에 따른 매출 데이터 구조</title><desc id="desc">동일한 4,000원 매출을 상품 항목 3행, 영수증 2행, 매장별 일별 합계 1행으로 저장한다. 집계하면 행 수와 분석 가능한 상세 수준이 달라진다.</desc>
+<rect width="800" height="684" fill="#fff"/>
+<text x="36" y="48.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="24" fill="#172B4D">그레인에 따른 매출 데이터 구조</text>
+<text x="36" y="78.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="16" fill="#62748B">동일한 거래 · 서로 다른 행의 의미</text>
+<text x="620" y="78.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="16" fill="#315D93">예시 합계 4,000원</text>
+<path d="M 36 100 l 728 0" fill="none" stroke="#172B4D"/>
+<text x="36" y="137.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="16" fill="#315D93">01</text>
+<text x="78" y="137.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="20" fill="#172B4D">상품 항목</text>
+<text x="78" y="169.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="16" fill="#62748B">영수증 내 항목 하나</text>
+<text x="78" y="218.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="24" fill="#315D93">3행</text>
+<text x="314" y="135.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="16" fill="#62748B">영수증</text>
+<text x="445" y="135.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="16" fill="#62748B">상품</text>
+<text x="643" y="135.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="16" fill="#62748B">금액</text>
+<path d="M 304 149 l 460 0" fill="none" stroke="#DCE3EC"/>
+<text x="314" y="180.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="18" fill="#172B4D">R1</text>
+<text x="445" y="180.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="18" fill="#172B4D">삼각김밥</text>
+<text x="643" y="180.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="18" fill="#172B4D">1,000원</text>
+<text x="314" y="215.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="18" fill="#172B4D">R1</text>
+<text x="445" y="215.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="18" fill="#172B4D">생수</text>
+<text x="643" y="215.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="18" fill="#172B4D">2,000원</text>
+<text x="314" y="250.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="18" fill="#172B4D">R2</text>
+<text x="445" y="250.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="18" fill="#172B4D">삼각김밥</text>
+<text x="643" y="250.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="18" fill="#172B4D">1,000원</text>
+<path d="M 304 270 l 460 0" fill="none" stroke="#DCE3EC"/>
+<text x="314" y="298.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="15" fill="#315D93">↓ 영수증별 합산</text>
+<path d="M 36 320 l 728 0" fill="none" stroke="#DCE3EC"/>
+<text x="36" y="357.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="16" fill="#315D93">02</text>
+<text x="78" y="357.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="20" fill="#172B4D">영수증</text>
+<text x="78" y="389.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="16" fill="#62748B">영수증 한 장</text>
+<text x="78" y="438.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="24" fill="#315D93">2행</text>
+<text x="314" y="355.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="16" fill="#62748B">영수증</text>
+<text x="643" y="355.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="16" fill="#62748B">합계</text>
+<path d="M 304 369 l 460 0" fill="none" stroke="#DCE3EC"/>
+<text x="314" y="401.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="18" fill="#172B4D">R1</text>
+<text x="643" y="401.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="18" fill="#172B4D">3,000원</text>
+<text x="314" y="436.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="18" fill="#172B4D">R2</text>
+<text x="643" y="436.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="18" fill="#172B4D">1,000원</text>
+<path d="M 304 456 l 460 0" fill="none" stroke="#DCE3EC"/>
+<text x="314" y="484.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="15" fill="#315D93">↓ 매장별·일별 합산</text>
+<path d="M 36 506 l 728 0" fill="none" stroke="#DCE3EC"/>
+<text x="36" y="543.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="16" fill="#315D93">03</text>
+<text x="78" y="543.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="20" fill="#172B4D">일별 매출</text>
+<text x="78" y="575.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="16" fill="#62748B">매장 × 날짜</text>
+<text x="78" y="619.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="24" fill="#315D93">1행</text>
+<text x="314" y="541.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="16" fill="#62748B">매장</text>
+<text x="445" y="541.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="16" fill="#62748B">날짜</text>
+<text x="643" y="541.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="16" fill="#62748B">합계</text>
+<path d="M 304 555 l 460 0" fill="none" stroke="#DCE3EC"/>
+<text x="314" y="590.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="18" fill="#172B4D">A매장</text>
+<text x="445" y="590.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="18" fill="#172B4D">09-01</text>
+<text x="643" y="590.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="18" fill="#172B4D">4,000원</text>
+<path d="M 36 638 l 728 0" fill="none" stroke="#172B4D"/>
+<text x="36" y="667.0" font-family="Helvetica, Arial, Apple SD Gothic Neo, Malgun Gothic, sans-serif" font-size="16" fill="#62748B">합계만 저장하면 상품별 상세 내역을 복원할 수 없습니다.</text>
 </svg>
