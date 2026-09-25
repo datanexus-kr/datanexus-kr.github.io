@@ -1,0 +1,618 @@
+<!doctype html><html lang=ko dir=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>수십 개 오브젝트 스키마를 한눈에 보는 ERD 구축 AI 가이드 | Junho Lee</title><meta name=keywords content="erd,database-design,data-modeling,prompt-engineering,ai-agent,pii"><meta name=description content="수십 개 오브젝트의 스키마를 한 번에 파악하기 어려울 때 쓰는 ERD 구축 가이드를 공유합니다. 스키마 자료와 ERD_GUIDE.md를 AI에게 함께 넘기고 한 줄로 지시하면, AI가 입력 구조를 먼저 조사한 뒤 관계선과 개인정보 분류, 테이블 관계 그래프를 갖춘 반응형 ERD 웹을 만듭니다."><meta name=author content="Junho Lee"><link rel=canonical href=https://datanexus-kr.github.io/curations/2026-09/2026-09-26-erd-guide-ai-schema-visualization/><link crossorigin=anonymous href=/assets/css/stylesheet.adb0b59f222af910f2fa11a4ed41b7adac0b40f8845a45b94a95729faab3efd2.css integrity="sha256-rbC1nyIq+RDy+hGk7UG3rawLQPiEWkW5SpVyn6qz79I=" rel="preload stylesheet" as=style><link rel=icon href=https://datanexus-kr.github.io/favicon.svg><link rel=icon type=image/svg+xml sizes=16x16 href=https://datanexus-kr.github.io/favicon.svg><link rel=icon type=image/svg+xml sizes=32x32 href=https://datanexus-kr.github.io/favicon.svg><link rel=apple-touch-icon href=https://datanexus-kr.github.io/favicon.svg><link rel=mask-icon href=https://datanexus-kr.github.io/favicon.svg><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=ko href=https://datanexus-kr.github.io/curations/2026-09/2026-09-26-erd-guide-ai-schema-visualization/><noscript><style>#theme-toggle,.top-link{display:none}</style></noscript><meta name=google-site-verification content="iWd8AoWgnTadiUPbsORsmafUoM0hk5Ab2bCXg1_m420"><meta name=author content="Junho Lee"><meta name=twitter:card content="summary_large_image"><meta name=twitter:site content="@datanexus_kr"><meta name=twitter:creator content="@datanexus_kr"><meta name=googlebot content="index, follow"><meta name=bingbot content="index, follow"><meta name=slurp content="index, follow"><meta name=CCBot content="index, follow"><meta name=GPTBot content="index, follow"><meta name=Google-Extended content="index, follow"><meta name=PerplexityBot content="index, follow"><meta name=ClaudeBot content="index, follow"><meta name=Applebot-Extended content="index, follow"><meta name=language content="ko"><meta name=geo.region content="KR"><meta name=geo.placename content="Seoul"><meta property="og:type" content="article"><meta property="og:site_name" content="Junho Lee"><meta property="og:locale" content="ko_KR"><script type=application/ld+json>{"@context":"https://schema.org","@type":"TechArticle","headline":"수십 개 오브젝트 스키마를 한눈에 보는 ERD 구축 AI 가이드","description":"수십 개 오브젝트의 스키마를 한 번에 파악하기 어려울 때 쓰는 ERD 구축 가이드를 공유합니다. 스키마 자료와 ERD_GUIDE.md를 AI에게 함께 넘기고 한 줄로 지시하면, AI가 입력 구조를 먼저 조사한 뒤 관계선과 개인정보 분류, 테이블 관계 그래프를 갖춘 반응형 ERD 웹을 만듭니다.","author":{"@type":"Person","name":"Junho Lee","url":"https://datanexus-kr.github.io/"},"publisher":{"@type":"Organization","name":"Junho Lee","logo":{"@type":"ImageObject","url":"https://datanexus-kr.github.io/favicon.svg"}},"datePublished":"2026-09-26T00:45:00\u002b09:00","dateModified":"2026-09-26T00:45:00\u002b09:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://datanexus-kr.github.io/curations/2026-09/2026-09-26-erd-guide-ai-schema-visualization/"},"isPartOf":{"@type":"Blog","name":"Junho Lee","url":"https://datanexus-kr.github.io/"},"inLanguage":"ko","wordCount":"4126","speakable":{"@type":"SpeakableSpecification","cssSelector":[".post-title",".post-content p:first-of-type"]},"citation":["https://datanexus-kr.github.io/files/erd-guide/ERD_GUIDE.md"],"keywords":["erd","database-design","data-modeling","prompt-engineering","ai-agent","pii"]}</script><style>.faq-item{border:1px solid var(--border);border-radius:8px;margin:8px 0;overflow:hidden}.faq-item summary{padding:12px 16px;font-weight:600;cursor:pointer;background:var(--entry);transition:background .2s}.faq-item summary:hover{background:var(--code-bg)}.faq-item[open] summary{border-bottom:1px solid var(--border)}.faq-answer{padding:12px 16px;line-height:1.7}</style><style>.demo-btn{display:inline-flex;align-items:center;gap:6px;padding:6px 16px;border-radius:20px;font-size:13px;font-weight:600;text-decoration:none;transition:all .2s;border:1px solid transparent}.demo-btn svg{flex-shrink:0}.demo-btn--primary{background:#e8710a;color:#fff}.demo-btn--primary:hover{background:#cf6509;color:#fff}.dark .demo-btn--primary,.dark .demo-btn--primary:hover{color:#fff!important}.demo-btn--outline{background:0 0;color:#e8710a;border-color:#e8710a}.demo-btn--outline:hover{background:rgba(232,113,10,8%);color:#e8710a}.dark .demo-btn--outline{color:#f0a050;border-color:#f0a050}.dark .demo-btn--outline:hover{background:rgba(240,160,80,.1);color:#f0a050}.demo-btn-group{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}</style><style>.demo-modal-overlay{display:none;position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,.88);align-items:center;justify-content:center}.demo-modal-overlay.open{display:flex}.demo-modal-inner{position:relative;width:95vw;height:90vh;max-width:1320px;border-radius:10px;overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,.6)}.demo-modal-iframe{width:100%;height:100%;border:none;display:block}.demo-modal-close{position:absolute;top:10px;right:12px;z-index:10;background:rgba(0,0,0,.55);color:#fff;border:none;border-radius:50%;width:32px;height:32px;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s}.demo-modal-close:hover{background:rgba(0,0,0,.9)}</style><script>(function(){function e(){var e=document.createElement("div");e.id="demoModalOverlay",e.className="demo-modal-overlay",e.innerHTML='<div class="demo-modal-inner"><button class="demo-modal-close" onclick="closeDemoModal()" title="닫기">&#x2715;</button><iframe class="demo-modal-iframe" id="demoModalIframe" src="" allowfullscreen></iframe></div>',e.addEventListener("click",function(t){t.target===e&&closeDemoModal()}),document.body.appendChild(e)}window.openDemoModal=function(t){var n=document.getElementById("demoModalOverlay");n||(e(),n=document.getElementById("demoModalOverlay")),document.getElementById("demoModalIframe").src=t,n.classList.add("open"),document.body.style.overflow="hidden"},window.closeDemoModal=function(){var e=document.getElementById("demoModalOverlay");e&&e.classList.remove("open"),document.getElementById("demoModalIframe").src="",document.body.style.overflow=""},document.addEventListener("keydown",function(e){e.key==="Escape"&&closeDemoModal()})})()</script><style>.sidebar-icon-btn{display:inline-flex;align-items:center;justify-content:center;background:0 0;border:none;color:rgba(255,255,255,.45);cursor:pointer;padding:4px;border-radius:6px;transition:color .2s,background .2s}.sidebar-icon-btn:hover{color:var(--sidebar-accent);background:var(--sidebar-hover)}.sidebar-icon-btn svg{width:18px;height:18px}.sidebar-lang-btn{text-decoration:none}.lang-flag{flex-shrink:0;border-radius:0!important;box-shadow:none;outline:1px solid rgba(255,255,255,.15);vertical-align:middle;overflow:visible}</style><style>:root{--ember:oklch(0.72 0.17 38);--sidebar-width:260px;--sidebar-bg:#1d1e20;--sidebar-text:#e0e0e0;--sidebar-accent:oklch(0.72 0.17 38);--sidebar-hover:oklch(0.72 0.17 38 / 0.12);--sidebar-active-bg:linear-gradient(135deg, oklch(0.72 0.17 38) 0%, oklch(0.62 0.16 12) 100%)}html{font-size:15px}.first-entry{min-height:240px}.first-entry .entry-header h1{font-size:24px}.first-entry .entry-content{font-size:14px}.home-info .entry-content{font-size:14px}.entry-header h2{font-size:20px}.entry-content{font-size:13px}.post-title,.post-single .post-title{font-size:26px}.post-content{font-size:15px;line-height:1.75}.post-content h1{font-size:24px}.post-content h2{font-size:21px}.post-content h3{font-size:18px}.post-content h4{font-size:16px}.post-meta{font-size:13px}.toc a{font-size:13px}.first-entry{margin-top:0}.sidebar{position:fixed;top:0;left:0;width:var(--sidebar-width);height:100vh;background:var(--sidebar-bg);color:var(--sidebar-text);z-index:100;overflow-y:auto;transition:transform .3s ease}.sidebar-inner{display:flex;flex-direction:column;height:100%;padding:24px 0}.sidebar-header{padding:0 20px 20px;border-bottom:1px solid rgba(255,255,255,8%);margin-bottom:8px}.sidebar-logo{display:flex;align-items:center;gap:8px;font-size:1.3rem;font-weight:700;color:#fff;text-decoration:none;letter-spacing:-.02em}.sidebar-logo-img{width:28px;height:28px;border-radius:6px;object-fit:cover}.home-logo-img{width:42px;height:42px;border-radius:8px;object-fit:cover;vertical-align:middle;margin-right:8px}.sidebar-logo:hover{opacity:.85}.sidebar-subtitle{display:block;font-size:.75rem;color:rgba(255,255,255,.4);margin-top:2px;letter-spacing:.02em}.sidebar-section ul{list-style:none;padding:0;margin:0}.sidebar-section li a{display:block;padding:9px 20px;color:var(--sidebar-text);text-decoration:none;font-size:.88rem;border-left:3px solid transparent;transition:all .2s}.sidebar-section li a:hover{background:var(--sidebar-hover);border-left-color:var(--sidebar-accent);color:#fff}.sidebar-section li a.active{color:var(--sidebar-accent);font-weight:600;border-left-color:var(--sidebar-accent)}.sidebar-section{padding:0;margin-top:4px}.sidebar-section>ul{display:none}.sidebar-section.expanded>ul{display:block}.sidebar-section-title{font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.4);padding:8px 20px;margin:0;font-weight:600;display:flex;align-items:center;gap:6px;cursor:pointer;user-select:none;transition:color .2s}.sidebar-section-title:hover{color:rgba(255,255,255,.7)}.sidebar-section-title::after{content:"\25B8";margin-left:4px;font-size:.6rem;transition:transform .2s}.sidebar-section.expanded .sidebar-section-title::after{transform:rotate(90deg)}.sidebar-section-title::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;flex-shrink:0}.sidebar-section-title--datanexus::before{background:#4fc3f7}.sidebar-section-title--dw::before{background:#ab47bc}.sidebar-section-title--etl::before{background:#66bb6a}.sidebar-section-title--geo::before{background:#ff7043}.sidebar-section-title--curations::before{background:#06b6d4}.sidebar-section li a{font-size:.82rem;padding:7px 20px;line-height:1.4;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.sidebar-hidden-item{display:none}.sidebar-section.expanded .sidebar-hidden-item{display:block}.sidebar-more-link{margin-left:auto;font-size:.65rem;color:rgba(255,255,255,.35);text-decoration:none;cursor:pointer;transition:color .2s;white-space:nowrap}.sidebar-more-link:hover{color:var(--sidebar-accent)}.sidebar-stats{padding:10px 20px;border-top:1px solid rgba(255,255,255,8%);margin-top:4px;display:flex;flex-direction:column;gap:4px}.sidebar-stats-row{display:flex;align-items:center;gap:4px}.sidebar-stats-period{font-size:.62rem;color:rgba(255,255,255,.22);text-transform:uppercase;letter-spacing:.04em;width:34px;flex-shrink:0}.sidebar-stat-pill{display:flex;align-items:center;gap:8px;padding:0 2px;height:28px}.stat-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}.stat-dot--pv{background:#667eea}.stat-dot--uv{background:#f5576c}.sidebar-stat-value{font-weight:600;font-size:.85rem;color:rgba(255,255,255,.9);font-variant-numeric:tabular-nums}.sidebar-stat-source-note{margin-left:-3px;font-size:.64rem;color:rgba(255,255,255,.42);font-variant-numeric:tabular-nums;white-space:nowrap}.sidebar-stat-label{font-size:.7rem;color:rgba(255,255,255,.3)}.sidebar-dashboard-links{padding:8px 20px;display:flex;flex-direction:column;gap:5px}.sidebar-dashboard-links a,.sidebar-dashboard-links button{display:inline-flex;align-items:center;gap:5px;padding:4px 10px;background:0 0;font:inherit;text-align:left;font-size:.7rem;white-space:nowrap;color:rgba(255,255,255,.5);text-decoration:none;border:1px solid rgba(255,255,255,.1);border-radius:6px;transition:all .2s}.sidebar-dashboard-links a:hover,.sidebar-dashboard-links button:hover,.sidebar-dashboard-links button.is-active{color:#fff;background:var(--sidebar-hover);border-color:var(--sidebar-accent)}.site-wrapper{margin-left:var(--sidebar-width);min-height:100vh}.sidebar-toggle{display:none;position:fixed;bottom:20px;left:20px;z-index:101;background:var(--sidebar-active-bg);color:#fff;border:none;border-radius:50%;width:48px;height:48px;cursor:pointer;box-shadow:0 4px 14px oklch(.72 .17 38/.35);align-items:center;justify-content:center;transition:transform .2s}.sidebar-toggle:hover{transform:scale(1.08)}.sidebar-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:99;backdrop-filter:blur(2px)}@media(max-width:860px){.sidebar{transform:translateX(-100%)}.sidebar.open{transform:translateX(0)}.sidebar-toggle{display:flex}.sidebar-overlay.open{display:block}.site-wrapper{margin-left:0}}.section-group-desc{margin:-4px 0 8px;font-size:13px;color:var(--secondary);line-height:1.5}.home-search,.list-search-bar{margin:16px 0 20px}.home-search #searchInput,.list-search-bar #searchInput{width:100%;padding:10px 16px;font-size:15px;border:2px solid var(--tertiary);border-radius:8px;background:var(--entry);color:var(--primary);outline:none;transition:border-color .2s}.home-search #searchInput:focus,.list-search-bar #searchInput:focus{border-color:var(--sidebar-accent,#667eea)}.home-search #searchInput::placeholder,.list-search-bar #searchInput::placeholder{color:var(--secondary)}.home-search #searchResults,.list-search-bar #searchResults{margin:8px 0 0;padding:0;list-style:none}.home-search #searchResults .post-entry,.list-search-bar #searchResults .post-entry{border-bottom:1px solid var(--tertiary);font-size:.85rem}.home-search #searchResults .entry-header h2,.list-search-bar #searchResults .entry-header h2{font-size:.95rem}.home-search #searchResults .entry-content,.list-search-bar #searchResults .entry-content{font-size:.8rem}.sidebar-social{display:flex;gap:12px;padding:10px 20px 12px;border-bottom:1px solid rgba(255,255,255,8%)}.sidebar-social-link{color:rgba(255,255,255,.45);transition:color .2s}.sidebar-social-link:hover{color:var(--sidebar-accent)}.sidebar-social-link svg{width:18px;height:18px}</style><style>.view-toggle{display:flex;gap:4px;justify-content:flex-end;margin-bottom:12px;padding:0 4px}.view-toggle-btn{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border:1px solid var(--border);border-radius:6px;background:var(--entry);color:var(--secondary);cursor:pointer;transition:all .2s}.view-toggle-btn:hover{color:var(--primary);border-color:var(--primary)}.page-size-select{height:32px;padding:0 8px;border:1px solid var(--border);border-radius:6px;background:var(--entry);color:var(--secondary);font-size:.8rem;cursor:pointer;outline:none}.page-size-select:hover,.page-size-select:focus{border-color:var(--primary);color:var(--primary)}.page-info{font-size:.85rem;color:var(--secondary)}.view-toggle-btn.active{color:var(--primary);background:var(--theme);border-color:var(--primary)}.curation-browse-mode{display:flex;align-items:center;gap:8px;margin-bottom:16px}.curation-browse-mode-current,.curation-browse-mode-link{display:inline-flex;align-items:center;height:32px;padding:0 12px;border:1px solid var(--border);border-radius:6px;font-size:.85rem;line-height:1}.curation-browse-mode-current{color:var(--primary);background:var(--theme);border-color:var(--primary);font-weight:600}.curation-browse-mode-link{color:var(--secondary);background:var(--entry);text-decoration:none;transition:all .2s}.curation-browse-mode-link:hover{color:var(--primary);border-color:var(--primary)}.curation-count{display:inline-block;margin-left:8px;color:var(--secondary);font-size:.58em;font-weight:500;vertical-align:middle;white-space:nowrap}.curation-count--month{margin-left:6px;font-size:.72em}.section-group-header{display:flex;align-items:baseline;justify-content:space-between;gap:12px}.section-group-header .section-group-title{margin:0}.section-more-link{font-size:.78rem;color:var(--secondary);text-decoration:none;transition:color .2s;white-space:nowrap;flex-shrink:0}.section-more-link:hover{color:var(--primary)}.posts-container[data-view=thumbnail]{display:flex;flex-wrap:wrap;gap:16px}.posts-container[data-view=thumbnail] .section-group{width:100%}.posts-container[data-view=thumbnail] .section-group-header,.posts-container[data-view=thumbnail] .section-group-title,.posts-container[data-view=thumbnail] .section-group-desc{width:100%}.posts-container[data-view=thumbnail] .post-entry{display:flex;flex-direction:row;align-items:center;width:100%;gap:12px;padding:10px 14px;border-bottom:1px solid var(--border);margin:0}.posts-container[data-view=thumbnail] .post-entry .entry-cover{flex-shrink:0;width:80px;height:60px;border-radius:6px;overflow:hidden;order:-1}.posts-container[data-view=thumbnail] .post-entry .entry-cover img{width:100%;height:100%;object-fit:cover}.posts-container[data-view=thumbnail] .post-entry .entry-content{display:none}.posts-container[data-view=thumbnail] .post-entry .entry-header{flex:auto;min-width:0}.posts-container[data-view=thumbnail] .post-entry .entry-header h2{font-size:.92rem;margin:0}.posts-container[data-view=thumbnail] .post-entry .entry-footer{flex-shrink:0;font-size:.72rem;text-align:right}.posts-container[data-view=card]{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(260px,100%),1fr));gap:16px;width:min(1320px,calc(100vw - var(--sidebar-width) - 48px));margin-left:50%;transform:translateX(-50%)}.posts-container[data-view=card] .section-group{grid-column:1/-1;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(260px,100%),1fr));gap:16px}.posts-container[data-view=card] .section-group-header,.posts-container[data-view=card] .section-group-title,.posts-container[data-view=card] .section-group-desc{grid-column:1/-1}.posts-container[data-view=card] .post-entry{display:flex;flex-direction:column;border:1px solid var(--border);border-radius:10px;overflow:hidden;margin:0;transition:box-shadow .2s,transform .2s}.posts-container[data-view=card] .post-entry:hover{box-shadow:0 4px 16px rgba(0,0,0,.1);transform:translateY(-2px)}.dark .posts-container[data-view=card] .post-entry:hover{box-shadow:0 4px 16px rgba(0,0,0,.3)}.posts-container[data-view=card] .post-entry .entry-cover{width:100%;height:160px;overflow:hidden}.posts-container[data-view=card] .post-entry .entry-cover img{width:100%;height:100%;object-fit:cover}.posts-container[data-view=card] .post-entry .entry-header{padding:12px 14px 4px}.posts-container[data-view=card] .post-entry .entry-header h2{font-size:.95rem;line-height:1.4}.posts-container[data-view=card] .post-entry .entry-content{padding:0 14px;font-size:.8rem;color:var(--secondary)}.posts-container[data-view=card] .post-entry .entry-content p{display:-webkit-box;-webkit-line-clamp:5;-webkit-box-orient:vertical;overflow:hidden}.posts-container[data-view=card] .post-entry .entry-footer{padding:4px 14px 10px;font-size:.72rem;margin-top:auto}@media(max-width:860px){.posts-container[data-view=card]{width:min(1320px,calc(100vw - 48px))}}</style><script async src="https://www.googletagmanager.com/gtag/js?id=G-Q0RS9ZG67P"></script><script>var doNotTrack=!1,dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes";if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-Q0RS9ZG67P")}</script><meta property="og:url" content="https://datanexus-kr.github.io/curations/2026-09/2026-09-26-erd-guide-ai-schema-visualization/"><meta property="og:site_name" content="Junho Lee"><meta property="og:title" content="수십 개 오브젝트 스키마를 한눈에 보는 ERD 구축 AI 가이드"><meta property="og:description" content="수십 개 오브젝트의 스키마를 한 번에 파악하기 어려울 때 쓰는 ERD 구축 가이드를 공유합니다. 스키마 자료와 ERD_GUIDE.md를 AI에게 함께 넘기고 한 줄로 지시하면, AI가 입력 구조를 먼저 조사한 뒤 관계선과 개인정보 분류, 테이블 관계 그래프를 갖춘 반응형 ERD 웹을 만듭니다."><meta property="og:locale" content="ko"><meta property="og:type" content="article"><meta property="article:section" content="curations"><meta property="article:published_time" content="2026-09-26T00:45:00+09:00"><meta property="article:modified_time" content="2026-09-26T00:45:00+09:00"><meta property="article:tag" content="Erd"><meta property="article:tag" content="Database-Design"><meta property="article:tag" content="Data-Modeling"><meta property="article:tag" content="Prompt-Engineering"><meta property="article:tag" content="Ai-Agent"><meta property="article:tag" content="Pii"><meta name=twitter:card content="summary"><meta name=twitter:title content="수십 개 오브젝트 스키마를 한눈에 보는 ERD 구축 AI 가이드"><meta name=twitter:description content="수십 개 오브젝트의 스키마를 한 번에 파악하기 어려울 때 쓰는 ERD 구축 가이드를 공유합니다. 스키마 자료와 ERD_GUIDE.md를 AI에게 함께 넘기고 한 줄로 지시하면, AI가 입력 구조를 먼저 조사한 뒤 관계선과 개인정보 분류, 테이블 관계 그래프를 갖춘 반응형 ERD 웹을 만듭니다."><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"큐레이션","item":"https://datanexus-kr.github.io/curations/"},{"@type":"ListItem","position":2,"name":"2026년 9월 큐레이션","item":"https://datanexus-kr.github.io/curations/2026-09/"},{"@type":"ListItem","position":3,"name":"수십 개 오브젝트 스키마를 한눈에 보는 ERD 구축 AI 가이드","item":"https://datanexus-kr.github.io/curations/2026-09/2026-09-26-erd-guide-ai-schema-visualization/"}]}</script></head><body class=dark id=top><script data-goatcounter=https://datanexus-kr.goatcounter.com/count async src=//gc.zgo.at/count.js></script><aside class=sidebar id=sidebar><div class=sidebar-inner><div class=sidebar-header><a href=https://datanexus-kr.github.io/ class=sidebar-logo><img src=/images/DataNexus_Logo.jpg alt=DataNexus class=sidebar-logo-img>
+DataNexus</a></div><div class=sidebar-social><a href=https://www.linkedin.com/in/leejuno/ target=_blank rel="noopener noreferrer" title=linkedin class=sidebar-social-link><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+</a><a href=/index.xml target=_blank rel="noopener noreferrer" title=rss class=sidebar-social-link><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 019 9"/><path d="M4 4a16 16 0 0116 16"/><circle cx="5" cy="19" r="1"/></svg>
+</a><button id=theme-toggle accesskey=t title="(Alt + T)" aria-label="Toggle theme" class=sidebar-icon-btn>
+<svg id="moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+<svg id="sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+</button>
+<a href=https://datanexus-kr.github.io/en/ class="sidebar-icon-btn sidebar-lang-btn" title=English aria-label=English><svg class="lang-flag" viewBox="0 0 36 24" width="22" height="15"><rect width="36" height="24" fill="#B22234"/><rect y="1.85" width="36" height="1.85" fill="#fff"/><rect y="5.54" width="36" height="1.85" fill="#fff"/><rect y="9.23" width="36" height="1.85" fill="#fff"/><rect y="12.92" width="36" height="1.85" fill="#fff"/><rect y="16.62" width="36" height="1.85" fill="#fff"/><rect y="20.31" width="36" height="1.85" fill="#fff"/><rect width="14.4" height="12.92" fill="#3C3B6E"/></svg></a></div><div class=sidebar-section><h3 class="sidebar-section-title sidebar-section-title--datanexus" onclick=toggleSidebarSection(this)>DataNexus Series
+<a href=/posts/datanexus/ class=sidebar-more-link onclick=event.stopPropagation()>more</a></h3><ul><li><a href=https://datanexus-kr.github.io/posts/datanexus/000-architecture/ title="DataNexus 아키텍처: 4개 레이어와 두 가지 워크플로우">DataNexus 아키텍처: 4개 레이어와 두 가지 워크플로우</a></li><li><a href=https://datanexus-kr.github.io/posts/datanexus/012-agent-race-worktree/ title="12. 9편에서 실패한 후보 비교를 세 코딩 에이전트로 다시 시도했습니다">12. 9편에서 실패한 후보 비교를 세 코딩 에이전트로 다시 시도했습니다</a></li><li><a href=https://datanexus-kr.github.io/posts/datanexus/011-chat-ui-trust-design/ title="11. 틀릴 수 있는 AI 답변, 화면에서는 어떻게 보여야 할까">11. 틀릴 수 있는 AI 답변, 화면에서는 어떻게 보여야 할까</a></li><li><a href=https://datanexus-kr.github.io/posts/datanexus/010-error-taxonomy-spider/ title="10. Spider 72%, 오답은 모델보다 데이터셋에서 갈렸다">10. Spider 72%, 오답은 모델보다 데이터셋에서 갈렸다</a></li><li><a href=https://datanexus-kr.github.io/posts/datanexus/009-multi-candidate-seal/ title="9. BIRD 56%, 9번 실험하고 접은 것들">9. BIRD 56%, 9번 실험하고 접은 것들</a></li></ul></div><div class=sidebar-section><h3 class="sidebar-section-title sidebar-section-title--dw" onclick=toggleSidebarSection(this)>DW 모델링
+<a href=/posts/dw-modeling/ class=sidebar-more-link onclick=event.stopPropagation()>more</a></h3><ul><li><a href=https://datanexus-kr.github.io/posts/dw-modeling/005-llm-data-modeling-grain-snapshots/ title="5. LLM 시대의 데이터 모델링">5. LLM 시대의 데이터 모델링</a></li><li><a href=https://datanexus-kr.github.io/posts/dw-modeling/004-super-sub-type/ title="4. 수퍼-서브 타입 - 고객이 개인이면서 법인일 수 있는가">4. 수퍼-서브 타입 - 고객이 개인이면서 법인일 수 있는가</a></li><li><a href=https://datanexus-kr.github.io/posts/dw-modeling/003-erd-notation/ title="3. ERD 표기법 - 같은 그림, 다른 해석">3. ERD 표기법 - 같은 그림, 다른 해석</a></li><li><a href=https://datanexus-kr.github.io/posts/dw-modeling/002-oltp-vs-dw-model/ title="2. OLTP vs DW 모델 - 목적이 다르면 설계도 다르다">2. OLTP vs DW 모델 - 목적이 다르면 설계도 다르다</a></li><li><a href=https://datanexus-kr.github.io/posts/dw-modeling/001-cloud-era-dw-modeling/ title="1. 클라우드 DW에서 Kimball은 여전히 유효한가">1. 클라우드 DW에서 Kimball은 여전히 유효한가</a></li></ul></div><div class=sidebar-section><h3 class="sidebar-section-title sidebar-section-title--etl" onclick=toggleSidebarSection(this)>ETL 설계
+<a href=/posts/etl-design/ class=sidebar-more-link onclick=event.stopPropagation()>more</a></h3><ul><li><a href=https://datanexus-kr.github.io/posts/etl-design/004-scd/ title="4. SCD - 고객 주소가 바뀌면 과거 주문은 어디로 배송된 걸로 남는가">4. SCD - 고객 주소가 바뀌면 과거 주문은 어디로 배송된 걸로 남는가</a></li><li><a href=https://datanexus-kr.github.io/posts/etl-design/003-silver-layer/ title="3. Silver 레이어 - Bronze를 분석 가능한 상태로 올린다">3. Silver 레이어 - Bronze를 분석 가능한 상태로 올린다</a></li><li><a href=https://datanexus-kr.github.io/posts/etl-design/002-bronze-layer/ title="2. Bronze 레이어 - 원본을 있는 그대로 쌓는다">2. Bronze 레이어 - 원본을 있는 그대로 쌓는다</a></li><li><a href=https://datanexus-kr.github.io/posts/etl-design/001-medallion-architecture/ title="1. 메달리온 아키텍처 - 데이터를 세 겹으로 쌓는 이유">1. 메달리온 아키텍처 - 데이터를 세 겹으로 쌓는 이유</a></li></ul></div><div class=sidebar-section><h3 class="sidebar-section-title sidebar-section-title--geo" onclick=toggleSidebarSection(this)>GEO 최적화
+<a href=/posts/geo-optimization/ class=sidebar-more-link onclick=event.stopPropagation()>more</a></h3><ul><li><a href=https://datanexus-kr.github.io/posts/geo-optimization/005-what-is-aeo/ title="5. AEO - 코딩 에이전트가 읽는 문서는 왜 다른가">5. AEO - 코딩 에이전트가 읽는 문서는 왜 다른가</a></li><li><a href=https://datanexus-kr.github.io/posts/geo-optimization/004-offsite-geo-strategy/ title="4. Off-Site GEO - 공식 사이트를 안 보는 AI에게 선택받는 법">4. Off-Site GEO - 공식 사이트를 안 보는 AI에게 선택받는 법</a></li><li><a href=https://datanexus-kr.github.io/posts/geo-optimization/003-geo-data-pipeline/ title="3. On-Site GEO 기술 구조 - 상품 DB에서 JSON-LD까지">3. On-Site GEO 기술 구조 - 상품 DB에서 JSON-LD까지</a></li><li><a href=https://datanexus-kr.github.io/posts/geo-optimization/002-ai-citation-sources/ title="2. AI마다 인용하는 소스가 다르다">2. AI마다 인용하는 소스가 다르다</a></li><li><a href=https://datanexus-kr.github.io/posts/geo-optimization/001-what-is-geo/ title="1. GEO란 무엇인가 - SEO 너머의 AI 인용 전략">1. GEO란 무엇인가 - SEO 너머의 AI 인용 전략</a></li></ul></div><div class="sidebar-section expanded"><h3 class="sidebar-section-title sidebar-section-title--curations" onclick=toggleSidebarSection(this)>큐레이션
+<a href=/curations/ class=sidebar-more-link onclick=event.stopPropagation()>more</a></h3><ul><li><a href=https://datanexus-kr.github.io/curations/2026-09/2026-09-26-erd-guide-ai-schema-visualization/ title="수십 개 오브젝트 스키마를 한눈에 보는 ERD 구축 AI 가이드" class=active>수십 개 오브젝트 스키마를 한눈에 보는 ERD 구축 AI 가이드</a></li><li><a href=https://datanexus-kr.github.io/curations/2026-09/2026-09-23-kev-open-source-decision-models-on-qwen35/ title="로컬 환경에서 구동하는 오픈소스 의사결정 모델 Kev">로컬 환경에서 구동하는 오픈소스 의사결정 모델 Kev</a></li><li><a href=https://datanexus-kr.github.io/curations/2026-09/2026-09-23-senior-engineer-downward-spiral/ title="시니어 엔지니어의 악순환과 벗어나는 방법">시니어 엔지니어의 악순환과 벗어나는 방법</a></li><li><a href=https://datanexus-kr.github.io/curations/2026-09/2026-09-23-enterprise-rag-document-parsing-layout-analysis/ title="기업형 RAG 성능을 결정짓는 문서 레이아웃 분석과 파싱 기법">기업형 RAG 성능을 결정짓는 문서 레이아웃 분석과 파싱 기법</a></li><li><a href=https://datanexus-kr.github.io/curations/2026-09/2026-09-19-three-habits-big-tech-veterans-must-break-in-start/ title="대기업 출신이 초기 스타트업에서 반드시 버려야 할 3가지 습관">대기업 출신이 초기 스타트업에서 반드시 버려야 할 3가지 습관</a></li></ul></div><script>function toggleSidebarSection(e){var t=e.closest(".sidebar-section"),n=t.classList.contains("expanded"),s=document.querySelectorAll(".sidebar-section");s.forEach(function(e){e.classList.remove("expanded")}),n||t.classList.add("expanded")}</script><div class="sidebar-stats dn-admin-only" id=sidebar-stats style=display:none><div class=sidebar-stats-row><span class=sidebar-stats-period>Total</span><div class=sidebar-stat-pill id=gc-container-pv-total style=display:none><span class="stat-dot stat-dot--pv"></span>
+<span class=sidebar-stat-value id=gc-value-pv-total>-</span>
+<span class=sidebar-stat-source-note data-gc-skip-note></span>
+<span class=sidebar-stat-label>views</span></div></div><div class=sidebar-stats-row><span class=sidebar-stats-period>Today</span><div class=sidebar-stat-pill id=gc-container-pv-today style=display:none><span class="stat-dot stat-dot--pv"></span>
+<span class=sidebar-stat-value id=gc-value-pv-today>-</span>
+<span class=sidebar-stat-source-note data-gc-skip-note></span>
+<span class=sidebar-stat-label>views</span></div></div></div><div class="sidebar-dashboard-links dn-admin-only" id=dashboard-links style=display:none><a href=https://datanexus-kr.goatcounter.com/ target=_blank rel=noopener><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+GoatCounter
+</a><button id=sidebar-goatcounter-toggle type=button title="이 브라우저에서 GoatCounter 수집을 토글합니다.">
+<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M21 12c-1.9 3.3-5.1 6-9 6s-7.1-2.7-9-6c1.9-3.3 5.1-6 9-6s7.1 2.7 9 6z"/></svg>
+<span id=sidebar-goatcounter-toggle-label>내 접속 제외 켜기</span>
+</button>
+<a href=https://analytics.google.com/analytics/web/ target=_blank rel=noopener><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 118 2.83"/><path d="M22 12A10 10 0 0012 2v10z"/></svg>
+GA4 Dashboard
+</a><button id=sidebar-reactions-filter type=button>
+<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5.0 00-7.78.0L12 5.67l-1.06-1.06a5.5 5.5.0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5.0 000-7.78z"/></svg>
+반응 있는 글만
+</button>
+<button id=sidebar-comments-filter type=button>
+<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+댓글 있는 글만</button></div><script>(function(){var t,n="1022",e="dn-admin";function s(){document.querySelectorAll(".dn-admin-only").forEach(function(e){e.style.display=""});var e=encodeURIComponent(location.pathname),t=(new Date).toISOString().split("T")[0];function n(){try{return localStorage.getItem("skipgc")==="t"}catch{return!1}}function i(e){try{e?localStorage.setItem("skipgc","t"):localStorage.removeItem("skipgc")}catch{return}s()}function s(){var e=n(),t=document.getElementById("sidebar-goatcounter-toggle"),s=document.getElementById("sidebar-goatcounter-toggle-label");t&&(t.classList.toggle("is-active",e),t.setAttribute("aria-pressed",e?"true":"false"),t.title=e?"내 접속 제외 중입니다. 다시 누르면 이 브라우저의 GoatCounter 수집을 켭니다.":"이 브라우저의 GoatCounter 수집을 끕니다. 공식 #toggle-goatcounter와 같은 설정입니다."),s&&(s.textContent=e?"내 접속 제외 중":"내 접속 제외 켜기"),document.querySelectorAll("[data-gc-skip-note]").forEach(function(t){t.textContent=e?"(내 접속 제외)":""})}function a(){var e=document.getElementById("sidebar-goatcounter-toggle");if(!e||e.dataset.bound==="1")return;e.dataset.bound="1",e.addEventListener("click",function(){i(!n())})}function o(e,t,n){var s=document.getElementById(e),o=document.getElementById(t);if(!s||!o)return;s.textContent=n,o.style.display=""}a(),s(),fetch("https://datanexus-kr.goatcounter.com/counter/"+e+".json").then(function(e){return e.json()}).then(function(e){e.count&&o("gc-value-pv-total","gc-container-pv-total",e.count)}).catch(function(){}),fetch("https://datanexus-kr.goatcounter.com/counter/"+e+".json?start="+t+"&end="+t).then(function(e){return e.json()}).then(function(e){e.count&&o("gc-value-pv-today","gc-container-pv-today",e.count)}).catch(function(){})}t=new URLSearchParams(location.search),t.get("admin")===n&&(localStorage.setItem(e,"1"),history.replaceState(null,"",location.pathname)),localStorage.getItem(e)==="1"&&s()})()</script></aside><button class=sidebar-toggle id=sidebar-toggle aria-label="Toggle sidebar">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button><div class=sidebar-overlay id=sidebar-overlay></div><div class=site-wrapper><script>localStorage.getItem("pref-theme")==="light"&&document.body.classList.remove("dark")</script><header class=header><nav class=nav><div class="logo home-hide-logo" style=display:none><a href=https://datanexus-kr.github.io/ accesskey=h title="DataNexus (Alt + H)"><img src=https://datanexus-kr.github.io/images/DataNexus_Logo.jpg alt aria-label=logo height=42>DataNexus</a><div class=logo-switches></div></div><ul id=menu><li><a href=https://datanexus-kr.github.io/dashboard/ title=Roadmap><span>Roadmap</span></a></li><li><a href=https://datanexus-kr.github.io/posts/ title=Posts><span>Posts</span></a></li><li><a href=https://datanexus-kr.github.io/curations/ title=Curations><span>Curations</span></a></li><li><a href=https://datanexus-kr.github.io/tags/ title=Tags><span>Tags</span></a></li><li><a href=https://datanexus-kr.github.io/about/ title=About><span>About</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><div class=breadcrumbs><a href=https://datanexus-kr.github.io/>홈</a>&nbsp;»&nbsp;<a href=https://datanexus-kr.github.io/curations/>큐레이션</a>&nbsp;»&nbsp;<a href=https://datanexus-kr.github.io/curations/2026-09/>2026년 9월 큐레이션</a></div><h1 class="post-title entry-hint-parent">수십 개 오브젝트 스키마를 한눈에 보는 ERD 구축 AI 가이드</h1><div class=post-meta><span title='2026-09-26 00:45:00 +0900 +0900'>9월 26, 2026</span>&nbsp;·&nbsp;20 분&nbsp;·&nbsp;Junho Lee</div></header><aside class=sc-card aria-label=원문><div class=sc-head><span class=sc-label>원문</span>
+<span class=sc-badge>manual</span></div><ul class=sc-links><li><a class=sc-link href=https://datanexus-kr.github.io/files/erd-guide/ERD_GUIDE.md target=_blank rel=noopener><span class=sc-url>datanexus-kr.github.io/files/erd-guide/ERD_GUIDE.md</span>
+<svg class="sc-ext" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a></li></ul></aside><style>.sc-card{margin:1.4rem 0;padding:14px 16px;background:var(--entry);border:1px solid var(--border);border-radius:10px}.sc-head{display:flex;align-items:center;gap:10px;margin-bottom:10px}.sc-label{font-family:jetbrains mono,ui-monospace,SFMono-Regular,monospace;font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ember)}.sc-badge{font-family:jetbrains mono,ui-monospace,SFMono-Regular,monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--secondary);background:var(--theme);border:1px solid var(--border);border-radius:999px;padding:2px 9px;line-height:1.6}.sc-links{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px}.sc-link{display:inline-flex;align-items:center;gap:6px;max-width:100%;min-width:0;color:var(--primary);text-decoration:none;font-size:.92rem;transition:color .2s ease}.sc-link:hover,.sc-link:focus-visible{color:var(--ember)}.sc-url{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.sc-ext{flex-shrink:0;opacity:.55;transition:opacity .2s ease}.sc-link:hover .sc-ext,.sc-link:focus-visible .sc-ext{opacity:.9}@media(max-width:860px){.sc-card{margin:1.1rem 0;padding:12px 14px}.sc-link{font-size:.86rem}}</style><div class=toc><details><summary accesskey=c title="(Alt + C)"><span class=details>목차</span></summary><div class=inner><ul><li><a href=#%ec%82%ac%ec%9a%a9-%eb%b0%a9%eb%b2%95 aria-label="사용 방법">사용 방법</a></li><li><a href=#%ec%9e%85%eb%a0%a5-%ea%b5%ac%ec%a1%b0%eb%a5%bc-%ea%b0%80%ec%a0%95%ed%95%98%ec%a7%80-%ec%95%8a%ea%b2%8c-%ed%95%98%eb%8a%94-%ea%b7%9c%ec%b9%99 aria-label="입력 구조를 가정하지 않게 하는 규칙">입력 구조를 가정하지 않게 하는 규칙</a></li><li><a href=#%eb%91%90-%ea%b0%80%ec%a7%80-%eb%b7%b0%ec%99%80-%ea%b2%80%ed%86%a0-%ec%9e%91%ec%97%85 aria-label="두 가지 뷰와 검토 작업">두 가지 뷰와 검토 작업</a></li><li><a href=#%ea%b0%80%ec%9d%b4%eb%93%9c%ec%97%90-%ec%a0%81%ec%96%b4%eb%91%94-%ec%8b%9c%ed%96%89%ec%b0%a9%ec%98%a4 aria-label="가이드에 적어둔 시행착오">가이드에 적어둔 시행착오</a></li><li><a href=#%ea%b0%80%ec%9d%b4%eb%93%9c-%ec%a0%84%eb%ac%b8 aria-label="가이드 전문">가이드 전문</a></li><li><a href=#%ec%9a%94%ec%95%bd aria-label=요약>요약</a></li></ul></div></details></div><div class=post-content><p>새 프로젝트에 들어가면 가장 먼저 받는 자료가 테이블 정의서입니다. 엑셀 시트 여러 장에 오브젝트 수십 개와 컬럼 수천 개가 흩어져 있는 경우가 흔합니다. 시트를 넘기며 PK와 이름이 같은 컬럼을 맞춰 보는 방식으로는 어느 테이블이 허브인지, 개인정보 컬럼이 어느 업무 영역에 몰려 있는지 잘 보이지 않습니다.</p><p>그래서 스키마 자료를 AI에게 넘기고 분석용 ERD 웹을 만들게 합니다. 이때 AI에게 함께 주는 구축 가이드 문서 <code>ERD_GUIDE.md</code> 를 공유합니다.</p><h2 id=사용-방법>사용 방법<a hidden class=anchor aria-hidden=true href=#사용-방법>#</a></h2><p>준비물은 스키마 정보가 담긴 자료와 가이드 파일 두 가지입니다. 자료 형식은 가리지 않습니다. 엑셀·CSV 정의서나 SQL DDL, ORM 스키마, PDF 문서까지 입력으로 받습니다.</p><ol><li>새 프로젝트 폴더 최상단에 <code>ERD_GUIDE.md</code> 를 둡니다.</li><li>스키마 자료를 같은 프로젝트 안에 넣습니다.</li><li>AI 코딩 에이전트에게 아래처럼 지시합니다.</li></ol><div class=highlight><pre tabindex=0 style=color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-text data-lang=text><span style=display:flex><span>ERD_GUIDE.md를 기준으로 현재 프로젝트의 입력 자료를 조사하고,
+</span></span><span style=display:flex><span>범용 반응형 ERD 웹을 구현해줘.
+</span></span></code></pre></div><p>지시는 이 두 줄이면 됩니다. 무엇을 먼저 조사하고 어떤 순서로 구현할지, 언제 끝난 것으로 볼지는 가이드에 적혀 있습니다. 입력 자료가 아직 없으면 AI가 예제 데이터와 교체 가능한 어댑터를 먼저 만듭니다.</p><h2 id=입력-구조를-가정하지-않게-하는-규칙>입력 구조를 가정하지 않게 하는 규칙<a hidden class=anchor aria-hidden=true href=#입력-구조를-가정하지-않게-하는-규칙>#</a></h2><p>정의서 양식은 프로젝트마다 다릅니다. 헤더가 3행에 있기도 하고 테이블 목록과 컬럼 목록이 다른 시트로 나뉘기도 합니다. 병합 셀로 다중 헤더를 만든 정의서도 흔합니다. 가이드는 입력 구조를 미리 가정하지 말라고 요구합니다. 파일명과 시트명은 물론이고 헤더 행 위치, 열 순서, PK·FK 표기 방식도 AI가 자료를 직접 조사해서 정합니다.</p><p>AI는 모든 시트의 앞부분 20-50행을 읽고 헤더 유사어와 실제 값의 형태를 함께 보고 시트 역할을 추론합니다. 테이블 목록인지 컬럼 목록인지, 변경 이력처럼 ERD 입력이 아닌 시트인지를 가립니다. <code>Entity</code>, <code>오브젝트명</code>, <code>엔터티</code> 처럼 표기가 달라도 같은 의미로 묶는 유사어 표도 가이드에 들어 있습니다. 매핑이 애매하면 구현 전에 후보와 근거를 이렇게 보고합니다.</p><div class=highlight><pre tabindex=0 style=color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-text data-lang=text><span style=display:flex><span>테이블 식별자 후보: A열 &#34;Entity&#34;, D열 &#34;Object Name&#34;
+</span></span><span style=display:flex><span>컬럼 식별자 후보: F열 &#34;Attribute&#34;
+</span></span><span style=display:flex><span>PK 후보: J열 &#34;Key Type&#34;
+</span></span></code></pre></div><p>후보가 하나뿐이고 데이터 패턴이 일관되면 묻지 않고 진행합니다. 확인 질문은 결과가 크게 갈리는 경우에만 받습니다.</p><p>원본 파일은 수정하지 않습니다. 추론한 FK와 개인정보 분류는 원본에 명시된 값과 구분해 초기 제안값으로 표시합니다. 입력 자료는 먼저 표준 ERD 모델로 변환하고 화면은 그 모델만 읽습니다. 다음 프로젝트에서 정의서 양식이 바뀌어도 입력 어댑터만 새로 만들면 됩니다.</p><h2 id=두-가지-뷰와-검토-작업>두 가지 뷰와 검토 작업<a hidden class=anchor aria-hidden=true href=#두-가지-뷰와-검토-작업>#</a></h2><p>컬럼 카드 뷰는 테이블을 카드로 펼쳐 컬럼 단위로 검토하는 화면입니다. 관계선은 카드 중앙이 아니라 연결 컬럼 행의 좌우 측면에 붙고 상대 테이블이 어느 쪽에 있느냐에 따라 출발 측면이 바뀝니다. 선택한 테이블의 선은 맨 위에 강조해 그립니다. PK가 포함된 관계만 보는 필터와 미사용 항목의 선을 완전히 숨기는 옵션도 있습니다.</p><p>관계 그래프 뷰는 컬럼을 생략하고 테이블만 노드로 둡니다. 엣지 굵기는 공유 키 수를, 노드 크기는 연결 수를 나타냅니다. <code>공유 키 최소</code> 값을 올리면 약한 연결이 걸러지면서 고립되는 테이블이 점선 테두리로 드러납니다. 스키마 전체의 연결 구조를 볼 때는 이쪽이 빠릅니다. 두 뷰는 같은 선택 상태와 같은 관계 추론 규칙을 공유합니다.</p><p>컬럼을 선택하면 사용 여부와 개인정보 여부, 비고를 입력합니다. 개인정보 컬럼은 식별자 유형(직접식별자·준식별자·해당없음)과 처리 방식(가명화또는암호화·구간화·해당없음)도 고릅니다. 개인정보 초기값은 컬럼명과 논리명, 설명 같은 메타데이터로만 추론하고 실제 데이터 값은 읽지 않는 것이 기본입니다. 편집 결과는 원본 엑셀을 복제한 뒤 마지막 열 오른쪽에 결과 컬럼 5개를 붙여 내려받습니다. 행 순서와 스타일이 원본 그대로라 기존 정의서와 나란히 놓고 검토하기 편합니다.</p><h2 id=가이드에-적어둔-시행착오>가이드에 적어둔 시행착오<a hidden class=anchor aria-hidden=true href=#가이드에-적어둔-시행착오>#</a></h2><p>가이드 후반부에는 구현하면서 오래 헤맨 항목을 넣었습니다. 80개 테이블, 5,800개 컬럼 규모에서 관계 추론 자체는 한 자리 밀리초로 끝났습니다. 팬·줌이 느렸던 원인은 전부 렌더링 쪽이었습니다.</p><p>관계선을 화면 좌표로 그리면 이동하거나 확대할 때마다 모든 경로를 다시 만듭니다. 선을 카드와 같은 월드 좌표계에 그리고 레이어에 변환을 한 번만 적용하면 속성 두 개만 갱신하면 됩니다. 같은 스타일의 선을 하나의 path로 합치면 프레임당 갱신이 수천 회에서 한 자릿수로 줄어듭니다.</p><p>브라우저 쪽 함정도 몇 가지 적었습니다.</p><ul><li><code>position: absolute; inset: 0</code> 만 준 <code>&lt;svg></code> 는 늘어나지 않고 기본 300×150 뷰포트를 씁니다. 박스 밖의 선은 전부 잘립니다.</li><li>드래그를 위해 상위 요소에서 <code>setPointerCapture</code> 를 호출하면 자식 노드의 클릭 처리기가 실행되지 않습니다. 이동 거리가 짧은 <code>pointerup</code> 을 클릭으로 판정해야 합니다.</li><li><code>localeCompare(b, 'ko')</code> 는 한글을 영문보다 앞에 둬서 영문 접두어 테이블이 목록 끝으로 밀립니다. 엑셀과 같은 숫자 → 영문 → 가나다 순서가 필요하면 <code>'en'</code> 을 씁니다.</li></ul><p>측정 없이 원인을 짐작하면 대부분 틀렸습니다. 그래서 가이드에도 성능은 추정하지 말고 프레임당 반복 작업을 세어 확인하라고 적었습니다.</p><h2 id=가이드-전문>가이드 전문<a hidden class=anchor aria-hidden=true href=#가이드-전문>#</a></h2><p><a href=/files/erd-guide/ERD_GUIDE.md download=ERD_GUIDE.md>ERD_GUIDE.md 내려받기</a></p><p>파일을 내려받거나 아래 전문을 복사해 프로젝트 최상단에 <code>ERD_GUIDE.md</code> 로 저장하면 됩니다.</p><details class=glossary><summary>ERD_GUIDE.md 전문 펼치기</summary><div class=highlight><pre tabindex=0 style=color:#c0caf5;background-color:#1a1b26;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-markdown data-lang=markdown><span style=display:flex><span><span style=color:#e0af68;font-weight:700># 범용 반응형 ERD 웹 구축 가이드
+</span></span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>이 문서는 특정 프로젝트의 코드, 파일명, 시트명, 컬럼 순서, 프레임워크 또는 배포 환경에 의존하지 않는 독립 실행형 구축 명세다. 새 프로젝트에는 이 파일만 복사해 사용할 수 있다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>구현자는 입력 자료의 구조를 먼저 조사하고, 실제 자료에 맞는 변환 계층을 만든 뒤 ERD 웹을 구현해야 한다. 알려지지 않은 파일 구조를 임의로 단정하지 않는다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#e0af68;font-weight:700>## 1. 사용 방법
+</span></span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#bb9af7>1.</span> 이 파일을 새 프로젝트의 최상단에 복사한다.
+</span></span><span style=display:flex><span><span style=color:#bb9af7>2.</span> 테이블 및 컬럼 정보가 들어 있을 가능성이 있는 자료를 프로젝트 안에 둔다.
+</span></span><span style=display:flex><span><span style=color:#bb9af7>3.</span> 구현자에게 다음과 같이 요청한다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#9ece6a>```text
+</span></span></span><span style=display:flex><span>ERD_GUIDE.md를 기준으로 현재 프로젝트의 입력 자료를 조사하고,
+</span></span><span style=display:flex><span>범용 반응형 ERD 웹을 구현해줘.
+</span></span><span style=display:flex><span><span style=color:#9ece6a>```</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>입력 자료가 아직 없다면 구현자는 예제 데이터와 교체 가능한 어댑터를 제공해야 한다. 실제 자료가 있다면 예제 구조를 강요하지 말고 자료를 직접 분석한다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#e0af68;font-weight:700>## 2. 목표 기능
+</span></span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>완성되는 웹은 다음 기능을 제공해야 한다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 테이블과 컬럼을 카드 형태로 표시
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 테이블 및 컬럼 사용 여부를 켜고 끄기
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 미사용 항목은 삭제하지 않고 반투명하게 구분
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 개인정보 컬럼 여부 선택
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 개인정보 식별자 유형 선택: 직접식별자, 준식별자, 해당없음
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 개인정보 처리 방식 선택: 가명화또는암호화, 구간화, 해당없음
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 컬럼별 비고 입력
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> PK 표시
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 확인 가능한 경우 FK 및 명시적 관계 표시
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 설정에 따라 동일하거나 대응되는 컬럼명 사이의 관계 표시
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 테이블 드래그 재배치
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 사용 테이블은 중심부, 미사용 테이블은 외곽으로 보내는 자동 배치
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 넓은 캔버스의 상하좌우 이동 여백
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 스크롤 이동과 캔버스 드래그 이동
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 트랙패드 핀치 또는 이에 준하는 확대·축소
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 전체 맞춤 보기와 확대 비율 조절
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 전체 관계선과 PK 관련 관계선 필터
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 미사용 항목의 관계선 완전 숨김 옵션
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 선택한 테이블과 연결된 관계선을 최상단에 강하게 강조
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 관계선이 상대 테이블 방향에 따라 컬럼 행의 좌우 측면에 연결
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 컬럼을 생략하고 테이블 단위 관계만 보는 그래프 뷰
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 테이블 목록의 정렬 기준 선택과 목록 선택 시 캔버스 시야 이동
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 검색, 필터 및 간단한 통계
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 편집 결과 다운로드
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 작은 화면에서도 사용할 수 있는 반응형 UI
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 선택 사항으로 공용 상태 공유 및 여러 사용자 열람
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#e0af68;font-weight:700>## 3. 가장 중요한 원칙
+</span></span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#e0af68;font-weight:700>### 입력 구조를 먼저 조사한다
+</span></span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>다음 값을 미리 가정하지 않는다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 입력 파일명과 확장자
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 워크북 시트명
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 헤더가 있는 행
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 테이블 정보와 컬럼 정보가 같은 시트에 있는지 여부
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 컬럼 배치 순서
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> PK 또는 FK 표현 방식
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 한글명과 영문명의 존재 여부
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 병합 셀, 다중 헤더, 빈 행 사용 방식
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#e0af68;font-weight:700>### 원본을 보존한다
+</span></span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 입력 파일을 직접 덮어쓰지 않는다.
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 생성 데이터와 다운로드 결과는 별도 파일로 만든다.
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 원본 행 순서와 사용자가 입력한 값을 가능한 한 보존한다.
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 자동 판단값과 원본에 명시된 값을 구분한다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#e0af68;font-weight:700>### 불확실성을 숨기지 않는다
+</span></span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 확실한 구조는 자동 매핑한다.
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 여러 해석이 가능한 경우 후보와 근거를 제시한다.
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 핵심 매핑이 불명확할 때만 사용자에게 짧게 확인한다.
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 개인정보 여부와 관계 추론은 초기 제안값임을 명시한다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#e0af68;font-weight:700>## 4. 지원할 입력 자료
+</span></span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>우선순위는 프로젝트에 실제로 존재하는 자료에 따라 결정한다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> Excel: <span style=color:#9ece6a>`.xlsx`</span>, <span style=color:#9ece6a>`.xls`</span>, <span style=color:#9ece6a>`.xlsm`</span>
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 텍스트 표: <span style=color:#9ece6a>`.csv`</span>, <span style=color:#9ece6a>`.tsv`</span>
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 구조화 데이터: <span style=color:#9ece6a>`.json`</span>, <span style=color:#9ece6a>`.yaml`</span>
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 데이터베이스 정의: SQL DDL, 스키마 덤프, ORM 스키마
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 문서형 정의서: Markdown, Word, PDF
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 여러 파일로 나뉜 테이블·컬럼·인덱스·관계 정의서
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>문서나 PDF처럼 구조가 불명확한 자료는 먼저 표를 추출하고, 추출 결과를 검증한 뒤 사용한다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#e0af68;font-weight:700>## 5. 입력 자료 탐색 절차
+</span></span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#e0af68;font-weight:700>### 5.1 파일 목록 작성
+</span></span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>프로젝트 안에서 후보 파일을 찾고 다음 정보를 기록한다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 경로와 파일 형식
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 파일 크기와 수정 시각
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 워크북이면 전체 시트 목록
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 데이터가 존재하는 행과 열 범위
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 숨김 시트 여부
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>임시 파일, 잠금 파일, 이미 생성된 다운로드 결과와 백업본은 원본 후보에서 구분한다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#e0af68;font-weight:700>### 5.2 워크북 구조 조사
+</span></span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>모든 시트를 대상으로 다음을 확인한다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 첫 20~50개 행의 값
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 헤더 후보 행
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 병합 셀과 반복 헤더
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 빈 행을 경계로 나뉜 여러 표
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 수식 셀과 표시값
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 숨김 행과 숨김 열
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 동일한 테이블명이 반복되는 방식
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>시트 이름만으로 역할을 결정하지 않는다. 이름은 단서로만 사용하고 실제 헤더와 데이터 패턴을 함께 본다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#e0af68;font-weight:700>### 5.3 시트 역할 추론
+</span></span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>각 표 또는 시트에 대해 아래 역할의 가능성을 평가한다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 테이블 목록
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 컬럼 목록
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 테이블과 컬럼이 합쳐진 목록
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> PK 또는 인덱스 목록
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> FK 또는 관계 목록
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 코드 정의
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 설명 및 메타데이터
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 변경 이력이나 표지처럼 ERD 입력이 아닌 자료
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>역할 판단에는 헤더 유사어와 실제 값의 형태를 함께 사용한다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>| 표준 의미 | 가능한 표현 예시 |
+</span></span><span style=display:flex><span>|---|---|
+</span></span><span style=display:flex><span>| 테이블명 | table, table_name, entity, 엔터티, 테이블, 오브젝트명 |
+</span></span><span style=display:flex><span>| 컬럼명 | column, column_name, field, attribute, 속성, 항목명 |
+</span></span><span style=display:flex><span>| 한글명 | logical_name, display_name, 논리명, 한글명, 설명명 |
+</span></span><span style=display:flex><span>| 데이터 타입 | type, data_type, datatype, 자료형, 타입 |
+</span></span><span style=display:flex><span>| PK | pk, primary_key, primary, 기본키, 주키 |
+</span></span><span style=display:flex><span>| FK | fk, foreign_key, reference, 참조키, 외래키 |
+</span></span><span style=display:flex><span>| 설명 | description, comment, definition, 비고, 설명 |
+</span></span><span style=display:flex><span>| 순서 | ordinal, sequence, order, seq, 순번, 위치 |
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>유사어 비교 시 대소문자, 앞뒤 공백, 밑줄, 하이픈과 괄호를 정규화한다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#e0af68;font-weight:700>### 5.4 헤더 행 탐지
+</span></span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>헤더가 첫 행이라는 가정을 하지 않는다. 다음 특징을 종합해 헤더 후보를 찾는다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 문자열 비율이 높음
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 아래 행들과 데이터 타입 분포가 다름
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 표준 의미 유사어가 여러 개 존재
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 병합된 제목 행 바로 아래에 위치
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 이후 여러 행이 유사한 구조로 반복
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>다중 헤더는 상위·하위 헤더를 결합해 내부 키를 만든다. 예를 들어 <span style=color:#9ece6a>`컬럼 정보`</span> 아래의 <span style=color:#9ece6a>`영문명`</span>은 <span style=color:#9ece6a>`컬럼 정보 / 영문명`</span>으로 취급할 수 있다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#e0af68;font-weight:700>### 5.5 필드 매핑 확정
+</span></span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>최소 필수 필드는 다음 두 가지다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 테이블을 구분할 수 있는 값
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 컬럼을 구분할 수 있는 값
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>가능하면 다음 필드도 매핑한다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 테이블 논리명과 물리명
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 컬럼 논리명과 물리명
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 데이터 타입과 길이
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> nullable 여부와 기본값
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> PK 여부 및 PK 순서
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> FK 대상 테이블과 컬럼
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 인덱스
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 테이블 및 컬럼 설명
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 원본 파일, 시트와 행 번호
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>자동 매핑 결과가 불확실하면 구현 전에 다음처럼 요약한다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#9ece6a>```text
+</span></span></span><span style=display:flex><span>테이블 식별자 후보: A열 &#34;Entity&#34;, D열 &#34;Object Name&#34;
+</span></span><span style=display:flex><span>컬럼 식별자 후보: F열 &#34;Attribute&#34;
+</span></span><span style=display:flex><span>PK 후보: J열 &#34;Key Type&#34;
+</span></span><span style=display:flex><span><span style=color:#9ece6a>```</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>필수 필드 후보가 하나뿐이고 데이터 패턴이 일관되면 자동 진행한다. 후보가 여러 개이고 결과가 크게 달라질 때만 확인을 요청한다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#e0af68;font-weight:700>## 6. 내부 표준 데이터 모델
+</span></span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>입력 형식과 화면을 직접 결합하지 말고, 먼저 아래와 같은 표준 모델로 변환한다. 실제 구현 언어에 맞게 타입은 조정할 수 있다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#9ece6a>```ts
+</span></span></span><span style=display:flex><span><span style=color:#bb9af7>type</span> ErdTable <span style=color:#9ece6a;font-weight:700>=</span> {
+</span></span><span style=display:flex><span>  id: <span style=color:#41a6b5>string</span>;
+</span></span><span style=display:flex><span>  physicalName: <span style=color:#41a6b5>string</span>;
+</span></span><span style=display:flex><span>  logicalName?: <span style=color:#41a6b5>string</span>;
+</span></span><span style=display:flex><span>  description?: <span style=color:#41a6b5>string</span>;
+</span></span><span style=display:flex><span>  included: <span style=color:#41a6b5>boolean</span>;
+</span></span><span style=display:flex><span>  source?: <span style=color:#41a6b5>SourceReference</span>;
+</span></span><span style=display:flex><span>  columns: <span style=color:#41a6b5>ErdColumn</span>[];
+</span></span><span style=display:flex><span>};
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#bb9af7>type</span> ErdColumn <span style=color:#9ece6a;font-weight:700>=</span> {
+</span></span><span style=display:flex><span>  id: <span style=color:#41a6b5>string</span>;
+</span></span><span style=display:flex><span>  physicalName: <span style=color:#41a6b5>string</span>;
+</span></span><span style=display:flex><span>  logicalName?: <span style=color:#41a6b5>string</span>;
+</span></span><span style=display:flex><span>  dataType?: <span style=color:#41a6b5>string</span>;
+</span></span><span style=display:flex><span>  nullable?: <span style=color:#41a6b5>boolean</span>;
+</span></span><span style=display:flex><span>  defaultValue?: <span style=color:#41a6b5>string</span>;
+</span></span><span style=display:flex><span>  primaryKey: <span style=color:#41a6b5>boolean</span>;
+</span></span><span style=display:flex><span>  primaryKeyOrder?: <span style=color:#41a6b5>number</span>;
+</span></span><span style=display:flex><span>  foreignKeys?: <span style=color:#41a6b5>ForeignKeyReference</span>[];
+</span></span><span style=display:flex><span>  included: <span style=color:#41a6b5>boolean</span>;
+</span></span><span style=display:flex><span>  personal: <span style=color:#41a6b5>boolean</span>;
+</span></span><span style=display:flex><span>  identifierType<span style=color:#9ece6a;font-weight:700>:</span> <span style=color:#9ece6a>&#34;직접식별자&#34;</span> <span style=color:#9ece6a;font-weight:700>|</span> <span style=color:#9ece6a>&#34;준식별자&#34;</span> <span style=color:#9ece6a;font-weight:700>|</span> <span style=color:#9ece6a>&#34;해당없음&#34;</span>;
+</span></span><span style=display:flex><span>  treatment<span style=color:#9ece6a;font-weight:700>:</span> <span style=color:#9ece6a>&#34;가명화또는암호화&#34;</span> <span style=color:#9ece6a;font-weight:700>|</span> <span style=color:#9ece6a>&#34;구간화&#34;</span> <span style=color:#9ece6a;font-weight:700>|</span> <span style=color:#9ece6a>&#34;해당없음&#34;</span>;
+</span></span><span style=display:flex><span>  note: <span style=color:#41a6b5>string</span>;
+</span></span><span style=display:flex><span>  source?: <span style=color:#41a6b5>SourceReference</span>;
+</span></span><span style=display:flex><span>};
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#bb9af7>type</span> ForeignKeyReference <span style=color:#9ece6a;font-weight:700>=</span> {
+</span></span><span style=display:flex><span>  targetTable: <span style=color:#41a6b5>string</span>;
+</span></span><span style=display:flex><span>  targetColumn: <span style=color:#41a6b5>string</span>;
+</span></span><span style=display:flex><span>  source<span style=color:#9ece6a;font-weight:700>:</span> <span style=color:#9ece6a>&#34;explicit&#34;</span> <span style=color:#9ece6a;font-weight:700>|</span> <span style=color:#9ece6a>&#34;inferred&#34;</span>;
+</span></span><span style=display:flex><span>};
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#bb9af7>type</span> SourceReference <span style=color:#9ece6a;font-weight:700>=</span> {
+</span></span><span style=display:flex><span>  file: <span style=color:#41a6b5>string</span>;
+</span></span><span style=display:flex><span>  sheet?: <span style=color:#41a6b5>string</span>;
+</span></span><span style=display:flex><span>  row?: <span style=color:#41a6b5>number</span>;
+</span></span><span style=display:flex><span>  columnMap?: <span style=color:#41a6b5>Record</span>&lt;<span style=color:#bb9af7>string</span>, <span style=color:#7aa2f7>number</span> <span style=color:#db4b4b>|</span> <span style=color:#7aa2f7>string</span>&gt;;
+</span></span><span style=display:flex><span>};
+</span></span><span style=display:flex><span><span style=color:#9ece6a>```</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>내부 ID는 화면 상태를 안정적으로 유지할 수 있어야 한다. 행 번호만으로 ID를 만들면 입력 정렬이 바뀔 때 기존 편집 상태와 연결되지 않을 수 있으므로, 가능하면 파일 식별자와 테이블·컬럼 물리명을 조합한다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#e0af68;font-weight:700>## 7. 관계 추론 규칙
+</span></span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>관계는 신뢰도가 높은 순서로 적용한다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#bb9af7>1.</span> 입력 자료에 명시된 FK
+</span></span><span style=display:flex><span><span style=color:#bb9af7>2.</span> DDL 또는 ORM 스키마의 참조 정의
+</span></span><span style=display:flex><span><span style=color:#bb9af7>3.</span> 별도 관계·인덱스 정의 자료
+</span></span><span style=display:flex><span><span style=color:#bb9af7>4.</span> 테이블명, 컬럼명과 데이터 타입을 함께 사용한 추론
+</span></span><span style=display:flex><span><span style=color:#bb9af7>5.</span> 정규화된 컬럼명 일치
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>추론 관계는 명시적 관계와 시각적으로 구분할 수 있어야 한다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>기본 컬럼명 정규화 후보:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#9ece6a>```text
+</span></span></span><span style=display:flex><span>앞뒤 공백 제거
+</span></span><span style=display:flex><span>대문자 또는 소문자로 통일
+</span></span><span style=display:flex><span>연속 공백 정리
+</span></span><span style=display:flex><span>선택적으로 밑줄과 하이픈 차이 흡수
+</span></span><span style=display:flex><span><span style=color:#9ece6a>```</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>같은 컬럼명 그룹을 모두 연결할지, PK가 포함된 조합만 연결할지는 필터로 선택할 수 있게 한다. 데이터 타입이 명백히 호환되지 않으면 자동 연결에서 제외하거나 낮은 신뢰도로 표시한다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#e0af68;font-weight:700>## 8. 개인정보 초기값 판단
+</span></span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>개인정보 값은 원본에 명시된 분류를 최우선으로 사용한다. 명시값이 없을 때만 컬럼 물리명, 논리명과 설명 등 메타데이터를 이용해 보수적으로 추론한다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>직접식별자 후보:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 성명, 전화번호, 이메일과 주소
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 주민·여권·면허 등 고유 식별번호
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 계정과 직접 연결되는 고유 ID
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>준식별자 후보:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 생년 또는 연령, 성별과 지역
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> IP 주소
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 고객번호나 기기 식별자처럼 다른 정보와 결합해 식별 가능한 값
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 직업, 등급과 이용 패턴
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>초기 처리 방식 예시:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 직접식별자: 가명화또는암호화
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 연속형 준식별자: 구간화
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> IP, 고객번호와 기기 식별자: 가명화또는암호화
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 개인정보가 아닌 경우: 해당없음
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>자동 판단은 검토 시작점일 뿐이며 법적 판단으로 표현하지 않는다. 실제 데이터 값은 분류 목적으로 읽거나 노출하지 않는 것을 기본으로 한다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#e0af68;font-weight:700>## 9. 화면 및 상호작용 요구사항
+</span></span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#e0af68;font-weight:700>### 테이블 카드
+</span></span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 헤더에 물리명, 논리명, 사용 여부와 PK 개수 표시
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 본문에 원본 순서대로 컬럼 표시
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 컬럼 행에 PK, FK, 개인정보 상태와 사용 여부 표시
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 카드 전체가 미사용이면 반투명 처리
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 선택 중인 카드는 다른 카드보다 앞에 표시
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 드래그 핸들과 컬럼 클릭 영역을 구분
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#e0af68;font-weight:700>### 캔버스
+</span></span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 테이블을 가로 일렬이 아닌 면 형태로 분산 배치
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 초기 테이블 집합을 캔버스 중앙에 배치
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 상하좌우에 충분한 이동 여백 제공
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 빈 영역 드래그는 캔버스 이동
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 트랙패드 두 손가락 드래그(세로 휠)와 핀치는 모두 포인터 중심 확대·축소
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 가로 스와이프는 좌우 이동
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 트랙패드는 작은 델타를 연속으로, 마우스 휠은 큰 델타를 한 번에 보낸다. 이벤트당 배율 변화를 ±25% 정도로 제한해 두 입력에서 같은 감각을 만든다
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 확대·축소를 휠 이동에 배정할지는 제품 결정이다. 한쪽에 배정했으면 다른 쪽 제스처를 반드시 남겨둔다
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 브라우저 기본 확대와 충돌하지 않도록 가능한 범위에서 제스처 처리
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 확대 중심은 포인터 또는 제스처 중심을 유지
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 테이블 이동 중 관계선을 상태 갱신 직후 다시 계산
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#e0af68;font-weight:700>### 관계선
+</span></span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 카드 중앙이 아니라 연결 컬럼 행의 측면에 연결
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 상대 카드가 오른쪽이면 오른쪽 측면에서 출발
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 상대 카드가 왼쪽이면 왼쪽 측면에서 출발
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 테이블 위치가 서로 교차하면 연결 측면도 즉시 전환
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 기본 선도 배경에서 충분히 보이는 대비와 두께 사용
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 선택한 테이블의 표시 중인 선은 마지막에 그려 가장 위에 표시
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 선택선은 색상, 두께, 외곽선 또는 광택으로 강조
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 미사용 컬럼의 선은 흐리게 표시하거나 토글에 따라 완전히 숨김
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> PK 필터에 해당하지 않는 선은 흐리게 남기지 않고 완전히 숨김
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 카드가 컬럼을 페이지로 나눠 보여주면, 공유 컬럼이 양쪽 현재 페이지에 동시에 있을 확률이 낮다. 이때 관계선을 버리면 연결이 수십 개인 테이블도 선이 하나도 없어 보인다
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 한쪽 행이 다른 페이지에 있으면 선을 버리지 않고 카드 위·아래 모서리에 물려 다른 점선 패턴으로 표시한다. 어느 카드로 가는지와 어느 방향으로 페이지를 넘겨야 하는지는 남는다
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 모서리 앵커까지 모두 그리면 화면이 과밀해진다. 정확한 행 연결은 항상 그리고, 모서리 앵커는 선택한 테이블에 한정하는 것을 기본으로 한다
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 카드 머리글과 바닥글 높이를 CSS에서 고정하고 행 위치를 산술로 계산한다. 내용에 따라 높이가 변하면 선 끝점이 행에서 어긋나고, 확대할수록 눈에 띈다
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#e0af68;font-weight:700>### 관계 그래프 뷰
+</span></span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>컬럼 카드는 컬럼 단위 검토에 강하지만, 스키마 전체의 연결 구조를 볼 수는 없다. 컬럼을 생략하고 테이블만 노드로 두는 힘 기반 그래프 뷰를 함께 제공한다. 두 뷰는 같은 선택 상태와 같은 관계 추론 규칙을 공유한다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 노드는 테이블, 엣지는 테이블 쌍이다. 공유 키가 하나라도 있으면 연결로 본다
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 엣지 굵기는 공유 키 수, 노드 크기는 연결 수로 인코딩한다
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 색은 업무 세그먼트, 테두리는 테이블 역할(마스터·이력·집계·상세)에 배정한다. 두 축을 색 하나에 겹쳐 담지 않는다
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 세그먼트와 역할은 테이블명 기반 제안이므로 업무 검토가 필요하다고 화면에 명시한다
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> <span style=color:#9ece6a>`공유 키 최소`</span> 필터로 약한 연결을 걸러낸다. 기본값은 1이어야 한다. 사용자가 기준을 올리면 그 기준에서 고립되는 노드가 드러난다
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 고립 노드는 색이 아닌 형태(점선 테두리)와 이름 상시 표시로 구분한다
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 노드 좌표는 필터·정렬·검토값 변경에도 유지한다. 매번 다시 씨딩하면 배치가 흔들려 사용자가 위치로 기억한 맥락이 사라진다
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 초기 좌표는 고정 규칙(세그먼트별 원주 배치)으로 만든다. 같은 입력은 항상 같은 배치에서 시작해야 두 사람이 같은 화면을 이야기할 수 있다
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 세그먼트별 인력을 약하게 주면 색 범례가 화면의 영역으로 읽힌다
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 노드를 끌 때만 고정하고 손을 떼면 시뮬레이션에 되돌린다. 클릭으로 영구 고정되면 사용자가 해제 방법을 찾지 못한다
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 클릭 선택은 고정, 호버는 그 위에 얹는다. 호버가 선택을 덮으면 이웃 이름을 읽으려 마우스를 옮기는 순간 맥락이 사라진다
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 이웃 이름은 개수와 무관하게 모두 표시한다. 허브일수록 이름이 더 필요하다
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 범례 패널이 노드를 가리지 않도록 배치 중심과 경계를 패널 폭만큼 밀어둔다
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#e0af68;font-weight:700>### 편집 패널
+</span></span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>컬럼을 선택하면 다음을 편집할 수 있어야 한다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 필요 컬럼 여부
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 개인정보 여부
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 개인정보 식별자 유형
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 개인정보 처리 방식
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 비고
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>개인정보 여부를 끄면 식별자 유형과 처리 방식을 <span style=color:#9ece6a>`해당없음`</span>으로 정리하는 것을 기본 동작으로 한다. 다시 켰을 때 이전 값을 복구할지는 제품 정책에 따라 결정한다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#e0af68;font-weight:700>## 10. 반응형 설계
+</span></span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 상단 통계 영역은 가능한 작게 유지한다.
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 넓은 화면에서는 캔버스와 상세 패널을 동시에 표시한다.
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 작은 화면에서는 상세 패널을 오버레이 또는 바텀시트로 전환한다.
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 검색과 필터는 줄바꿈 또는 축약이 가능해야 한다.
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 터치 환경에서는 충분한 클릭 영역을 제공한다.
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 모바일에서도 캔버스 이동과 카드 선택이 충돌하지 않아야 한다.
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 화면 크기에 따라 초기 확대 비율과 전체 맞춤 계산을 다시 수행한다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#e0af68;font-weight:700>## 11. 상태 저장
+</span></span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#e0af68;font-weight:700>### 로컬 저장
+</span></span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>최소한 다음 상태를 브라우저에 저장할 수 있다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 테이블 및 컬럼 사용 여부
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 개인정보 분류와 비고
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 테이블 위치와 확대 비율
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 관계선 필터
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>입력 자료의 버전 또는 해시를 저장 키에 포함해 다른 스키마의 상태가 잘못 적용되지 않게 한다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#e0af68;font-weight:700>### 공용 상태 공유
+</span></span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>다른 사람이 동일한 화면을 보게 하려면 서버 저장소를 사용한다. 데이터베이스 종류는 배포 환경에 맞게 선택한다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>권장 공용 상태:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 표준화된 테이블 및 컬럼 데이터
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 테이블 위치와 확대 비율
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 표시 필터
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> revision과 저장 시각
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>기본 공유 방식은 명시적인 <span style=color:#9ece6a>`현재 상태 공유`</span> 버튼이다. 최초 공유 전에는 기존 사용자의 로컬 상태를 덮어쓰지 않는다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>공용 상태를 조회하는 화면은 일정 주기로 새 revision을 확인할 수 있다. 사용자가 로컬에서 편집 중이면 원격 상태로 즉시 덮어쓰지 말고 충돌 가능성을 알려야 한다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>완전한 동시 편집이 필요한 경우 사용자 식별, 작업 단위 변경 기록, 낙관적 잠금 또는 CRDT, 실시간 전송, 충돌 UI와 변경 이력이 추가로 필요하다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>공개 사이트에서 쓰기 API를 익명으로 열면 링크를 아는 누구나 상태를 변경할 수 있다. 읽기 전용 공유, 편집자 인증 또는 별도 공유 키를 고려한다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#e0af68;font-weight:700>## 12. 다운로드 및 원본 순서 보존
+</span></span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>입력이 표 형식 파일이면 가능한 한 원본 파일을 복제한 후 결과 컬럼을 추가한다. 원본의 기존 셀, 스타일, 시트와 행 순서를 유지한다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>기본 추가 컬럼:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#bb9af7>1.</span> 사용여부
+</span></span><span style=display:flex><span><span style=color:#bb9af7>2.</span> 개인정보 여부
+</span></span><span style=display:flex><span><span style=color:#bb9af7>3.</span> 개인정보 식별자 유형
+</span></span><span style=display:flex><span><span style=color:#bb9af7>4.</span> 개인정보 처리방식
+</span></span><span style=display:flex><span><span style=color:#bb9af7>5.</span> 비고
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>추가 위치는 고정 열 번호가 아니라 실제 사용 중인 마지막 열의 오른쪽으로 계산한다. 테이블과 컬럼 정보가 여러 시트에 나뉘어 있다면 컬럼 단위 정보가 존재하는 시트에 추가한다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>입력 구조가 원본 형태로 되돌리기 어려우면 원본 보존 사본과 별도 결과 시트, 표준화된 새 Excel, CSV 또는 JSON 내보내기 중 적절한 방식을 제공한다. 각 결과 행에는 원본 파일·시트·행 참조를 유지해 역매핑할 수 있게 한다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#e0af68;font-weight:700>## 13. 구현 구조 권장안
+</span></span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>특정 프레임워크를 강제하지 않는다. 기존 프로젝트의 기술 스택과 배포 환경을 우선한다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#9ece6a>```text
+</span></span></span><span style=display:flex><span>입력 탐색기
+</span></span><span style=display:flex><span>  → 형식별 파서
+</span></span><span style=display:flex><span>  → 필드 매핑 및 검증
+</span></span><span style=display:flex><span>  → 표준 ERD 모델
+</span></span><span style=display:flex><span>  → 관계 및 개인정보 초기값 추론
+</span></span><span style=display:flex><span>  → 반응형 ERD 화면
+</span></span><span style=display:flex><span>  → 로컬/공용 상태 저장
+</span></span><span style=display:flex><span>  → 원본 기반 결과 내보내기
+</span></span><span style=display:flex><span><span style=color:#9ece6a>```</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>모듈 경계 예시:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> <span style=color:#9ece6a>`input-discovery`</span>: 파일, 시트와 헤더 탐색
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> <span style=color:#9ece6a>`input-adapters`</span>: Excel, CSV, JSON과 DDL 파서
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> <span style=color:#9ece6a>`schema-mapper`</span>: 입력 필드와 표준 모델 매핑
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> <span style=color:#9ece6a>`classification`</span>: 개인정보 초기 판단
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> <span style=color:#9ece6a>`relationships`</span>: 명시적 및 추론 관계 생성
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> <span style=color:#9ece6a>`layout`</span>: 초기 및 자동 배치
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> <span style=color:#9ece6a>`canvas`</span>: 확대, 이동, 드래그와 선 렌더링
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> <span style=color:#9ece6a>`state`</span>: 로컬 및 공용 상태
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> <span style=color:#9ece6a>`export`</span>: 결과 파일 생성
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#e0af68;font-weight:700>## 14. 성능 기준
+</span></span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 관계선 계산과 그리기는 데이터 변환과 분리한다.
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 테이블 이동 중 전체 화면을 불필요하게 다시 만들지 않는다.
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 캔버스 또는 SVG 레이어는 위치 변경에 맞춰 효율적으로 갱신한다.
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 동일 컬럼명 그룹이 큰 경우 모든 조합 생성에 상한이나 경고를 둔다.
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 검색 및 필터는 메모이제이션을 고려한다.
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 수백 개 테이블에서는 카드 가상화, 관계선 공간 인덱스 또는 단계적 렌더링을 검토한다.
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 브라우저 픽셀 비율을 고려하되 캔버스 해상도 상한을 둔다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#e0af68;font-weight:700>### 최적화 순서
+</span></span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>체감 지연은 대개 관계 추론이 아니라 프레임마다 반복되는 렌더 작업에서 나온다. 80개 테이블·5,800개 컬럼 규모에서 추론 자체는 한 자리 밀리초였고, 팬·줌이 느린 원인은 전부 렌더 쪽이었다. 다음 순서로 확인한다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#bb9af7>1.</span> <span style=font-weight:700>**프레임마다 무엇이 다시 계산되는지 센다.**</span> 포인터 이동 한 번에 몇 개의 DOM 속성이 쓰이는지가 첫 지표다. 링크마다 선 요소를 갱신하면 링크 1,200개에서 프레임당 5,000회에 가까운 속성 쓰기가 발생한다.
+</span></span><span style=display:flex><span><span style=color:#bb9af7>2.</span> <span style=font-weight:700>**뷰 변환은 좌표 재계산이 아니라 변환 한 번으로 처리한다.**</span> 관계선을 화면 좌표로 그리면 팬·줌마다 모든 경로를 다시 만든다. 카드와 같은 월드 좌표계에 그리고 같은 변환을 레이어에 적용하면 이동·확대는 속성 두 개 갱신으로 끝난다. 선 굵기는 <span style=color:#9ece6a>`vector-effect: non-scaling-stroke`</span>로 유지하고, 확대 시 선이 얇아 보이면 배율에 맞춰 굵기를 보정한다.
+</span></span><span style=display:flex><span><span style=color:#bb9af7>3.</span> <span style=font-weight:700>**같은 스타일의 선은 하나의 path로 합친다.**</span> 굵기 구간별로 묶어 일반·강조 두 벌만 유지하면 프레임당 갱신이 수천 회에서 8회로 줄고 굵기 인코딩은 유지된다.
+</span></span><span style=display:flex><span><span style=color:#bb9af7>4.</span> <span style=font-weight:700>**힘 기반 배치는 수렴하면 멈춘다.**</span> 계속 도는 루프는 다른 상호작용의 프레임 예산을 잡아먹는다. 감쇠 계수 하한이나 틱 상한에서 정지하고, 드래그·리사이즈·데이터 변경 때만 재가동한다.
+</span></span><span style=display:flex><span><span style=color:#bb9af7>5.</span> <span style=font-weight:700>**컬럼 단위 파생값은 한 번만 계산해 캐시한다.**</span> 기본 개인정보 분류나 조인 키를 정규식으로 매번 구하면, 관계선을 그릴 때마다 컬럼 수의 몇 배에 달하는 정규식 실행이 쌓인다.
+</span></span><span style=display:flex><span><span style=color:#bb9af7>6.</span> <span style=font-weight:700>**렌더를 한 프레임으로 합치고 선택 변경은 부분 갱신으로 처리한다.**</span> 선택만 바뀌었으면 클래스와 상세 패널만 갱신한다. 카드 수백 장을 다시 만들 이유가 없다.
+</span></span><span style=display:flex><span><span style=color:#bb9af7>7.</span> <span style=font-weight:700>**싼 조건으로 먼저 걸러낸다.**</span> 화면 밖 카드, 현재 페이지 밖 행처럼 정수 비교로 끝나는 조건을 경로 문자열 생성과 상태 조회보다 앞에 둔다.
+</span></span><span style=display:flex><span><span style=color:#bb9af7>8.</span> <span style=font-weight:700>**웹폰트를 재검토한다.**</span> 한글 웹폰트는 수백 KB에서 수 MB다. 시스템 한글 스택으로 충분한 화면이면 첫 렌더가 폰트를 기다리지 않는다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#e0af68;font-weight:700>### 흔한 함정
+</span></span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>측정 없이 원인을 추정하면 대부분 틀린다. 다음은 실제로 오래 헤맨 항목이다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> **절대배치 SVG의 기본 크기.** <span style=color:#9ece6a>`position: absolute; inset: 0`</span>만 준 <span style=color:#9ece6a>`&lt;svg&gt;`</span>는 늘어나지 않고 기본 300×150 뷰포트를 쓴다. 그 박스 밖의 선은 전부 잘려 좌상단에만 조각이 남는다. <span style=color:#9ece6a>`width: 100%; height: 100%`</span>를 명시한다.
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> **포인터 캡처가 클릭을 삼킨다.** 드래그를 위해 상위 요소에서 <span style=color:#9ece6a>`setPointerCapture`</span>를 호출하면 이후 <span style=color:#9ece6a>`click`</span>이 캡처 요소로 전달되고 자식 노드의 클릭 처리기는 실행되지 않는다. 이동 거리가 임계값 이하인 <span style=color:#9ece6a>`pointerup`</span>을 클릭으로 판정한다.
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> **ARIA 상태 값.** <span style=color:#9ece6a>`aria-current`</span>나 <span style=color:#9ece6a>`aria-pressed`</span>는 <span style=color:#9ece6a>`&#34;true&#34;`</span>/<span style=color:#9ece6a>`&#34;false&#34;`</span> 문자열이다. HTML 불리언 속성처럼 빈 문자열로 쓰면 <span style=color:#9ece6a>`[aria-current=&#39;true&#39;]`</span> 선택자가 걸리지 않아 강조가 사라진다.
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> **SVG에는 <span style=color:#9ece6a>`hidden`</span> 프로퍼티가 없다.** <span style=color:#9ece6a>`el.hidden = false`</span>는 속성을 지우지 않으므로 호스트의 <span style=color:#9ece6a>`[hidden] { display: none }`</span> 규칙이 계속 적용된다. 속성을 직접 다룬다.
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> **프레젠테이션 속성의 CSS 변수.** <span style=color:#9ece6a>`fill=&#34;var(--x)&#34;`</span>는 적용되지 않는다. <span style=color:#9ece6a>`style=&#34;fill: var(--x)&#34;`</span>를 쓴다.
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> **한국어 콜레이션.** <span style=color:#9ece6a>`localeCompare(b, &#39;ko&#39;)`</span>는 한글을 라틴 문자보다 앞에 둔다. 접두어가 영문인 테이블이 전부 목록 끝으로 밀린다. 엑셀·윈도우와 같은 숫자 → 영문 → 가나다 순서가 필요하면 <span style=color:#9ece6a>`&#39;en&#39;`</span>을 쓴다.
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> **숨은 탭의 <span style=color:#9ece6a>`requestAnimationFrame`</span>.** 백그라운드 탭에서는 콜백이 실행되지 않는다. rAF에 렌더를 위임했다면 자동화 검증에서 &#34;동작하지 않는다&#34;로 오판할 수 있다. 동기 경로로 상태를 확인한다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#e0af68;font-weight:700>## 15. 접근성 기준
+</span></span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 모든 토글에 접근 가능한 이름과 현재 상태 제공
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 키보드로 테이블 및 컬럼 선택 가능
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 가능하면 키보드로 카드 위치 이동 가능
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 색상만으로 PK, 개인정보와 미사용 상태를 구분하지 않음
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 포커스 표시 유지
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 입력 필드에 명시적 레이블 제공
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 애니메이션 감소 설정을 존중
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#e0af68;font-weight:700>## 16. 검증 절차
+</span></span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#e0af68;font-weight:700>### 입력 검증
+</span></span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 모든 후보 파일과 시트를 조사했는가?
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 헤더 행을 고정값으로 가정하지 않았는가?
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 테이블 및 컬럼 매핑 근거가 있는가?
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 원본 행 참조가 보존되는가?
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 중복 테이블명과 중복 컬럼을 안전하게 처리하는가?
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#e0af68;font-weight:700>### 기능 검증
+</span></span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 테이블과 컬럼 사용 토글이 즉시 화면에 반영되는가?
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 컬럼 사용 상태가 관계선에도 즉시 반영되는가?
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> PK 필터에서 비대상 선이 완전히 사라지는가?
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 미사용 관계선 숨김이 즉시 반영되는가?
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 선택 테이블의 선이 다른 선보다 위에 보이는가?
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 테이블을 좌우로 교차 이동하면 연결 측면이 바뀌는가?
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 캔버스가 상하좌우로 이동하는가?
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 두 손가락 드래그·핀치 확대와 드래그 이동이 의도대로 분리되는가?
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 화면 크기가 달라도 주요 조작이 가능한가?
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 관계 그래프에서 노드 클릭이 테이블을 선택하고, 그 선택이 호버 중에도 유지되는가?
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 그래프의 고립 노드 수가 <span style=color:#9ece6a>`공유 키 최소`</span> 값에 따라 바뀌는가?
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 필터나 정렬을 바꿔도 그래프 노드 위치가 유지되는가?
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 확대·축소와 이동 중 프레임이 끊기지 않는가?
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#e0af68;font-weight:700>### 데이터 검증
+</span></span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 화면의 테이블 및 컬럼 수가 원본과 일치하는가?
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> PK와 FK가 원본 정의와 일치하는가?
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 원본 순서가 다운로드 결과에 유지되는가?
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 추가 분류 컬럼의 값이 화면과 일치하는가?
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 비고의 빈 값과 입력값이 구분되는가?
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#e0af68;font-weight:700>### 공유 검증
+</span></span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 최초 공용 상태가 없을 때 로컬 데이터를 덮어쓰지 않는가?
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 공유 저장 후 다른 브라우저에서 같은 상태가 보이는가?
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 편집 중인 로컬 화면을 폴링이 덮어쓰지 않는가?
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 권한 없는 사용자의 쓰기 범위가 의도와 일치하는가?
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#e0af68;font-weight:700>## 17. 배포 안전 수칙
+</span></span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 새 프로젝트는 새 배포 프로젝트와 새 저장소를 사용한다.
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 다른 프로젝트에서 복사한 배포 ID, 사이트 ID, 데이터베이스 ID 또는 비밀값을 재사용하지 않는다.
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 가이드에는 실제 배포 ID나 인증 정보를 기록하지 않는다.
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 로컬 실행과 파일 복사만으로 기존 사이트가 변경되어서는 안 된다.
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 배포 전 대상 사이트 이름과 공개 범위를 확인한다.
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 기존 사이트를 갱신할 때는 정확한 대상임을 확인한 뒤 배포한다.
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 공용 상태 데이터베이스 역시 환경별로 분리한다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#e0af68;font-weight:700>## 18. 완료 조건
+</span></span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 입력 구조를 자동 조사하고 사용한 매핑을 설명할 수 있다.
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 고정된 파일명, 시트명 또는 열 번호 없이 대상 자료를 처리한다.
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 표준 모델과 입력 어댑터가 분리되어 있다.
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 요구된 분류 및 비고를 편집할 수 있다.
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 관계선, 필터, 자동 배치, 드래그, 이동과 확대·축소가 동작한다.
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 미사용 항목은 삭제되지 않고 시각적으로 구분된다.
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 편집 결과를 원본과 연결 가능한 형태로 다운로드할 수 있다.
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 반응형 화면과 접근성 기본 검증을 통과한다.
+</span></span><span style=display:flex><span><span style=color:#bb9af7>-</span> 새 프로젝트의 배포가 다른 프로젝트나 기존 공개 링크에 영향을 주지 않는다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#e0af68;font-weight:700>## 19. 구현자용 최종 지시문
+</span></span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#9ece6a>```text
+</span></span></span><span style=display:flex><span>이 가이드는 예시가 아니라 구현 요구사항이다.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>먼저 프로젝트 안의 입력 후보를 조사하라. 파일명, 시트명, 헤더 행,
+</span></span><span style=display:flex><span>열 순서와 관계 정의 형식을 가정하지 말라. 실제 헤더와 데이터 패턴을
+</span></span><span style=display:flex><span>근거로 필드를 표준 ERD 모델에 매핑하라.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>필수 매핑이 명확하면 바로 구현하고, 결과가 크게 달라지는 모호성이
+</span></span><span style=display:flex><span>있을 때만 사용자에게 짧게 확인하라. 원본 파일은 수정하지 말고,
+</span></span><span style=display:flex><span>모든 자동 추론은 검토 가능한 초기값으로 취급하라.
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>기존 프로젝트의 기술 스택을 우선하며, 입력 어댑터·표준 모델·화면·
+</span></span><span style=display:flex><span>상태 저장·내보내기를 분리하라. 컬럼 카드 뷰와 테이블 단위 관계 그래프
+</span></span><span style=display:flex><span>뷰는 같은 선택 상태와 같은 추론 규칙을 공유하게 만들라. 성능은 추정하지
+</span></span><span style=display:flex><span>말고 프레임당 반복 작업을 세어 확인하라. 새 배포 대상에는 새 프로젝트
+</span></span><span style=display:flex><span>식별자와 새 저장소를 사용하라. 구현 후 입력, 기능, 데이터, 반응형 동작과
+</span></span><span style=display:flex><span>배포 대상 안전성을 검증하라.
+</span></span><span style=display:flex><span><span style=color:#9ece6a>```</span>
+</span></span></code></pre></div></details><h2 id=요약>요약<a hidden class=anchor aria-hidden=true href=#요약>#</a></h2><ul><li>스키마 자료와 <code>ERD_GUIDE.md</code> 를 한 프로젝트에 두고 두 줄로 지시하면 AI가 입력 구조부터 조사해 ERD 웹을 만듭니다.</li><li>파일명과 시트명, 헤더 행을 가정하지 않고 원본을 보존합니다. 추론한 관계와 개인정보 분류는 초기 제안값으로 구분합니다.</li><li>컬럼 카드 뷰와 테이블 관계 그래프 뷰로 수십 개 오브젝트의 연결 구조와 개인정보 컬럼 분포를 함께 검토합니다.</li></ul></div><footer class=post-footer><ul class=post-tags><li><a href=https://datanexus-kr.github.io/tags/erd/>Erd</a></li><li><a href=https://datanexus-kr.github.io/tags/database-design/>Database-Design</a></li><li><a href=https://datanexus-kr.github.io/tags/data-modeling/>Data-Modeling</a></li><li><a href=https://datanexus-kr.github.io/tags/prompt-engineering/>Prompt-Engineering</a></li><li><a href=https://datanexus-kr.github.io/tags/ai-agent/>Ai-Agent</a></li><li><a href=https://datanexus-kr.github.io/tags/pii/>Pii</a></li></ul><div class=post-tag-admin id=postTagAdmin style=display:none data-file=curations/2026-09/2026-09-26-erd-guide-ai-schema-visualization.md data-initial='["erd","database-design","data-modeling","prompt-engineering","ai-agent","pii"]'><span class=pta-label>🏷️ 태그 관리 (admin)</span>
+<span class=pta-tags id=ptaTags></span><form class=pta-add id=ptaAdd autocomplete=off><input type=text id=ptaInput placeholder="태그 추가…" aria-label="태그 추가">
+<button type=submit aria-label=add>＋</button></form><span class=pta-status id=ptaStatus></span></div><style>.post-tag-admin{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:14px;padding:10px 12px;border:1px dashed var(--border);border-radius:8px;background:var(--entry);font-size:.8rem}.post-tag-admin .pta-label{color:var(--secondary);font-weight:600;white-space:nowrap}.post-tag-admin .pta-tags{display:inline-flex;flex-wrap:wrap;gap:6px}.post-tag-admin .pta-chip{display:inline-flex;align-items:center;gap:4px;padding:2px 4px 2px 10px;border-radius:999px;background:var(--code-bg);color:var(--primary)}.post-tag-admin .pta-x{display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;border:none;border-radius:50%;background:0 0;color:var(--secondary);cursor:pointer;font-size:14px;line-height:1}.post-tag-admin .pta-x:hover{background:#e5484d;color:#fff}.post-tag-admin .pta-add{display:inline-flex;gap:4px}.post-tag-admin .pta-add input{width:130px;padding:3px 8px;border:1px solid var(--border);border-radius:6px;background:var(--theme);color:var(--primary);font-size:.78rem;outline:none}.post-tag-admin .pta-add input:focus{border-color:var(--sidebar-accent,#667eea)}.post-tag-admin .pta-add button{padding:3px 10px;border:1px solid var(--border);border-radius:6px;background:var(--theme);color:var(--primary);cursor:pointer}.post-tag-admin .pta-add button:hover{border-color:var(--sidebar-accent,#667eea)}.post-tag-admin .pta-status{color:var(--secondary);font-size:.72rem}.post-tag-admin .pta-status.err{color:#e5484d}</style><script>(function(){var t,s,a,r,c,l,d,u,v="dn-admin",f="http://127.0.0.1:8788/api/tags",o=document.getElementById("postTagAdmin"),h=location.hostname,b=h==="localhost"||h==="127.0.0.1";if(!o||localStorage.getItem(v)!=="1"||!b)return;o.style.display="",a=o.getAttribute("data-file"),r=document.getElementById("ptaTags"),c=document.getElementById("ptaStatus"),d=document.getElementById("ptaAdd"),l=document.getElementById("ptaInput"),u=document.documentElement.lang==="en",s=!1,t=[];try{t=JSON.parse(o.getAttribute("data-initial")||"[]")||[]}catch{t=[]}function n(e,t){return u?t:e}function e(e,t){c.textContent=e||"",c.className="pta-status"+(t?" err":"")}function m(e){var t=String(e&&e.message?e.message:e);return/Failed to fetch|NetworkError|Load failed/i.test(t)?n("로컬 admin 서버가 꺼져 있습니다 → python scripts/admin_server.py","local admin server is off → python scripts/admin_server.py"):n("오류: ","error: ")+t}function i(){r.textContent="",t.forEach(function(e){var t,o,s=document.createElement("span");s.className="pta-chip",o=document.createElement("span"),o.textContent=e,s.appendChild(o),t=document.createElement("button"),t.type="button",t.className="pta-x",t.textContent="×",t.title=n("삭제","remove"),t.addEventListener("click",function(){g("remove",e)}),s.appendChild(t),r.appendChild(s)})}function p(e){return e.json().then(function(t){if(!e.ok)throw new Error(t&&t.error?t.error:"HTTP "+e.status);return t})}function g(o,r){if(s)return;s=!0,e(n("저장 중…","saving…")),fetch(f,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({file:a,action:o,tag:r})}).then(p).then(function(s){t=s.tags,i(),e(n("저장됨 · git diff 확인 후 push","saved · review git diff, then push"))}).catch(function(t){e(m(t),!0)}).then(function(){s=!1})}d.addEventListener("submit",function(e){e.preventDefault();var t=l.value.trim();if(!t)return;l.value="",g("add",t)}),i(),e(""),fetch(f+"?file="+encodeURIComponent(a)).then(p).then(function(n){t=n.tags,i(),e("")}).catch(function(t){e(m(t),!0)})})()</script><nav class=paginav><a class=prev href=https://datanexus-kr.github.io/curations/2026-09/2026-09-23-kev-open-source-decision-models-on-qwen35/><span class=title>« 다음 페이지</span><br><span>로컬 환경에서 구동하는 오픈소스 의사결정 모델 Kev</span></a></nav></footer><div class=comments><script src=https://giscus.app/client.js data-repo=datanexus-kr/datanexus-kr.github.io data-repo-id=R_kgDOPhm8OQ data-category=General data-category-id=DIC_kwDOPhm8Oc4C2uES data-mapping=pathname data-strict=0 data-reactions-enabled=1 data-emit-metadata=1 data-input-position=bottom data-theme=preferred_color_scheme data-lang=ko crossorigin=anonymous async></script></div></article></main><footer class=footer><span>&copy; 2026 <a href=https://datanexus-kr.github.io/>Junho Lee</a></span> ·
+<span>Powered by
+<a href=https://gohugo.io/ rel="noopener noreferrer" target=_blank>Hugo</a> &
+<a href=https://github.com/adityatelange/hugo-PaperMod/ rel=noopener target=_blank>PaperMod</a></span></footer><a href=#top aria-label="go to top" title="Go to Top (Alt + G)" class=top-link id=top-link accesskey=g><svg viewBox="0 0 12 6" fill="currentColor"><path d="M12 6H0l6-6z"/></svg>
+</a><script>document.addEventListener("DOMContentLoaded",function(){var e,t=document.querySelectorAll("pre.mermaid");if(!t.length)return;e=document.createElement("script"),e.src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js",e.onload=function(){mermaid.initialize({startOnLoad:!1,theme:"neutral",themeVariables:{fontSize:"13px"}}),mermaid.run({nodes:t})},document.body.appendChild(e)})</script><script>(function(){var t,n,e=document.getElementById("posts-container"),s=document.getElementById("view-toggle");if(!e||!s)return;t=localStorage.getItem("view-mode")||"list",e.setAttribute("data-view",t),n=s.querySelectorAll(".view-toggle-btn"),n.forEach(function(s){s.getAttribute("data-view")===t?s.classList.add("active"):s.classList.remove("active"),s.addEventListener("click",function(){var t=this.getAttribute("data-view");e.setAttribute("data-view",t),localStorage.setItem("view-mode",t),n.forEach(function(e){e.classList.remove("active")}),this.classList.add("active")})})})()</script><script>(function(){var e,t,n,c,l=document.getElementById("posts-container"),o=document.getElementById("page-size-select"),i=document.getElementById("client-pagination"),a=document.getElementById("page-prev"),r=document.getElementById("page-next"),d=document.getElementById("page-info");if(!l||!o)return;if(c=Array.prototype.slice.call(l.querySelectorAll("article.post-entry, article.first-entry, article.post-entry.tag-entry")),n=c.length,n===0)return;e=1,t=parseInt(localStorage.getItem("page-size")||"10",10),o.value=t.toString();function s(){var l,u,o=t===0,h=o?n:t,s=o?1:Math.ceil(n/t);e>s&&(e=s),e<1&&(e=1),l=o?0:(e-1)*t,u=o?n:l+t,c.forEach(function(e,t){e.style.display=t>=l&&t<u?"":"none"}),i&&(s>1?(i.style.display="",d.textContent=e+" / "+s,a.style.visibility=e>1?"visible":"hidden",r.style.visibility=e<s?"visible":"hidden"):i.style.display="none")}o.addEventListener("change",function(){t=parseInt(this.value,10),localStorage.setItem("page-size",this.value),e=1,s()}),a&&a.addEventListener("click",function(t){t.preventDefault(),e>1&&(e--,s())}),r&&r.addEventListener("click",function(o){o.preventDefault();var i=t===0?1:Math.ceil(n/t);e<i&&(e++,s())}),s()})()</script><script>(function(){var e,t,i,a,h,m,n=document.getElementById("sidebar-reactions-filter"),s=document.getElementById("sidebar-comments-filter");if(!n&&!s)return;m="datanexus-kr/datanexus-kr.github.io",a="dn_discussions_v3",h=36e5,e=null,i=null,t=null;function l(t,n){if(!t)return;t.addEventListener("click",function(){var s=e===n;if(p(s?null:n),s){g();return}if(i){c(n);return}t.classList.add("loading"),y().then(function(s){i=s,t.classList.remove("loading"),e===n&&c(n)}).catch(function(){t.classList.remove("loading")})})}l(n,"reactions"),l(s,"comments");function p(t){e=t,n&&n.classList.toggle("active",t==="reactions"),s&&s.classList.toggle("active",t==="comments")}function c(e){var n,t=document.getElementById("posts-container");if(!t)return;n=i[e],d(t)?b(t,n):v(t,n)}function g(){var t,e=document.getElementById("posts-container");if(!e)return;d(e)?(e.style.display="",t=document.getElementById("eng-filter-overlay"),t&&(t.style.display="none")):u(e).forEach(function(e){e.style.display=""})}function v(e,t){u(e).forEach(function(e){var n=r(j(e));e.style.display=n&&t.has(n)?"":"none"})}function b(n,s){var c,l,i=document.getElementById("eng-filter-overlay");i||(i=document.createElement("div"),i.id="eng-filter-overlay",i.className="posts-container",i.setAttribute("data-view",localStorage.getItem("view-mode")||"list"),n.parentNode.insertBefore(i,n.nextSibling)),n.style.display="none",i.style.display="",i.innerHTML='<p style="padding:16px 0;color:var(--secondary);font-size:13px">불러오는 중…</p>';function a(e){var n=document.documentElement.lang||"ko",t=e.filter(function(e){try{return s.has(r(new URL(e.permalink).pathname))}catch{return!1}});if(!t.length){i.innerHTML='<p style="padding:16px 0;color:var(--secondary);font-size:13px">'+(n==="en"?"No matching posts.":"해당하는 게시글이 없습니다.")+"</p>";return}i.innerHTML=t.map(function(e){return'<article class="post-entry"><header class="entry-header"><h2 class="entry-hint-parent">'+o(e.title)+'</h2></header><div class="entry-content"><p>'+o((e.summary||"").substring(0,120))+(e.summary&&e.summary.length>120?"...":"")+'</p></div><a class="entry-link" aria-label="'+o(e.title)+'" href="'+o(e.permalink)+'"></a></article>'}).join("")}if(t){a(t);return}c=document.documentElement.lang||"ko",l=c==="en"?"/en/index.json":"/index.json",fetch(l).then(function(e){return e.json()}).then(function(n){t=Array.isArray(n)?n:[],e&&a(t)}).catch(function(){i.innerHTML='<p style="padding:16px 0;color:var(--secondary);font-size:13px">데이터를 불러올 수 없습니다.</p>'})}function d(e){return!!e.querySelector(".section-group")}function u(e){return Array.prototype.slice.call(e.querySelectorAll("article.post-entry, article.first-entry"))}function j(e){var t=e.querySelector("a.entry-link");if(!t)return null;try{return new URL(t.href).pathname}catch{return t.getAttribute("href")||null}}function r(e){return e?e.replace(/\/$/,"")||"/":null}function o(e){return String(e||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;")}function y(){try{var e,t=sessionStorage.getItem(a);if(t&&(e=JSON.parse(t),Date.now()-e.t<h))return Promise.resolve({reactions:new Set(e.r),comments:new Set(e.c)})}catch{}return f().then(function(e){var t=[],n=[];e.forEach(function(e){var s=r("/"+(e.title||"").replace(/^\//,""));if(!s||s==="/")return;e.reactions&&e.reactions.total_count>0&&t.push(s),e.comments>0&&n.push(s)});try{sessionStorage.setItem(a,JSON.stringify({t:Date.now(),r:t,c:n}))}catch{}return{reactions:new Set(t),comments:new Set(n)}})}function f(e,t){return e=e||1,t=t||[],fetch("https://api.github.com/repos/"+m+"/discussions?per_page=100&page="+e,{headers:{Accept:"application/vnd.github+json"}}).then(function(n){return n.ok?n.json().then(function(n){if(!Array.isArray(n)||!n.length)return t;var s=t.concat(n);return n.length<100?s:f(e+1,s)}):t}).catch(function(){return t})}})()</script><script>(function(){try{var e,n,t=new URLSearchParams(location.search);if(t.get("admin")==="on"&&localStorage.setItem("dn-admin","1"),t.get("admin")==="off"&&localStorage.removeItem("dn-admin"),localStorage.getItem("dn-admin")!=="1")return;if(n=location.pathname,!/^\/(page\/\d+\/)?$|^\/curations(-all)?\/(page\/\d+\/)?$/.test(n))return;e=document.createElement("a"),e.href="/learning-roadmap/roadmap.html",e.target="_blank",e.rel="noopener",e.textContent="🗺️ 학습 로드맵",e.setAttribute("aria-label","큐레이션 학습 로드맵 (관리자 전용)"),e.style.cssText="position:fixed;right:18px;bottom:18px;z-index:90;padding:9px 16px;border-radius:99px;background:var(--entry);border:1px solid var(--border);color:var(--primary);font-size:14px;font-weight:600;text-decoration:none;box-shadow:0 2px 10px rgba(0,0,0,.15)",document.body.appendChild(e)}catch{}})()</script><script>let menu=document.getElementById("menu");menu&&(menu.scrollLeft=localStorage.getItem("menu-scroll-position"),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}),document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var mybutton=document.getElementById("top-link");window.onscroll=function(){document.body.scrollTop>800||document.documentElement.scrollTop>800?(mybutton.style.visibility="visible",mybutton.style.opacity="1"):(mybutton.style.visibility="hidden",mybutton.style.opacity="0")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{document.body.className.includes("dark")?(document.body.classList.remove("dark"),localStorage.setItem("pref-theme","light")):(document.body.classList.add("dark"),localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="복사";function s(){t.innerHTML="복사 완료!",setTimeout(()=>{t.innerHTML="복사"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></div><script>(function(){const n=document.getElementById("sidebar-toggle"),e=document.getElementById("sidebar"),t=document.getElementById("sidebar-overlay");n&&e&&(n.addEventListener("click",function(){e.classList.toggle("open"),t.classList.toggle("open")}),t.addEventListener("click",function(){e.classList.remove("open"),t.classList.remove("open")}))})()</script></body></html>
