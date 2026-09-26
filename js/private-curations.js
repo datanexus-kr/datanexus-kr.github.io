@@ -13,9 +13,9 @@
   let privateArticles = [], authorized = false;
   const reader = document.getElementById('private-reader');
   let popup, poll, expiry, generation = 0, token = '';
-  let privateArticleHTML = '', readerStyles;
+  let privateArticleHTML = '', readerStyles, frameResizeId = ''; 
   // Use the same stylesheet order and selectors as a regular post. Keep the
-  // private HTML in its script-free, opaque-origin sandbox.
+  // private HTML in an opaque-origin sandbox; only our nonce-bound height reporter runs.
   async function renderPrivateBody() {
     const frame = document.getElementById('private-body');
     if (!frame || !privateArticleHTML) return;
@@ -36,7 +36,8 @@
     doc.documentElement.lang = document.documentElement.lang || 'ko';
     const csp = doc.createElement('meta');
     csp.httpEquiv = 'Content-Security-Policy';
-    csp.content = "default-src 'none'; style-src 'unsafe-inline'; img-src data:; base-uri 'none'; form-action 'none'";
+    frameResizeId = crypto.randomUUID();
+    csp.content = `default-src 'none'; script-src 'nonce-${frameResizeId}'; style-src 'unsafe-inline'; img-src data:; base-uri 'none'; form-action 'none'`; 
     doc.head.prepend(csp);
     for (const text of styles) {
       const style = doc.createElement('style'); style.textContent = text; doc.head.append(style);
@@ -46,9 +47,28 @@
     const content = doc.createElement('div'); content.className = 'post-content';
     content.innerHTML = html;
     post.append(content); doc.body.append(post);
+    const sizingStyle = doc.createElement('style');
+    sizingStyle.textContent = 'html{overflow:hidden}body{margin:0;padding:0;min-height:0!important;height:auto}.post-single{display:flow-root;margin:0}';
+    doc.head.append(sizingStyle);
+    const reporter = doc.createElement('script');
+    reporter.setAttribute('nonce', frameResizeId);
+    reporter.textContent = `(() => {
+      const post = document.querySelector('.post-single');
+      const report = () => parent.postMessage({type:'dn-private-height', id:${JSON.stringify(frameResizeId)}, height:Math.ceil(post.getBoundingClientRect().height) + 2}, ${JSON.stringify(location.origin)});
+      new ResizeObserver(report).observe(post);
+      addEventListener('load', report);
+      report();
+    })();`;
+    doc.body.append(reporter);
     frame.srcdoc = '<!doctype html>' + doc.documentElement.outerHTML;
   }
   if (reader) {
+    window.addEventListener('message', event => {
+      const frame = document.getElementById('private-body');
+      const data = event.data;
+      if (event.source !== frame.contentWindow || event.origin !== 'null' || data?.type !== 'dn-private-height' || data.id !== frameResizeId) return;
+      if (Number.isFinite(data.height) && data.height > 0 && data.height <= 1000000) frame.style.height = Math.ceil(data.height) + 'px';
+    });
     new MutationObserver(() => { renderPrivateBody().catch(error => { status.textContent = error.message; }); })
       .observe(document.body, {attributes: true, attributeFilter: ['class']});
   }
