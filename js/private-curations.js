@@ -7,7 +7,10 @@
   const login = document.getElementById('private-login');
   const logout = document.getElementById('private-logout');
   const status = document.getElementById('private-status');
-  const list = document.getElementById('private-list');
+  const list = document.querySelector('[data-private-target]') || document.getElementById('posts-container');
+  const toggle = document.getElementById('private-toggle');
+  const VISIBILITY_KEY = 'dn-private-visible';
+  let privateArticles = [], authorized = false;
   const reader = document.getElementById('private-reader');
   let popup, poll, expiry, generation = 0, token = '';
   let privateArticleHTML = '', readerStyles;
@@ -48,14 +51,37 @@
   if (reader) {
     new MutationObserver(() => { renderPrivateBody().catch(error => { status.textContent = error.message; }); })
       .observe(document.body, {attributes: true, attributeFilter: ['class']});
-  } else {
-    const publicList = document.getElementById('posts-container');
-    if (publicList) {
-      const syncView = () => { list.dataset.view = publicList.dataset.view || 'list'; };
-      syncView();
-      new MutationObserver(syncView).observe(publicList, {attributes: true, attributeFilter: ['data-view']});
-    }
   }
+  function removePrivateRows() {
+    list?.querySelectorAll('[data-private-entry]').forEach(row => row.remove());
+  }
+  function refreshList() {
+    removePrivateRows();
+    if (authorized && toggle?.checked && list) {
+      const month = (box.dataset.path || '').match(/^\/curations\/(\d{4}-\d{2})\//)?.[1];
+      for (const article of privateArticles.filter(a => !month || a.date.startsWith(month))) {
+        const row = document.createElement('article'); row.className = 'post-entry';
+        row.dataset.privateEntry = article.id; row.dataset.published = article.date;
+        const header = document.createElement('header'); header.className = 'entry-header';
+        const heading = document.createElement('h2'); heading.className = 'entry-hint-parent';
+        heading.textContent = '🔒 ' + article.title; header.append(heading);
+        const summary = document.createElement('div'); summary.className = 'entry-content';
+        const paragraph = document.createElement('p'); paragraph.textContent = article.summary; summary.append(paragraph);
+        const a = document.createElement('a'); a.className = 'entry-link';
+        a.href = '/private-reader/?id=' + encodeURIComponent(article.id);
+        a.setAttribute('aria-label', '비공개 글: ' + article.title);
+        row.append(header, summary, a);
+        const following = [...list.children].find(el => el.matches('article.post-entry') && Date.parse(el.dataset.published) <= Date.parse(article.date));
+        if (following) list.insertBefore(row, following); else list.append(row);
+      }
+    }
+    document.getElementById('posts-container')?.dispatchEvent(new Event('dn:posts-changed'));
+  }
+  if (toggle) toggle.addEventListener('change', () => {
+    if (!authorized) { toggle.checked = false; login.click(); return; }
+    try { sessionStorage.setItem(VISIBILITY_KEY, toggle.checked ? '1' : '0'); } catch {}
+    refreshList();
+  });
   try { token = sessionStorage.getItem(KEY) || ''; } catch {}
   function clear(message) {
     generation++;
@@ -63,7 +89,9 @@
     token = '';
     clearTimeout(expiry);
     try { sessionStorage.removeItem(KEY); } catch {}
-    list.replaceChildren();
+    authorized = false; privateArticles = [];
+    if (toggle) toggle.checked = false;
+    refreshList();
     if (reader) {
       reader.hidden = true;
       document.getElementById('private-body').srcdoc = '';
@@ -92,7 +120,13 @@
       status.textContent = data.login + ' · 비공개 글 열람 중 (로그인 유지 1시간)';
       clearTimeout(expiry);
       expiry = setTimeout(() => clear('로그인이 만료되었습니다. 다시 로그인해 주세요.'), Math.max(0, data.expiresAt * 1000 - Date.now()));
-      list.replaceChildren();
+      authorized = true;
+      privateArticles = data.articles;
+      if (toggle) {
+        let show = true;
+        try { show = sessionStorage.getItem(VISIBILITY_KEY) !== '0'; } catch {}
+        toggle.checked = show;
+      }
       if (reader) {
         const id = new URLSearchParams(location.search).get('id');
         if (!data.articles.some(a => a.id === id)) throw new Error('해당 비공개 글을 찾을 수 없습니다.');
@@ -114,23 +148,7 @@
           } catch (error) { status.textContent = error.message; }
         };
       } else {
-        const month = (box.dataset.path || '').match(/^\/curations\/(\d{4}-\d{2})\//)?.[1];
-        const articles = data.articles.filter(a => !month || a.date.startsWith(month));
-        for (const article of articles) {
-          const row = document.createElement('article'); row.className = 'post-entry';
-          const header = document.createElement('header'); header.className = 'entry-header';
-          const heading = document.createElement('h2'); heading.className = 'entry-hint-parent';
-          heading.textContent = '🔒 ' + article.title;
-          header.append(heading);
-          const summary = document.createElement('div'); summary.className = 'entry-content';
-          const paragraph = document.createElement('p'); paragraph.textContent = article.summary;
-          summary.append(paragraph);
-          const a = document.createElement('a'); a.className = 'entry-link';
-          a.href = '/private-reader/?id=' + encodeURIComponent(article.id);
-          a.setAttribute('aria-label', '비공개 글: ' + article.title);
-          row.append(header, summary, a); list.append(row);
-        }
-        if (!articles.length) list.textContent = '이 목록에는 비공개 글이 없습니다.';
+        refreshList();
       }
     } catch (error) { if (run === generation) status.textContent = error.message; }
   }
@@ -147,6 +165,7 @@
     if (event.data.error) { clear(event.data.error); return; }
     if (typeof event.data.token !== 'string') return;
     token = event.data.token;
+    try { sessionStorage.setItem(VISIBILITY_KEY, '1'); } catch {}
     try { sessionStorage.setItem(KEY, token); } catch {}
     load();
   });
