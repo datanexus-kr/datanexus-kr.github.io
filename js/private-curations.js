@@ -52,10 +52,24 @@
     new MutationObserver(() => { renderPrivateBody().catch(error => { status.textContent = error.message; }); })
       .observe(document.body, {attributes: true, attributeFilter: ['class']});
   }
+  function updateAuthFlow() {
+    const flow = document.getElementById('private-auth-flow');
+    if (!flow) return;
+    const state = authorized ? (toggle?.checked ? 'visible' : 'hidden') : (token ? 'checking' : 'signed-out');
+    flow.dataset.state = state;
+    const stages = {'signed-out': 'login', checking: 'verify', hidden: 'toggle', visible: 'read'};
+    const labels = {'signed-out': '로그인 전', checking: '권한 확인 중', hidden: '목록에서 숨김', visible: '비공개 글 포함'};
+    document.getElementById('private-auth-state').textContent = labels[state];
+    flow.querySelectorAll('[data-step]').forEach(step => {
+      if (step.dataset.step === stages[state]) step.setAttribute('aria-current', 'step');
+      else step.removeAttribute('aria-current');
+    });
+  }
   function removePrivateRows() {
     list?.querySelectorAll('[data-private-entry]').forEach(row => row.remove());
   }
   function refreshList() {
+    updateAuthFlow();
     removePrivateRows();
     if (authorized && toggle?.checked && list) {
       const month = (box.dataset.path || '').match(/^\/curations\/(\d{4}-\d{2})\//)?.[1];
@@ -113,6 +127,7 @@
   async function load() {
     const run = ++generation;
     status.textContent = '접근 권한을 확인하고 있습니다…';
+    updateAuthFlow();
     try {
       const data = await (await api('/api/curations')).json();
       if (run !== generation) return;
