@@ -4,9 +4,6 @@
   const KEY = 'dn-private-session-v1';
   const box = document.getElementById('private-curations');
   if (!box) return;
-  if (box.hasAttribute('data-admin-query-only')) {
-    box.hidden = new URLSearchParams(location.search).get('admin') !== '1022';
-  }
   const login = document.getElementById('private-login');
   const logout = document.getElementById('private-logout');
   const status = document.getElementById('private-status');
