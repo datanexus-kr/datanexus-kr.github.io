@@ -82,13 +82,13 @@
     try { sessionStorage.setItem(VISIBILITY_KEY, toggle.checked ? '1' : '0'); } catch {}
     refreshList();
   });
-  try { token = sessionStorage.getItem(KEY) || ''; } catch {}
+  try { token = localStorage.getItem(KEY) || sessionStorage.getItem(KEY) || ''; } catch {}
   function clear(message) {
     generation++;
     privateArticleHTML = '';
     token = '';
     clearTimeout(expiry);
-    try { sessionStorage.removeItem(KEY); } catch {}
+    try { localStorage.removeItem(KEY); sessionStorage.removeItem(KEY); } catch {}
     authorized = false; privateArticles = [];
     if (toggle) toggle.checked = false;
     refreshList();
@@ -120,6 +120,7 @@
       status.textContent = data.login + ' · 비공개 글 열람 중 (로그인 유지 1시간)';
       clearTimeout(expiry);
       expiry = setTimeout(() => clear('로그인이 만료되었습니다. 다시 로그인해 주세요.'), Math.max(0, data.expiresAt * 1000 - Date.now()));
+      try { localStorage.setItem(KEY, token); sessionStorage.removeItem(KEY); } catch {}
       authorized = true;
       privateArticles = data.articles;
       if (toggle) {
@@ -166,10 +167,17 @@
     if (typeof event.data.token !== 'string') return;
     token = event.data.token;
     try { sessionStorage.setItem(VISIBILITY_KEY, '1'); } catch {}
-    try { sessionStorage.setItem(KEY, token); } catch {}
+    try { localStorage.setItem(KEY, token); } catch {}
     load();
   });
   logout.onclick = () => clear('로그아웃했습니다.');
-  window.addEventListener('pageshow', e => { if (e.persisted) { try { token = sessionStorage.getItem(KEY) || ''; } catch {} if (token) load(); else clear('로그인하면 비공개 글을 볼 수 있습니다.'); } });
+  window.addEventListener('pageshow', e => { if (e.persisted) { try { token = localStorage.getItem(KEY) || sessionStorage.getItem(KEY) || ''; } catch {} if (token) load(); else clear('로그인하면 비공개 글을 볼 수 있습니다.'); } });
+  window.addEventListener('storage', event => {
+    if (event.key !== KEY || event.storageArea !== localStorage) return;
+    if (!event.newValue) { clear('로그아웃했습니다.'); return; }
+    token = event.newValue;
+    try { sessionStorage.removeItem(VISIBILITY_KEY); } catch {}
+    load();
+  });
   if (token) load();
 })();
