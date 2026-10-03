@@ -3,9 +3,9 @@
 <desc id="d">Opus 4.8 high effort 74.4%와 4.6센트, Opus 5.5 low effort 87.8%와 1.9센트, Sonnet 5 low effort 88.9%와 1센트, 프롬프트 개선 후 Sonnet 5 low effort 98.9%와 1센트를 비교한 막대 차트. 시험 티켓 14건은 원래 설정 78.6%, 최종 설정 90.5%.</desc>
 <rect width="1200" height="770" rx="16" fill="#faf9f5" stroke="#e7e5e4"/>
 <text x="48" y="58" font-size="30" font-weight="700" fill="#1c1917">고객지원 벤치마크: 설정을 바꿀 때 정확도와 비용</text>
-<text x="48" y="92" font-size="20" fill="#57534e">티켓 44건 중 탐색 30건 기준 · 막대 길이는 0에서 시작해 값에 비례</text>
+<text x="48" y="92" font-size="20" fill="#57534e">티켓 44건 중 학습용 30건 기준 · 막대 길이는 0에서 시작해 값에 비례</text>
 
-<text x="330" y="140" font-size="22" font-weight="700" fill="#1c1917">결정 정확도 (탐색 티켓 30건)</text>
+<text x="330" y="140" font-size="22" font-weight="700" fill="#1c1917">결정 정확도 (학습용 티켓 30건)</text>
 <text x="770" y="140" font-size="22" font-weight="700" fill="#1c1917">티켓당 비용 (센트)</text>
 <line x1="330.0" y1="150" x2="330.0" y2="488" stroke="#a8a29e" stroke-width="2"/>
 <text x="330.0" y="514" font-size="16" fill="#78716c" text-anchor="middle">0%</text>
@@ -54,7 +54,7 @@
 <rect x="770" y="426" width="60.0" height="38" rx="3" fill="#78716c"/>
 <text x="840.0" y="453" font-size="22" font-weight="700" fill="#1c1917">1¢</text>
 <line x1="48" y1="559" x2="1152" y2="559" stroke="#e7e5e4" stroke-width="1.5"/>
-<text x="48" y="593" font-size="22" font-weight="700" fill="#1c1917">시험 티켓 14건 정확도 (탐색에서 쓰지 않은 티켓)</text>
+<text x="48" y="593" font-size="22" font-weight="700" fill="#1c1917">시험 티켓 14건 정확도 (학습에서 쓰지 않은 티켓)</text>
 <text x="48" y="640" font-size="20" fill="#1c1917">원래 설정</text>
 <rect x="330" y="615" width="235.8" height="36" rx="3" fill="#78716c"/>
 <text x="575.8" y="642" font-size="22" font-weight="700" fill="#1c1917">78.6%</text>

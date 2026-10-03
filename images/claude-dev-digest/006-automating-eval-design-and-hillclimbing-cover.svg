@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-labelledby="t d" font-family="'Noto Sans KR','Apple SD Gothic Neo',sans-serif">
 <title id="t">평가 세트는 어떻게 만들고, 점수는 어떻게 속지 않고 올릴까</title>
-<desc id="d">고객지원 벤치마크 탐색 티켓 정확도가 74.4%에서 98.9%로 오르는 막대 네 개와, 티켓 44건을 탐색 30건과 시험 14건으로 나눈 점 그림</desc>
+<desc id="d">고객지원 벤치마크 학습용 티켓 정확도가 74.4%에서 98.9%로 오르는 막대 네 개와, 티켓 44건을 학습용 30건과 시험 14건으로 나눈 점 그림</desc>
 <rect width="1200" height="630" fill="#1c1917"/>
 <rect x="0" y="0" width="12" height="630" fill="#d97757"/>
 <text x="80" y="88" font-size="24" font-weight="700" fill="#d97757">claude.dev 다이제스트 · 006</text>
@@ -17,7 +17,7 @@
 <rect x="512" y="382.1" width="120" height="187.9" rx="6" fill="#d97757"/>
 <text x="572.0" y="372.1" font-size="22" font-weight="700" fill="#faf9f5" text-anchor="middle">98.9%</text>
 <line x1="70" y1="570" x2="642" y2="570" stroke="#57534e" stroke-width="2"/>
-<text x="80" y="606" font-size="20" fill="#a8a29e">탐색 티켓 정확도 74.4% → 98.9%</text>
+<text x="80" y="606" font-size="20" fill="#a8a29e">학습용 티켓 정확도 74.4% → 98.9%</text>
 <text x="760" y="405" font-size="22" font-weight="700" fill="#faf9f5">고객지원 벤치마크 티켓 44건</text>
 <circle cx="772" cy="452" r="11" fill="#d97757"/>
 <circle cx="805" cy="452" r="11" fill="#d97757"/>
@@ -63,6 +63,6 @@
 <circle cx="1036" cy="551" r="10" fill="none" stroke="#faf9f5" stroke-width="2.5"/>
 <circle cx="1069" cy="551" r="10" fill="none" stroke="#faf9f5" stroke-width="2.5"/>
 <circle cx="1102" cy="551" r="10" fill="none" stroke="#faf9f5" stroke-width="2.5"/>
-<circle cx="772" cy="590" r="8" fill="#d97757"/><text x="790" y="597" font-size="20" fill="#a8a29e">탐색 30건</text>
+<circle cx="772" cy="590" r="8" fill="#d97757"/><text x="790" y="597" font-size="20" fill="#a8a29e">학습용 30건</text>
 <circle cx="920" cy="590" r="7.5" fill="none" stroke="#faf9f5" stroke-width="2.5"/><text x="938" y="597" font-size="20" fill="#a8a29e">시험 14건</text>
 </svg>
