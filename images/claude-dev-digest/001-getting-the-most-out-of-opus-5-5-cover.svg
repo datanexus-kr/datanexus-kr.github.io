@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="끝나는 조건을 체크포인트로 둔 한 줄짜리 작업 경로">
+  <rect width="1200" height="630" fill="#1c1917"/>
+  <rect x="0" y="0" width="12" height="630" fill="#d97757"/>
+
+  <!-- 라벨 -->
+  <text x="64" y="84" font-family="'Noto Sans KR','Apple SD Gothic Neo',sans-serif" font-size="24" fill="#d97757">claude.dev 다이제스트 · 001</text>
+
+  <!-- 지워도 되는 문장 -->
+  <rect x="860" y="44" width="276" height="52" rx="26" fill="#292524" stroke="#57534e" stroke-width="2"/>
+  <text x="998" y="79" text-anchor="middle" font-family="'Noto Sans KR','Apple SD Gothic Neo',sans-serif" font-size="26" fill="#a8a29e">think carefully</text>
+  <line x1="884" y1="70" x2="1112" y2="70" stroke="#d97757" stroke-width="3"/>
+  <text x="1136" y="124" text-anchor="end" font-family="'Noto Sans KR','Apple SD Gothic Neo',sans-serif" font-size="18" fill="#a8a29e">지워도 되는 문장</text>
+
+  <!-- 제목 -->
+  <text x="64" y="156" font-family="'Noto Sans KR','Apple SD Gothic Neo',sans-serif" font-size="34" fill="#e7e5e4">Opus 5.5에게 일을 맡기는 법</text>
+  <text x="64" y="232" font-family="'Noto Sans KR','Apple SD Gothic Neo',sans-serif" font-size="64" font-weight="700" fill="#ffffff">끝나는 조건부터 말하세요</text>
+  <text x="64" y="278" font-family="'Noto Sans KR','Apple SD Gothic Neo',sans-serif" font-size="22" fill="#a8a29e">Getting the most out of Opus 5.5 in Claude and Claude Code</text>
+
+  <!-- 경로 -->
+  <line x1="120" y1="440" x2="1090" y2="440" stroke="#57534e" stroke-width="6" stroke-linecap="round"/>
+  <line x1="120" y1="440" x2="1090" y2="440" stroke="#d97757" stroke-width="3" stroke-dasharray="2 14" stroke-linecap="round"/>
+
+  <!-- 시작 -->
+  <circle cx="120" cy="440" r="22" fill="#d97757"/>
+  <text x="120" y="388" text-anchor="middle" font-family="'Noto Sans KR','Apple SD Gothic Neo',sans-serif" font-size="22" fill="#e7e5e4">한 번에 전달</text>
+  <text x="120" y="500" text-anchor="middle" font-family="'Noto Sans KR','Apple SD Gothic Neo',sans-serif" font-size="22" fill="#e7e5e4">작업 통째로</text>
+
+  <!-- 체크포인트 1 -->
+  <circle cx="390" cy="440" r="30" fill="#1c1917" stroke="#d97757" stroke-width="4"/>
+  <polyline points="376,441 386,451 405,429" fill="none" stroke="#d97757" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="390" y="500" text-anchor="middle" font-family="'Noto Sans KR','Apple SD Gothic Neo',sans-serif" font-size="22" fill="#e7e5e4">모든 엔드포인트가</text>
+  <text x="390" y="530" text-anchor="middle" font-family="'Noto Sans KR','Apple SD Gothic Neo',sans-serif" font-size="22" fill="#e7e5e4">새 클라이언트 사용</text>
+
+  <!-- 체크포인트 2 -->
+  <circle cx="640" cy="440" r="30" fill="#1c1917" stroke="#d97757" stroke-width="4"/>
+  <polyline points="626,441 636,451 655,429" fill="none" stroke="#d97757" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="640" y="500" text-anchor="middle" font-family="'Noto Sans KR','Apple SD Gothic Neo',sans-serif" font-size="22" fill="#e7e5e4">옛 클라이언트 삭제</text>
+
+  <!-- 멈춤 조건 -->
+  <polygon points="765,414 791,440 765,466 739,440" fill="#f5b041" stroke="#1c1917" stroke-width="3"/>
+  <text x="765" y="352" text-anchor="middle" font-family="'Noto Sans KR','Apple SD Gothic Neo',sans-serif" font-size="22" fill="#f5b041">이유 모를 테스트 실패일 때만</text>
+  <text x="765" y="382" text-anchor="middle" font-family="'Noto Sans KR','Apple SD Gothic Neo',sans-serif" font-size="22" fill="#f5b041">멈추고 질문</text>
+
+  <!-- 체크포인트 3 -->
+  <circle cx="890" cy="440" r="30" fill="#1c1917" stroke="#d97757" stroke-width="4"/>
+  <polyline points="876,441 886,451 905,429" fill="none" stroke="#d97757" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="890" y="500" text-anchor="middle" font-family="'Noto Sans KR','Apple SD Gothic Neo',sans-serif" font-size="22" fill="#e7e5e4">테스트 통과</text>
+
+  <!-- 끝 -->
+  <circle cx="1090" cy="440" r="34" fill="#d97757"/>
+  <polyline points="1074,441 1086,453 1108,427" fill="none" stroke="#1c1917" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="1090" y="500" text-anchor="middle" font-family="'Noto Sans KR','Apple SD Gothic Neo',sans-serif" font-size="22" font-weight="700" fill="#ffffff">끝</text>
+</svg>

@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 736" font-family="'Noto Sans KR','Apple SD Gothic Neo',sans-serif" role="img" aria-label="핵심 여정 13개 측정의 p75 시간 감소율 막대 차트">
+<rect width="1000" height="736" rx="12" fill="#fffaf5"/>
+<text x="30" y="42" font-size="22" font-weight="700" fill="#1c1917">핵심 여정 13개 측정, p75 시간 감소율</text>
+<text x="30" y="68" font-size="14" fill="#57534e">실사용자 모니터링 기준, 8월 13일 대비 8월 27일. 막대 길이는 줄어든 비율입니다.</text>
+<text x="840" y="106" font-size="12" fill="#78716c">이전 → 이후</text>
+<line x1="330.0" y1="112" x2="330.0" y2="686" stroke="#e7e0d8" stroke-width="1"/><text x="330.0" y="106" font-size="12" text-anchor="middle" fill="#78716c">0%</text><line x1="440.0" y1="112" x2="440.0" y2="686" stroke="#e7e0d8" stroke-width="1"/><text x="440.0" y="106" font-size="12" text-anchor="middle" fill="#78716c">25%</text><line x1="550.0" y1="112" x2="550.0" y2="686" stroke="#e7e0d8" stroke-width="1"/><text x="550.0" y="106" font-size="12" text-anchor="middle" fill="#78716c">50%</text><line x1="660.0" y1="112" x2="660.0" y2="686" stroke="#e7e0d8" stroke-width="1"/><text x="660.0" y="106" font-size="12" text-anchor="middle" fill="#78716c">75%</text><line x1="770.0" y1="112" x2="770.0" y2="686" stroke="#e7e0d8" stroke-width="1"/><text x="770.0" y="106" font-size="12" text-anchor="middle" fill="#78716c">100%</text>
+<text x="30" y="152" font-size="16" font-weight="700" fill="#b4532f">앱 실행</text>
+<text x="48" y="182" font-size="15" fill="#292524">claude.ai 웹 (첫 로딩)</text>
+<rect x="330" y="168" width="360.8" height="18" rx="3" fill="#d97757"/>
+<text x="698.8" y="182" font-size="15" font-weight="700" fill="#292524">−82%</text>
+<text x="840" y="182" font-size="14" fill="#57534e">3,085 → 550 ms</text>
+<text x="48" y="212" font-size="15" fill="#292524">데스크톱 앱 (콜드 스타트)</text>
+<rect x="330" y="198" width="206.8" height="18" rx="3" fill="#d97757"/>
+<text x="544.8" y="212" font-size="15" font-weight="700" fill="#292524">−47%</text>
+<text x="840" y="212" font-size="14" fill="#57534e">6,310 → 3,328 ms</text>
+<text x="30" y="254" font-size="16" font-weight="700" fill="#b4532f">대화 시작</text>
+<text x="48" y="284" font-size="15" fill="#292524">Chat 웹</text>
+<rect x="330" y="270" width="149.6" height="18" rx="3" fill="#d97757"/>
+<text x="487.6" y="284" font-size="15" font-weight="700" fill="#292524">−34%</text>
+<text x="840" y="284" font-size="14" fill="#57534e">416 → 273 ms</text>
+<text x="48" y="314" font-size="15" fill="#292524">Chat 데스크톱</text>
+<rect x="330" y="300" width="224.4" height="18" rx="3" fill="#d97757"/>
+<text x="562.4" y="314" font-size="15" font-weight="700" fill="#292524">−51%</text>
+<text x="840" y="314" font-size="14" fill="#57534e">460 → 224 ms</text>
+<text x="48" y="344" font-size="15" fill="#292524">Claude Code 데스크톱</text>
+<rect x="330" y="330" width="259.6" height="18" rx="3" fill="#d97757"/>
+<text x="597.6" y="344" font-size="15" font-weight="700" fill="#292524">−59%</text>
+<text x="840" y="344" font-size="14" fill="#57534e">837 → 347 ms</text>
+<text x="30" y="386" font-size="16" font-weight="700" fill="#b4532f">기존 대화 불러오기</text>
+<text x="48" y="416" font-size="15" fill="#292524">Chat 웹</text>
+<rect x="330" y="402" width="259.6" height="18" rx="3" fill="#d97757"/>
+<text x="597.6" y="416" font-size="15" font-weight="700" fill="#292524">−59%</text>
+<text x="840" y="416" font-size="14" fill="#57534e">1,557 → 646 ms</text>
+<text x="48" y="446" font-size="15" fill="#292524">Chat 데스크톱</text>
+<rect x="330" y="432" width="281.6" height="18" rx="3" fill="#d97757"/>
+<text x="619.6" y="446" font-size="15" font-weight="700" fill="#292524">−64%</text>
+<text x="840" y="446" font-size="14" fill="#57534e">1,353 → 488 ms</text>
+<text x="48" y="476" font-size="15" fill="#292524">Cowork 데스크톱 (클라우드)</text>
+<rect x="330" y="462" width="316.8" height="18" rx="3" fill="#d97757"/>
+<text x="654.8" y="476" font-size="15" font-weight="700" fill="#292524">−72%</text>
+<text x="840" y="476" font-size="14" fill="#57534e">2,566 → 728 ms</text>
+<text x="48" y="506" font-size="15" fill="#292524">Claude Code 데스크톱</text>
+<rect x="330" y="492" width="228.8" height="18" rx="3" fill="#d97757"/>
+<text x="566.8" y="506" font-size="15" font-weight="700" fill="#292524">−52%</text>
+<text x="840" y="506" font-size="14" fill="#57534e">545 → 262 ms</text>
+<text x="30" y="548" font-size="16" font-weight="700" fill="#b4532f">메시지 보내기</text>
+<text x="48" y="578" font-size="15" fill="#292524">Chat 웹</text>
+<rect x="330" y="564" width="294.8" height="18" rx="3" fill="#d97757"/>
+<text x="632.8" y="578" font-size="15" font-weight="700" fill="#292524">−67%</text>
+<text x="840" y="578" font-size="14" fill="#57534e">180 → 59 ms</text>
+<text x="48" y="608" font-size="15" fill="#292524">Chat 데스크톱</text>
+<rect x="330" y="594" width="237.6" height="18" rx="3" fill="#d97757"/>
+<text x="575.6" y="608" font-size="15" font-weight="700" fill="#292524">−54%</text>
+<text x="840" y="608" font-size="14" fill="#57534e">140 → 64 ms</text>
+<text x="48" y="638" font-size="15" fill="#292524">Cowork 데스크톱 (클라우드)</text>
+<rect x="330" y="624" width="418.0" height="18" rx="3" fill="#d97757"/>
+<text x="756.0" y="638" font-size="15" font-weight="700" fill="#292524">−95%</text>
+<text x="840" y="638" font-size="14" fill="#57534e">928 → 48 ms</text>
+<text x="48" y="668" font-size="15" fill="#292524">Claude Code 데스크톱</text>
+<rect x="330" y="654" width="347.6" height="18" rx="3" fill="#d97757"/>
+<text x="685.6" y="668" font-size="15" font-weight="700" fill="#292524">−79%</text>
+<text x="840" y="668" font-size="14" fill="#57534e">250 → 52 ms</text>
+<text x="30" y="718" font-size="14" fill="#57534e">13개 측정의 평균(기하평균)은 3.1배 빨라짐</text>
+</svg>

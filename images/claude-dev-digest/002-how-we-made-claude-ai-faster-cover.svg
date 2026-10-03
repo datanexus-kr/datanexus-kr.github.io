@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" font-family="'Noto Sans KR','Apple SD Gothic Neo',sans-serif" role="img" aria-label="claude.ai 웹 첫 로딩 시간이 3,085 ms에서 550 ms로 줄어든 것을 보여주는 커버">
+<rect width="1200" height="630" fill="#1c1917"/>
+<rect x="0" y="0" width="14" height="630" fill="#d97757"/>
+<text x="70" y="78" font-size="22" font-weight="700" fill="#d97757">claude.dev 다이제스트 · 002</text>
+<text x="70" y="168" font-size="58" font-weight="700" fill="#fafaf9">claude.ai를 2주 만에</text>
+<text x="70" y="240" font-size="58" font-weight="700" fill="#fafaf9">3배 빠르게 만든 방법</text>
+<text x="70" y="292" font-size="24" fill="#a8a29e">How we made claude.ai 3x faster in two weeks</text>
+<text x="70" y="364" font-size="20" fill="#a8a29e">claude.ai 웹 첫 로딩, 입력 가능해질 때까지 (p75)</text>
+<rect x="70" y="384" width="925.5" height="56" rx="4" fill="#57534e"/>
+<text x="90" y="421" font-size="24" font-weight="700" fill="#fafaf9">이전 3,085 ms</text>
+<rect x="70" y="462" width="165.0" height="56" rx="4" fill="#d97757"/>
+<text x="255.0" y="499" font-size="24" font-weight="700" fill="#d97757">이후 550 ms · 5.6배 빠르게</text>
+<text x="70" y="578" font-size="18" fill="#78716c">막대 길이는 시간에 비례</text>
+</svg>

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Opus 5.5에서 작업 하나는 얼마일까. 같은 토큰 수로 계산한 예시 세션이 Opus 5 3.50달러에서 Opus 5.5 2.40달러로 약 31% 줄어드는 막대 비교">
+  <rect width="1200" height="630" fill="#1c1917"/>
+  <rect x="0" y="0" width="12" height="630" fill="#d97757"/>
+  <g font-family="'Noto Sans KR','Apple SD Gothic Neo',sans-serif">
+    <text x="80" y="110" font-size="26" font-weight="700" fill="#d97757">claude.dev 다이제스트 · 004</text>
+    <text x="80" y="240" font-size="58" font-weight="700" fill="#fafaf9">Opus 5.5에서</text>
+    <text x="80" y="315" font-size="58" font-weight="700" fill="#fafaf9">작업 하나는 얼마일까</text>
+    <text x="80" y="385" font-size="28" fill="#a8a29e">What a task costs on Opus 5.5</text>
+    <text x="80" y="470" font-size="28" fill="#e7e5e4">단가표보다 턴 수와 캐시를 보세요</text>
+    <text x="80" y="570" font-size="22" fill="#78716c">원문 Addy Osmani · 2026-09-25</text>
+
+    <!-- 막대 비교: 1달러 = 80px -->
+    <line x1="720" y1="540" x2="1100" y2="540" stroke="#57534e" stroke-width="2"/>
+    <!-- Opus 5: 출력 1.50 / 신규 입력 1.00 / 캐시 읽기 1.00 -->
+    <rect x="740" y="260" width="130" height="120" fill="#44403c" stroke="#78716c" stroke-width="2"/>
+    <rect x="740" y="380" width="130" height="80" fill="#a8a29e"/>
+    <rect x="740" y="460" width="130" height="80" fill="#d97757"/>
+    <text x="740" y="248" font-size="34" font-weight="700" fill="#fafaf9">$3.50</text>
+    <text x="805" y="574" font-size="24" text-anchor="middle" fill="#e7e5e4">Opus 5</text>
+    <!-- Opus 5.5: 출력 1.20 / 신규 입력 0.80 / 캐시 읽기 0.40 -->
+    <rect x="940" y="348" width="130" height="96" fill="#44403c" stroke="#78716c" stroke-width="2"/>
+    <rect x="940" y="444" width="130" height="64" fill="#a8a29e"/>
+    <rect x="940" y="508" width="130" height="32" fill="#d97757"/>
+    <text x="940" y="336" font-size="34" font-weight="700" fill="#fafaf9">$2.40</text>
+    <text x="1005" y="574" font-size="24" text-anchor="middle" fill="#e7e5e4">Opus 5.5</text>
+    <!-- 감소 표시 -->
+    <line x1="870" y1="260" x2="1050" y2="260" stroke="#d97757" stroke-width="2" stroke-dasharray="6 6"/>
+    <line x1="1050" y1="260" x2="1050" y2="338" stroke="#d97757" stroke-width="3"/>
+    <polygon points="1040,330 1060,330 1050,346" fill="#d97757"/>
+    <text x="1064" y="312" font-size="30" font-weight="700" fill="#d97757">−31%</text>
+    <!-- 범례 -->
+    <text x="1082" y="402" font-size="18" fill="#a8a29e">출력</text>
+    <text x="1082" y="482" font-size="18" fill="#a8a29e">신규 입력</text>
+    <text x="1082" y="530" font-size="18" fill="#a8a29e">캐시 읽기</text>
+  </g>
+</svg>

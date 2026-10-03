@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" role="img" aria-label="같은 토큰 수로 계산한 예시 세션 비용. Opus 5는 캐시 읽기 1.00달러, 신규 입력 1.00달러, 출력 1.50달러로 합계 3.50달러. Opus 5.5는 캐시 읽기 0.40달러, 신규 입력 0.80달러, 출력 1.20달러로 합계 2.40달러">
+  <rect x="1" y="1" width="1198" height="518" rx="16" fill="#fbf8f4" stroke="#e0d8cf" stroke-width="2"/>
+  <g font-family="'Noto Sans KR','Apple SD Gothic Neo',sans-serif">
+    <text x="50" y="60" font-size="28" font-weight="700" fill="#2b2420">같은 토큰 수로 두 모델에 올려 본 한 세션의 비용</text>
+    <text x="50" y="96" font-size="18" fill="#6b5f56">캐시 읽기 2.0M, 신규 입력 200K, 출력 60K 기준 · API 목록 가격 · 막대 길이는 금액에 비례</text>
+
+    <!-- Opus 5: 캐시 1.00(240) / 신규 1.00(240) / 출력 1.50(360) = 840 -->
+    <text x="170" y="203" font-size="26" font-weight="700" text-anchor="end" fill="#2b2420">Opus 5</text>
+    <rect x="200" y="150" width="240" height="80" fill="#d97757"/>
+    <rect x="440" y="150" width="240" height="80" fill="#8a7f76"/>
+    <rect x="680" y="150" width="360" height="80" fill="#3a2a22"/>
+    <text x="320" y="201" font-size="24" font-weight="700" text-anchor="middle" fill="#ffffff">$1.00</text>
+    <text x="560" y="201" font-size="24" font-weight="700" text-anchor="middle" fill="#ffffff">$1.00</text>
+    <text x="860" y="201" font-size="24" font-weight="700" text-anchor="middle" fill="#ffffff">$1.50</text>
+    <text x="1054" y="203" font-size="30" font-weight="700" fill="#2b2420">$3.50</text>
+
+    <!-- Opus 5.5: 캐시 0.40(96) / 신규 0.80(192) / 출력 1.20(288) = 576 -->
+    <text x="170" y="333" font-size="26" font-weight="700" text-anchor="end" fill="#2b2420">Opus 5.5</text>
+    <rect x="200" y="280" width="96" height="80" fill="#d97757"/>
+    <rect x="296" y="280" width="192" height="80" fill="#8a7f76"/>
+    <rect x="488" y="280" width="288" height="80" fill="#3a2a22"/>
+    <text x="248" y="331" font-size="24" font-weight="700" text-anchor="middle" fill="#ffffff">$0.40</text>
+    <text x="392" y="331" font-size="24" font-weight="700" text-anchor="middle" fill="#ffffff">$0.80</text>
+    <text x="632" y="331" font-size="24" font-weight="700" text-anchor="middle" fill="#ffffff">$1.20</text>
+    <text x="790" y="333" font-size="30" font-weight="700" fill="#2b2420">$2.40</text>
+
+    <!-- Opus 5 합계 기준선과 감소 표시 -->
+    <line x1="1040" y1="236" x2="1040" y2="384" stroke="#d97757" stroke-width="2" stroke-dasharray="6 6"/>
+    <text x="908" y="426" font-size="28" font-weight="700" text-anchor="middle" fill="#c2543a">약 31% 감소</text>
+    <line x1="776" y1="384" x2="1040" y2="384" stroke="#c2543a" stroke-width="2"/>
+    <polygon points="788,378 788,390 776,384" fill="#c2543a"/>
+
+    <!-- 범례 -->
+    <rect x="200" y="446" width="22" height="22" fill="#d97757"/>
+    <text x="232" y="464" font-size="20" fill="#2b2420">캐시 읽기</text>
+    <rect x="360" y="446" width="22" height="22" fill="#8a7f76"/>
+    <text x="392" y="464" font-size="20" fill="#2b2420">신규 입력</text>
+    <rect x="520" y="446" width="22" height="22" fill="#3a2a22"/>
+    <text x="552" y="464" font-size="20" fill="#2b2420">출력 (thinking 포함)</text>
+    <text x="50" y="500" font-size="15" fill="#6b5f56">Opus 5.5 막대는 단가로 다시 계산한 값이에요. 신규 입력 200K × $4/M = $0.80, 출력 60K × $20/M = $1.20, 합계 $2.40.</text>
+  </g>
+</svg>
