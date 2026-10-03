@@ -13,7 +13,7 @@
 
   <!-- 제목 -->
   <text x="64" y="156" font-family="'Noto Sans KR','Apple SD Gothic Neo',sans-serif" font-size="34" fill="#e7e5e4">Opus 5.5에게 일을 맡기는 법</text>
-  <text x="64" y="232" font-family="'Noto Sans KR','Apple SD Gothic Neo',sans-serif" font-size="64" font-weight="700" fill="#ffffff">끝나는 조건부터 말하세요</text>
+  <text x="64" y="232" font-family="'Noto Sans KR','Apple SD Gothic Neo',sans-serif" font-size="64" font-weight="700" fill="#ffffff">완료 조건부터 알려주세요</text>
   <text x="64" y="278" font-family="'Noto Sans KR','Apple SD Gothic Neo',sans-serif" font-size="22" fill="#a8a29e">Getting the most out of Opus 5.5 in Claude and Claude Code</text>
 
   <!-- 경로 -->
