@@ -1,0 +1,112 @@
+<svg class="art-diagram-wide" role="img" id="perf-journeys" width="651.5" height="679" viewBox="33.5 90.5 651.5 679" xmlns="http://www.w3.org/2000/svg" style="background:#faf9f5"><!-- Source: https://claude.dev/blog/how-we-made-claude-ai-faster/; original SVG geometry and data retained. Korean labels only. -->
+<style>#perf-journeys text{font-family:&#x27;Apple SD Gothic Neo&#x27;,&#x27;Noto Sans KR&#x27;,system-ui,sans-serif}#perf-journeys .tnum{font-variant-numeric:tabular-nums}#perf-journeys .mo{font-family:&#x27;Anthropic Mono&#x27;,&#x27;Anthropic Mono Fallback&#x27;,ui-monospace,monospace}#perf-journeys .up{text-transform:uppercase;letter-spacing:.02em}</style>
+<text x="36" y="104" font-size="12" style="fill:#141413"><tspan class="mo up" font-size="13" font-weight="500" style="fill:#141413">앱 실행</tspan></text>
+<rect x="36.5" y="116.5" width="155" height="119.25" fill="none" stroke-width="1" style="stroke:#1414131c"/>
+<text x="48" y="138" font-size="15" font-weight="500" style="fill:#141413">claude.ai</text>
+<text x="48" y="154" font-size="12" style="fill:#65645e">웹 · 첫 로딩</text>
+<text class="tnum" x="48" y="191.25" font-size="12" style="fill:#141413"><tspan font-size="26" font-weight="600" style="fill:#141413">5.6x</tspan><tspan dx="5" font-size="12" style="fill:#65645e">빨라짐</tspan></text>
+<rect x="48" y="200.25" width="88" height="4" style="fill:#8e8c87"/>
+<rect x="48" y="206.25" width="15.69" height="4" style="fill:#c15f3c"/>
+<text class="tnum" x="180" y="209.75" text-anchor="end" font-size="13" style="fill:#3d3d3a">−82%</text>
+<text class="tnum" x="48" y="225.25" font-size="12" style="fill:#4c4b45">3,085 → <tspan font-weight="600" style="fill:#141413">550</tspan> ms</text>
+<rect x="200.5" y="116.5" width="155" height="119.25" fill="none" stroke-width="1" style="stroke:#1414131c"/>
+<text x="212" y="138" font-size="15" font-weight="500" style="fill:#141413">Desktop app</text>
+<text x="212" y="154" font-size="12" style="fill:#65645e">앱 첫 실행</text>
+<text class="tnum" x="212" y="191.25" font-size="12" style="fill:#141413"><tspan font-size="26" font-weight="600" style="fill:#141413">1.9x</tspan><tspan dx="5" font-size="12" style="fill:#65645e">빨라짐</tspan></text>
+<rect x="212" y="200.25" width="88" height="4" style="fill:#8e8c87"/>
+<rect x="212" y="206.25" width="46.41" height="4" style="fill:#c15f3c"/>
+<text class="tnum" x="344" y="209.75" text-anchor="end" font-size="13" style="fill:#3d3d3a">−47%</text>
+<text class="tnum" x="212" y="225.25" font-size="12" style="fill:#4c4b45">6,310 → <tspan font-weight="600" style="fill:#141413">3,328</tspan> ms</text>
+<text x="36" y="270.25" font-size="12" style="fill:#141413"><tspan class="mo up" font-size="13" font-weight="500" style="fill:#141413">새 대화 시작</tspan></text>
+<rect x="36.5" y="282.75" width="155" height="119.25" fill="none" stroke-width="1" style="stroke:#1414131c"/>
+<text x="48" y="304.25" font-size="15" font-weight="500" style="fill:#141413">Chat</text>
+<text x="48" y="320.25" font-size="12" style="fill:#65645e">웹</text>
+<text class="tnum" x="48" y="357.5" font-size="12" style="fill:#141413"><tspan font-size="26" font-weight="600" style="fill:#141413">1.5x</tspan><tspan dx="5" font-size="12" style="fill:#65645e">빨라짐</tspan></text>
+<rect x="48" y="366.5" width="88" height="4" style="fill:#8e8c87"/>
+<rect x="48" y="372.5" width="57.75" height="4" style="fill:#c15f3c"/>
+<text class="tnum" x="180" y="376" text-anchor="end" font-size="13" style="fill:#3d3d3a">−34%</text>
+<text class="tnum" x="48" y="391.5" font-size="12" style="fill:#4c4b45">416 → <tspan font-weight="600" style="fill:#141413">273</tspan> ms</text>
+<rect x="200.5" y="282.75" width="155" height="119.25" fill="none" stroke-width="1" style="stroke:#1414131c"/>
+<text x="212" y="304.25" font-size="15" font-weight="500" style="fill:#141413">Chat</text>
+<text x="212" y="320.25" font-size="12" style="fill:#65645e">데스크톱</text>
+<text class="tnum" x="212" y="357.5" font-size="12" style="fill:#141413"><tspan font-size="26" font-weight="600" style="fill:#141413">2.1x</tspan><tspan dx="5" font-size="12" style="fill:#65645e">빨라짐</tspan></text>
+<rect x="212" y="366.5" width="88" height="4" style="fill:#8e8c87"/>
+<rect x="212" y="372.5" width="42.85" height="4" style="fill:#c15f3c"/>
+<text class="tnum" x="344" y="376" text-anchor="end" font-size="13" style="fill:#3d3d3a">−51%</text>
+<text class="tnum" x="212" y="391.5" font-size="12" style="fill:#4c4b45">460 → <tspan font-weight="600" style="fill:#141413">224</tspan> ms</text>
+<rect x="364.5" y="282.75" width="155" height="119.25" fill="none" stroke-width="1" style="stroke:#1414131c"/>
+<text x="376" y="304.25" font-size="15" font-weight="500" style="fill:#141413">Claude Code</text>
+<text x="376" y="320.25" font-size="12" style="fill:#65645e">데스크톱</text>
+<text class="tnum" x="376" y="357.5" font-size="12" style="fill:#141413"><tspan font-size="26" font-weight="600" style="fill:#141413">2.4x</tspan><tspan dx="5" font-size="12" style="fill:#65645e">빨라짐</tspan></text>
+<rect x="376" y="366.5" width="88" height="4" style="fill:#8e8c87"/>
+<rect x="376" y="372.5" width="36.48" height="4" style="fill:#c15f3c"/>
+<text class="tnum" x="508" y="376" text-anchor="end" font-size="13" style="fill:#3d3d3a">−59%</text>
+<text class="tnum" x="376" y="391.5" font-size="12" style="fill:#4c4b45">837 → <tspan font-weight="600" style="fill:#141413">347</tspan> ms</text>
+<text x="36" y="436.5" font-size="12" style="fill:#141413"><tspan class="mo up" font-size="13" font-weight="500" style="fill:#141413">대화 불러오기</tspan></text>
+<rect x="36.5" y="449" width="155" height="119.25" fill="none" stroke-width="1" style="stroke:#1414131c"/>
+<text x="48" y="470.5" font-size="15" font-weight="500" style="fill:#141413">Chat</text>
+<text x="48" y="486.5" font-size="12" style="fill:#65645e">웹</text>
+<text class="tnum" x="48" y="523.75" font-size="12" style="fill:#141413"><tspan font-size="26" font-weight="600" style="fill:#141413">2.4x</tspan><tspan dx="5" font-size="12" style="fill:#65645e">빨라짐</tspan></text>
+<rect x="48" y="532.75" width="88" height="4" style="fill:#8e8c87"/>
+<rect x="48" y="538.75" width="36.51" height="4" style="fill:#c15f3c"/>
+<text class="tnum" x="180" y="542.25" text-anchor="end" font-size="13" style="fill:#3d3d3a">−59%</text>
+<text class="tnum" x="48" y="557.75" font-size="12" style="fill:#4c4b45">1,557 → <tspan font-weight="600" style="fill:#141413">646</tspan> ms</text>
+<rect x="200.5" y="449" width="155" height="119.25" fill="none" stroke-width="1" style="stroke:#1414131c"/>
+<text x="212" y="470.5" font-size="15" font-weight="500" style="fill:#141413">Chat</text>
+<text x="212" y="486.5" font-size="12" style="fill:#65645e">데스크톱</text>
+<text class="tnum" x="212" y="523.75" font-size="12" style="fill:#141413"><tspan font-size="26" font-weight="600" style="fill:#141413">2.8x</tspan><tspan dx="5" font-size="12" style="fill:#65645e">빨라짐</tspan></text>
+<rect x="212" y="532.75" width="88" height="4" style="fill:#8e8c87"/>
+<rect x="212" y="538.75" width="31.74" height="4" style="fill:#c15f3c"/>
+<text class="tnum" x="344" y="542.25" text-anchor="end" font-size="13" style="fill:#3d3d3a">−64%</text>
+<text class="tnum" x="212" y="557.75" font-size="12" style="fill:#4c4b45">1,353 → <tspan font-weight="600" style="fill:#141413">488</tspan> ms</text>
+<rect x="364.5" y="449" width="155" height="119.25" fill="none" stroke-width="1" style="stroke:#1414131c"/>
+<text x="376" y="470.5" font-size="15" font-weight="500" style="fill:#141413">Claude Cowork</text>
+<text x="376" y="486.5" font-size="12" style="fill:#65645e">데스크톱 · 클라우드</text>
+<text class="tnum" x="376" y="523.75" font-size="12" style="fill:#141413"><tspan font-size="26" font-weight="600" style="fill:#141413">3.5x</tspan><tspan dx="5" font-size="12" style="fill:#65645e">빨라짐</tspan></text>
+<rect x="376" y="532.75" width="88" height="4" style="fill:#8e8c87"/>
+<rect x="376" y="538.75" width="24.97" height="4" style="fill:#c15f3c"/>
+<text class="tnum" x="508" y="542.25" text-anchor="end" font-size="13" style="fill:#3d3d3a">−72%</text>
+<text class="tnum" x="376" y="557.75" font-size="12" style="fill:#4c4b45">2,566 → <tspan font-weight="600" style="fill:#141413">728</tspan> ms</text>
+<rect x="528.5" y="449" width="155" height="119.25" fill="none" stroke-width="1" style="stroke:#1414131c"/>
+<text x="540" y="470.5" font-size="15" font-weight="500" style="fill:#141413">Claude Code</text>
+<text x="540" y="486.5" font-size="12" style="fill:#65645e">데스크톱</text>
+<text class="tnum" x="540" y="523.75" font-size="12" style="fill:#141413"><tspan font-size="26" font-weight="600" style="fill:#141413">2.1x</tspan><tspan dx="5" font-size="12" style="fill:#65645e">빨라짐</tspan></text>
+<rect x="540" y="532.75" width="88" height="4" style="fill:#8e8c87"/>
+<rect x="540" y="538.75" width="42.3" height="4" style="fill:#c15f3c"/>
+<text class="tnum" x="672" y="542.25" text-anchor="end" font-size="13" style="fill:#3d3d3a">−52%</text>
+<text class="tnum" x="540" y="557.75" font-size="12" style="fill:#4c4b45">545 → <tspan font-weight="600" style="fill:#141413">262</tspan> ms</text>
+<text x="36" y="602.75" font-size="12" style="fill:#141413"><tspan class="mo up" font-size="13" font-weight="500" style="fill:#141413">메시지 전송</tspan><tspan dx="10" font-size="12" style="fill:#65645e">클라이언트 처리 시간</tspan></text>
+<rect x="36.5" y="615.25" width="155" height="119.25" fill="none" stroke-width="1" style="stroke:#1414131c"/>
+<text x="48" y="636.75" font-size="15" font-weight="500" style="fill:#141413">Chat</text>
+<text x="48" y="652.75" font-size="12" style="fill:#65645e">웹</text>
+<text class="tnum" x="48" y="690" font-size="12" style="fill:#141413"><tspan font-size="26" font-weight="600" style="fill:#141413">3.1x</tspan><tspan dx="5" font-size="12" style="fill:#65645e">빨라짐</tspan></text>
+<rect x="48" y="699" width="88" height="4" style="fill:#8e8c87"/>
+<rect x="48" y="705" width="28.84" height="4" style="fill:#c15f3c"/>
+<text class="tnum" x="180" y="708.5" text-anchor="end" font-size="13" style="fill:#3d3d3a">−67%</text>
+<text class="tnum" x="48" y="724" font-size="12" style="fill:#4c4b45">180 → <tspan font-weight="600" style="fill:#141413">59</tspan> ms</text>
+<rect x="200.5" y="615.25" width="155" height="119.25" fill="none" stroke-width="1" style="stroke:#1414131c"/>
+<text x="212" y="636.75" font-size="15" font-weight="500" style="fill:#141413">Chat</text>
+<text x="212" y="652.75" font-size="12" style="fill:#65645e">데스크톱</text>
+<text class="tnum" x="212" y="690" font-size="12" style="fill:#141413"><tspan font-size="26" font-weight="600" style="fill:#141413">2.2x</tspan><tspan dx="5" font-size="12" style="fill:#65645e">빨라짐</tspan></text>
+<rect x="212" y="699" width="88" height="4" style="fill:#8e8c87"/>
+<rect x="212" y="705" width="40.23" height="4" style="fill:#c15f3c"/>
+<text class="tnum" x="344" y="708.5" text-anchor="end" font-size="13" style="fill:#3d3d3a">−54%</text>
+<text class="tnum" x="212" y="724" font-size="12" style="fill:#4c4b45">140 → <tspan font-weight="600" style="fill:#141413">64</tspan> ms</text>
+<rect x="364.5" y="615.25" width="155" height="119.25" fill="none" stroke-width="1" style="stroke:#1414131c"/>
+<text x="376" y="636.75" font-size="15" font-weight="500" style="fill:#141413">Claude Cowork</text>
+<text x="376" y="652.75" font-size="12" style="fill:#65645e">데스크톱 · 클라우드</text>
+<text class="tnum" x="376" y="690" font-size="12" style="fill:#141413"><tspan font-size="26" font-weight="600" style="fill:#141413">19x</tspan><tspan dx="5" font-size="12" style="fill:#65645e">빨라짐</tspan></text>
+<rect x="376" y="699" width="88" height="4" style="fill:#8e8c87"/>
+<rect x="376" y="705" width="4.55" height="4" style="fill:#c15f3c"/>
+<text class="tnum" x="508" y="708.5" text-anchor="end" font-size="13" style="fill:#3d3d3a">−95%</text>
+<text class="tnum" x="376" y="724" font-size="12" style="fill:#4c4b45">928 → <tspan font-weight="600" style="fill:#141413">48</tspan> ms</text>
+<rect x="528.5" y="615.25" width="155" height="119.25" fill="none" stroke-width="1" style="stroke:#1414131c"/>
+<text x="540" y="636.75" font-size="15" font-weight="500" style="fill:#141413">Claude Code</text>
+<text x="540" y="652.75" font-size="12" style="fill:#65645e">데스크톱</text>
+<text class="tnum" x="540" y="690" font-size="12" style="fill:#141413"><tspan font-size="26" font-weight="600" style="fill:#141413">4.8x</tspan><tspan dx="5" font-size="12" style="fill:#65645e">빨라짐</tspan></text>
+<rect x="540" y="699" width="88" height="4" style="fill:#8e8c87"/>
+<rect x="540" y="705" width="18.3" height="4" style="fill:#c15f3c"/>
+<text class="tnum" x="672" y="708.5" text-anchor="end" font-size="13" style="fill:#3d3d3a">−79%</text>
+<text class="tnum" x="540" y="724" font-size="12" style="fill:#4c4b45">250 → <tspan font-weight="600" style="fill:#141413">52</tspan> ms</text>
+<text x="36" y="765" font-size="12" style="fill:#65645e">4개 여정의 13개 측정: 평균 3.1배 빨라짐 (기하평균).</text>
+</svg>

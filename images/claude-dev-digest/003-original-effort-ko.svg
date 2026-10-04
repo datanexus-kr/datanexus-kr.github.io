@@ -1,0 +1,96 @@
+<svg class="art-diagram-wide" role="img" id="effort-curve-tb3" width="634" height="468" viewBox="18.5 90.5 666 484" xmlns="http://www.w3.org/2000/svg" style="background:#faf9f5"><!-- Source: https://claude.dev/blog/spending-your-effort/; original SVG geometry and data retained. Korean labels only. -->
+<style>#effort-curve-tb3 text{font-family:&#x27;Apple SD Gothic Neo&#x27;,&#x27;Noto Sans KR&#x27;,system-ui,sans-serif}#effort-curve-tb3 .tnum{font-variant-numeric:tabular-nums}</style><g transform="translate(20 66)"><g class="tnum" font-size="12" style="fill:#65645e">
+<text transform="translate(25.0 253.5) rotate(-90)" text-anchor="middle" font-size="13">시도 중 통과한 비율</text>
+<line x1="41.5" x2="633.0" y1="411.00" y2="411.00" stroke-width="1" style="stroke:#1414131c"/>
+<text x="41.5" y="406.00">20%</text>
+<line x1="41.5" x2="633.0" y1="341.00" y2="341.00" stroke-width="1" style="stroke:#1414131c"/>
+<text x="41.5" y="336.00">30%</text>
+<line x1="41.5" x2="633.0" y1="271.00" y2="271.00" stroke-width="1" style="stroke:#1414131c"/>
+<text x="41.5" y="266.00">40%</text>
+<line x1="41.5" x2="633.0" y1="201.00" y2="201.00" stroke-width="1" style="stroke:#1414131c"/>
+<text x="41.5" y="196.00">50%</text>
+<line x1="41.5" x2="633.0" y1="131.00" y2="131.00" stroke-width="1" style="stroke:#1414131c"/>
+<text x="41.5" y="126.00">60%</text>
+<line x1="41.5" x2="633.0" y1="61.00" y2="61.00" stroke-width="1" style="stroke:#1414131c"/>
+<text x="41.5" y="56.00">70%</text>
+</g>
+<line x1="41.5" x2="633.0" y1="446" y2="446" stroke-width="1" style="stroke:#14141338"/>
+<g class="tnum" font-size="12" style="fill:#65645e">
+<line x1="128.9" x2="128.9" y1="446" y2="451" stroke-width="1" style="stroke:#14141338"/>
+<text x="128.9" y="466" text-anchor="middle">50k</text>
+<line x1="303.6" x2="303.6" y1="446" y2="451" stroke-width="1" style="stroke:#14141338"/>
+<text x="303.6" y="466" text-anchor="middle">100k</text>
+<line x1="478.3" x2="478.3" y1="446" y2="451" stroke-width="1" style="stroke:#14141338"/>
+<text x="478.3" y="466" text-anchor="middle">200k</text>
+<line x1="580.5" x2="580.5" y1="446" y2="451" stroke-width="1" style="stroke:#14141338"/>
+<text x="580.5" y="466" text-anchor="middle">300k</text>
+<text x="337.3" y="495.5" text-anchor="middle" font-size="13">시도당 토큰 중앙값 (로그 눈금)</text>
+</g>
+<line class="note" x1="323.1" y1="139.1" x2="473.7" y2="144.6" stroke-width="1" stroke-dasharray="3 4" stroke-linecap="round" style="stroke:#14141338"/>
+<g class="series">
+<path d="M178.9 392.8 L271.3 317.2 L329.9 294.8 L393.8 247.2 L437.3 247.2" fill="none" stroke-width="1" stroke-dasharray="1.5 3" stroke-linejoin="round" stroke-linecap="round" style="stroke:#8e8c87"/>
+<circle cx="178.9" cy="392.8" r="4.5" stroke-width="1" style="fill:#8e8c87;stroke:#faf9f5"/>
+<circle cx="271.3" cy="317.2" r="4.5" stroke-width="1" style="fill:#8e8c87;stroke:#faf9f5"/>
+<circle cx="329.9" cy="294.8" r="4.5" stroke-width="1" style="fill:#8e8c87;stroke:#faf9f5"/>
+<circle cx="393.8" cy="247.2" r="4.5" stroke-width="1" style="fill:#8e8c87;stroke:#faf9f5"/>
+<circle cx="437.3" cy="247.2" r="4.5" stroke-width="1" style="fill:#8e8c87;stroke:#faf9f5"/>
+</g>
+<g class="series">
+<path d="M231.0 362.7 L341.0 287.1 L422.1 247.2 L480.8 222.7 L533.5 196.8" fill="none" stroke-width="1" stroke-dasharray="5 3" stroke-linejoin="round" stroke-linecap="round" style="stroke:#65645e"/>
+<circle cx="231.0" cy="362.7" r="4.5" stroke-width="1" style="fill:#65645e;stroke:#faf9f5"/>
+<circle cx="341.0" cy="287.1" r="4.5" stroke-width="1" style="fill:#65645e;stroke:#faf9f5"/>
+<circle cx="422.1" cy="247.2" r="4.5" stroke-width="1" style="fill:#65645e;stroke:#faf9f5"/>
+<circle cx="480.8" cy="222.7" r="4.5" stroke-width="1" style="fill:#65645e;stroke:#faf9f5"/>
+<circle cx="533.5" cy="196.8" r="4.5" stroke-width="1" style="fill:#65645e;stroke:#faf9f5"/>
+</g>
+<g class="series">
+<path d="M191.1 327.0 L271.3 271.0 L347.4 226.9 L444.7 173.0 L485.8 145.0" fill="none" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" style="stroke:#c15f3c"/>
+<circle cx="191.1" cy="327.0" r="4.5" stroke-width="1" style="fill:#c15f3c;stroke:#faf9f5"/>
+<circle cx="271.3" cy="271.0" r="4.5" stroke-width="1" style="fill:#c15f3c;stroke:#faf9f5"/>
+<circle cx="347.4" cy="226.9" r="4.5" stroke-width="1" style="fill:#c15f3c;stroke:#faf9f5"/>
+<circle cx="444.7" cy="173.0" r="4.5" stroke-width="1" style="fill:#c15f3c;stroke:#faf9f5"/>
+<circle cx="485.8" cy="145.0" r="4.5" stroke-width="1" style="fill:#c15f3c;stroke:#faf9f5"/>
+</g>
+<g class="series">
+<path d="M90.9 294.8 L240.9 168.8 L311.1 138.7 L451.7 112.8 L559.5 91.1" fill="none" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" style="stroke:#3d3d3a"/>
+<circle cx="90.9" cy="294.8" r="4.5" stroke-width="1" style="fill:#3d3d3a;stroke:#faf9f5"/>
+<circle cx="240.9" cy="168.8" r="4.5" stroke-width="1" style="fill:#3d3d3a;stroke:#faf9f5"/>
+<circle cx="311.1" cy="138.7" r="4.5" stroke-width="1" style="fill:#3d3d3a;stroke:#faf9f5"/>
+<circle cx="451.7" cy="112.8" r="4.5" stroke-width="1" style="fill:#3d3d3a;stroke:#faf9f5"/>
+<circle cx="559.5" cy="91.1" r="4.5" stroke-width="1" style="fill:#3d3d3a;stroke:#faf9f5"/>
+</g>
+<text class="note" x="321.6" y="164" text-anchor="start" font-size="13" stroke-width="3" stroke-linejoin="round" paint-order="stroke" style="fill:#3d3d3a;stroke:#faf9f5">
+<tspan x="324" dy="0">같은 점수,</tspan>
+<tspan x="324" dy="17">토큰은 절반</tspan>
+</text>
+<g font-size="12" stroke-width="3" stroke-linejoin="round" paint-order="stroke" style="fill:#65645e;stroke:#faf9f5">
+<text x="166.9" y="396.8" text-anchor="end">low</text>
+<text x="259.3" y="321.2" text-anchor="end">medium</text>
+<text x="393.8" y="235.2" text-anchor="middle">xhigh</text>
+<text x="231.0" y="382.7" text-anchor="middle">low</text>
+<text x="353.1" y="303.1" text-anchor="start">medium</text>
+<text x="179.0" y="331.0" text-anchor="end">low</text>
+<text x="259.3" y="275.0" text-anchor="end">medium</text>
+<text x="335.3" y="230.9" text-anchor="end">high</text>
+<text x="456.8" y="189.0" text-anchor="start">xhigh</text>
+<text x="78.8" y="298.8" text-anchor="end">low</text>
+<text x="228.8" y="172.8" text-anchor="end">medium</text>
+<text x="311.1" y="126.7" text-anchor="middle">high</text>
+<text x="451.7" y="100.8" text-anchor="middle">xhigh</text>
+</g>
+<g class="mname">
+<text x="571.6" y="96.1" font-size="14" font-weight="500" stroke-width="3" stroke-linejoin="round" paint-order="stroke" style="fill:#141413;stroke:#faf9f5">Opus 5.5</text>
+<text x="571.6" y="113.1" font-size="12" stroke-width="3" stroke-linejoin="round" paint-order="stroke" style="fill:#65645e;stroke:#faf9f5">max</text>
+</g>
+<g class="mname">
+<text x="497.9" y="150.0" font-size="14" font-weight="500" stroke-width="3" stroke-linejoin="round" paint-order="stroke" style="fill:#141413;stroke:#faf9f5">Fable 5.1</text>
+<text x="497.9" y="167.0" font-size="12" stroke-width="3" stroke-linejoin="round" paint-order="stroke" style="fill:#65645e;stroke:#faf9f5">max</text>
+</g>
+<g class="mname">
+<text x="545.6" y="201.8" font-size="14" font-weight="500" stroke-width="3" stroke-linejoin="round" paint-order="stroke" style="fill:#141413;stroke:#faf9f5">Opus 5</text>
+<text x="545.6" y="218.8" font-size="12" stroke-width="3" stroke-linejoin="round" paint-order="stroke" style="fill:#65645e;stroke:#faf9f5">max</text>
+</g>
+<g class="mname">
+<text x="449.4" y="257.2" font-size="14" font-weight="500" stroke-width="3" stroke-linejoin="round" paint-order="stroke" style="fill:#141413;stroke:#faf9f5">Fable 5</text>
+<text x="449.4" y="274.2" font-size="12" stroke-width="3" stroke-linejoin="round" paint-order="stroke" style="fill:#65645e;stroke:#faf9f5">max</text>
+</g></g></svg>

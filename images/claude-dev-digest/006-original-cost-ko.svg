@@ -1,0 +1,54 @@
+<svg class="art-diagram-wide" role="img" id="eval-cost-path" width="634" height="393.5" viewBox="-16 -8 666 409.5" xmlns="http://www.w3.org/2000/svg" style="background:#faf9f5"><!-- Source: https://claude.dev/blog/automating-eval-design-and-hillclimbing/; original SVG geometry and data retained. Korean labels only. -->
+<style>#eval-cost-path text{font-family:&#x27;Apple SD Gothic Neo&#x27;,&#x27;Noto Sans KR&#x27;,system-ui,sans-serif}#eval-cost-path .tnum{font-variant-numeric:tabular-nums}</style>
+<g class="tnum" font-size="12" style="fill:#65645e">
+<line x1="68.0" x2="618.0" y1="286.2" y2="286.2" stroke-width="1" style="stroke:#1414131c"/>
+<text x="62.0" y="290.4" text-anchor="end">70%</text>
+<line x1="68.0" x2="618.0" y1="201.6" y2="201.6" stroke-width="1" style="stroke:#1414131c"/>
+<text x="62.0" y="205.8" text-anchor="end">80%</text>
+<line x1="68.0" x2="618.0" y1="117.0" y2="117.0" stroke-width="1" style="stroke:#1414131c"/>
+<text x="62.0" y="121.2" text-anchor="end">90%</text>
+<line x1="68.0" x2="618.0" y1="32.5" y2="32.5" stroke-width="1" style="stroke:#1414131c"/>
+<text x="62.0" y="36.7" text-anchor="end">100%</text>
+</g>
+<line x1="68.0" x2="618.0" y1="330" y2="330" stroke-width="1" style="stroke:#14141338"/>
+<g class="tnum" font-size="12" style="fill:#65645e">
+<line x1="154.8" x2="154.8" y1="330" y2="335" stroke-width="1" style="stroke:#14141338"/>
+<text x="154.8" y="350" text-anchor="middle">1¢</text>
+<line x1="324.6" x2="324.6" y1="330" y2="335" stroke-width="1" style="stroke:#14141338"/>
+<text x="324.6" y="350" text-anchor="middle">2¢</text>
+<line x1="494.3" x2="494.3" y1="330" y2="335" stroke-width="1" style="stroke:#14141338"/>
+<text x="494.3" y="350" text-anchor="middle">4¢</text>
+</g>
+<text x="343.1" y="379.5" text-anchor="middle" font-size="13" style="fill:#65645e">티켓당 비용 (로그 눈금)</text>
+<text transform="translate(10.5 177.0) rotate(-90)" text-anchor="middle" font-size="13" style="fill:#65645e">학습용 티켓의 결정 정확도</text>
+<line x1="68.0" x2="618.0" y1="249.0" y2="249.0" stroke-width="1" stroke-dasharray="3 4" stroke-linecap="round" style="stroke:#14141338"/>
+<text x="74.1" y="243.0" font-size="12" stroke-width="3" stroke-linejoin="round" paint-order="stroke" style="fill:#65645e;stroke:#faf9f5">출발점 정확도</text>
+<path d="M518.6 243.8 L321.9 140.8" fill="none" stroke-width="1" stroke-dasharray="4 3" stroke-linecap="round" style="stroke:#65645e"/>
+<path d="M328.1 140.1 L321.9 140.8 L324.8 146.3" fill="none" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" style="stroke:#65645e"/>
+<path d="M300.8 135.0 L163.6 127.0" fill="none" stroke-width="1" stroke-dasharray="4 3" stroke-linecap="round" style="stroke:#65645e"/>
+<path d="M168.9 123.8 L163.6 127.0 L168.4 130.8" fill="none" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" style="stroke:#65645e"/>
+<path d="M153.0 115.3 L156.6 52.7" fill="none" stroke-width="1" stroke-dasharray="4 3" stroke-linecap="round" style="stroke:#65645e"/>
+<path d="M159.9 57.9 L156.6 52.7 L152.8 57.5" fill="none" stroke-width="1" stroke-linejoin="round" stroke-linecap="round" style="stroke:#65645e"/>
+<g class="series">
+<circle cx="528.5" cy="249.0" r="4.5" stroke-width="1" style="fill:#c15f3c;stroke:#faf9f5"/>
+<circle cx="312.0" cy="135.6" r="4.5" stroke-width="1" style="fill:#c15f3c;stroke:#faf9f5"/>
+<circle cx="152.4" cy="126.3" r="4.5" stroke-width="1" style="fill:#c15f3c;stroke:#faf9f5"/>
+<circle cx="157.3" cy="41.8" r="4.5" stroke-width="1" style="fill:#c15f3c;stroke:#faf9f5"/>
+</g>
+<circle cx="355.4" cy="272.0" r="8.5" stroke-width="1" style="fill:#faf9f5;stroke:#3d3d3a"/>
+<text x="355.4" y="276.0" text-anchor="middle" font-size="11" font-weight="500" style="fill:#3d3d3a">1</text>
+<text class="mname" x="370.2" y="277.0" font-size="14" font-weight="500" stroke-width="3" stroke-linejoin="round" paint-order="stroke" style="fill:#141413;stroke:#faf9f5">Opus 4.8, high effort</text>
+<text class="tnum" x="370.2" y="294.0" font-size="12" stroke-width="3" stroke-linejoin="round" paint-order="stroke" style="fill:#65645e;stroke:#faf9f5">기본 설정: 74.4%, 4.6¢</text>
+<circle cx="332.9" cy="102.6" r="8.5" stroke-width="1" style="fill:#faf9f5;stroke:#3d3d3a"/>
+<text x="332.9" y="106.6" text-anchor="middle" font-size="11" font-weight="500" style="fill:#3d3d3a">2</text>
+<text class="mname" x="347.7" y="107.6" font-size="14" font-weight="500" stroke-width="3" stroke-linejoin="round" paint-order="stroke" style="fill:#141413;stroke:#faf9f5">Opus 5.5, low effort</text>
+<text class="tnum" x="347.7" y="124.6" font-size="12" stroke-width="3" stroke-linejoin="round" paint-order="stroke" style="fill:#65645e;stroke:#faf9f5">프롬프트 정리: 87.8%, 1.9¢</text>
+<circle cx="165.1" cy="151.3" r="8.5" stroke-width="1" style="fill:#faf9f5;stroke:#3d3d3a"/>
+<text x="165.1" y="155.3" text-anchor="middle" font-size="11" font-weight="500" style="fill:#3d3d3a">3</text>
+<text class="mname" x="179.9" y="156.3" font-size="14" font-weight="500" stroke-width="3" stroke-linejoin="round" paint-order="stroke" style="fill:#141413;stroke:#faf9f5">Sonnet 5, low effort</text>
+<text class="tnum" x="179.9" y="173.3" font-size="12" stroke-width="3" stroke-linejoin="round" paint-order="stroke" style="fill:#65645e;stroke:#faf9f5">같은 프롬프트: 88.9%, 1¢</text>
+<circle cx="180.2" cy="41.8" r="8.5" stroke-width="1" style="fill:#faf9f5;stroke:#3d3d3a"/>
+<text x="180.2" y="45.8" text-anchor="middle" font-size="11" font-weight="500" style="fill:#3d3d3a">4</text>
+<text class="mname" x="195.1" y="46.8" font-size="14" font-weight="500" stroke-width="3" stroke-linejoin="round" paint-order="stroke" style="fill:#141413;stroke:#faf9f5">Sonnet 5, low effort</text>
+<text class="tnum" x="195.1" y="63.8" font-size="12" stroke-width="3" stroke-linejoin="round" paint-order="stroke" style="fill:#65645e;stroke:#faf9f5">프롬프트 개선: 98.9%, 1¢</text>
+</svg>
