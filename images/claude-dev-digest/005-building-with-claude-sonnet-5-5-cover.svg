@@ -3,9 +3,9 @@
   <rect x="0" y="0" width="12" height="630" fill="#d97757"/>
   <g font-family="'Noto Sans KR','Apple SD Gothic Neo',sans-serif">
     <text x="60" y="90" font-size="24" font-weight="700" fill="#d97757">claude.dev 다이제스트 · 005</text>
-    <text x="60" y="210" font-size="50" font-weight="700" fill="#fafaf9">Sonnet 5.5로 갈아탈 때</text>
-    <text x="60" y="275" font-size="50" font-weight="700" fill="#fafaf9">먼저 확인할 것</text>
-    <text x="60" y="335" font-size="24" fill="#d6d3d1">Opus와의 선택 기준 · 가격 · 400 오류 함정</text>
+    <text x="60" y="210" font-size="50" font-weight="700" fill="#fafaf9">Sonnet 5.5,</text>
+    <text x="60" y="275" font-size="50" font-weight="700" fill="#fafaf9">언제 쓰면 좋을까요?</text>
+    <text x="60" y="335" font-size="24" fill="#d6d3d1">Opus와 비교하고, 바꾸기 전 확인할 설정</text>
     <text x="60" y="385" font-size="22" fill="#a8a29e">Building with Claude Sonnet 5.5</text>
 
     <rect x="60" y="470" width="290" height="56" rx="28" fill="#292524" stroke="#d97757" stroke-width="2"/>
@@ -33,6 +33,6 @@
     <rect x="720" y="430" width="340" height="32" rx="3" fill="#a8a29e"/>
     <text x="1070" y="454" font-size="22" font-weight="700" fill="#fafaf9">$20</text>
 
-    <text x="720" y="522" font-size="18" fill="#a8a29e">막대 길이는 가격에 비례</text>
+    <text x="720" y="522" font-size="18" fill="#a8a29e">막대가 길수록 비용이 큽니다</text>
   </g>
 </svg>

@@ -1,12 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Opus 5.5에서 작업 하나는 얼마일까. 같은 토큰 수로 계산한 예시 세션이 Opus 5 3.50달러에서 Opus 5.5 2.40달러로 약 31% 줄어드는 막대 비교">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Claude Code 비용, 어떻게 줄일까요? 같은 토큰 수로 계산한 예시 세션이 Opus 5 3.50달러에서 Opus 5.5 2.40달러로 약 31% 줄어드는 막대 비교">
   <rect width="1200" height="630" fill="#1c1917"/>
   <rect x="0" y="0" width="12" height="630" fill="#d97757"/>
   <g font-family="'Noto Sans KR','Apple SD Gothic Neo',sans-serif">
     <text x="80" y="110" font-size="26" font-weight="700" fill="#d97757">claude.dev 다이제스트 · 004</text>
-    <text x="80" y="240" font-size="58" font-weight="700" fill="#fafaf9">Opus 5.5에서</text>
-    <text x="80" y="315" font-size="58" font-weight="700" fill="#fafaf9">작업 하나는 얼마일까</text>
+    <text x="80" y="240" font-size="58" font-weight="700" fill="#fafaf9">Claude Code 비용,</text>
+    <text x="80" y="315" font-size="58" font-weight="700" fill="#fafaf9">어떻게 줄일까요?</text>
     <text x="80" y="385" font-size="28" fill="#a8a29e">What a task costs on Opus 5.5</text>
-    <text x="80" y="470" font-size="28" fill="#e7e5e4">단가표보다 턴 수와 캐시를 보세요</text>
+    <text x="80" y="470" font-size="28" fill="#e7e5e4">반복은 줄이고, 입력은 재사용하세요</text>
     <text x="80" y="570" font-size="22" fill="#78716c">원문 Addy Osmani · 2026-09-25</text>
 
     <!-- 막대 비교: 1달러 = 80px -->

@@ -1,21 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-labelledby="t d" font-family="'Noto Sans KR','Apple SD Gothic Neo',sans-serif">
-  <title id="t">effort는 똑똑함이 아니라 검증 예산이다</title>
+  <title id="t">Claude Code effort, 언제 높이면 좋을까?</title>
   <desc id="d">같은 운동 기록 앱 요청을 effort low, medium, high, max로 돌렸을 때 걸린 시간이 1.5분, 4분, 11분, 67분으로 늘어나는 막대 그래프</desc>
   <rect width="1200" height="630" fill="#1c1917"/>
   <rect x="0" y="0" width="12" height="630" fill="#d97757"/>
 
   <!-- 왼쪽 텍스트 -->
   <text x="70" y="96" font-size="26" font-weight="700" fill="#d97757">claude.dev 다이제스트 · 003</text>
-  <text x="70" y="226" font-size="50" font-weight="700" fill="#fafaf9">effort는 똑똑함이 아니라</text>
-  <text x="70" y="298" font-size="50" font-weight="700" fill="#d97757">검증 예산이다</text>
-  <text x="70" y="372" font-size="26" fill="#d6d3d1">Claude Code 레벨 고르는 법</text>
+  <text x="70" y="226" font-size="50" font-weight="700" fill="#fafaf9">Claude Code effort</text>
+  <text x="70" y="298" font-size="50" font-weight="700" fill="#d97757">언제 높이면 좋을까?</text>
+  <text x="70" y="372" font-size="26" fill="#d6d3d1">작업에 맞는 설정 고르는 법</text>
   <line x1="70" y1="414" x2="150" y2="414" stroke="#d97757" stroke-width="4"/>
   <text x="70" y="462" font-size="26" fill="#a8a29e">Using Claude Code:</text>
   <text x="70" y="498" font-size="26" fill="#a8a29e">Spending your effort</text>
   <text x="70" y="580" font-size="22" fill="#78716c">Thariq Shihipar · 2026-09-25</text>
 
   <!-- 오른쪽 막대: 같은 요청에 걸린 시간 (분), 67분 = 340px -->
-  <text x="720" y="96" font-size="24" font-weight="700" fill="#fafaf9">같은 요청, effort 레벨별 소요 시간</text>
+  <text x="720" y="96" font-size="24" font-weight="700" fill="#fafaf9">같은 요청, effort 설정별 걸린 시간</text>
   <line x1="700" y1="520" x2="1140" y2="520" stroke="#57534e" stroke-width="2"/>
 
   <rect x="710" y="512.4" width="76" height="7.6" fill="#78716c"/>
