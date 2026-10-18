@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-labelledby="t d">
+  <title id="t">무인 에이전트 자동화의 규칙</title>
+  <desc id="d">일정이 에이전트를 깨우고, 북마크부터 소스를 읽고, 게시 직전에 재확인하고, Slack 확인을 받은 뒤에만 기록을 갱신하는 흐름</desc>
+  <rect width="1200" height="630" fill="#1c1917"/>
+  <rect x="0" y="0" width="12" height="630" fill="#d97757"/>
+  <g font-family="'Noto Sans KR','Apple SD Gothic Neo',sans-serif">
+    <text x="72" y="78" font-size="24" fill="#d97757" font-weight="700">claude.dev 다이제스트 · 009</text>
+    <text x="72" y="168" font-size="56" fill="#faf6f1" font-weight="700">평일 아침 요약 에이전트,</text>
+    <text x="72" y="238" font-size="56" fill="#faf6f1" font-weight="700">조용히 틀리지 않게</text>
+    <text x="72" y="294" font-size="30" fill="#d97757" font-weight="700">북마크 · 재확인 · 게시 확인 · 예산 상한</text>
+
+    <!-- pipeline: 5 boxes, width 184, gap 34 -> 72..1128 -->
+    <g font-size="22" font-weight="700" text-anchor="middle">
+      <rect x="72" y="350" width="184" height="96" rx="12" fill="#2a2522" stroke="#6b625a" stroke-width="2"/>
+      <text x="164" y="392" fill="#e8e0d8">일정</text>
+      <text x="164" y="424" font-size="16" fill="#a89f96" font-weight="400">평일 아침 깨움</text>
+
+      <rect x="290" y="350" width="184" height="96" rx="12" fill="#2a2522" stroke="#6b625a" stroke-width="2"/>
+      <text x="382" y="392" fill="#e8e0d8">소스 읽기</text>
+      <text x="382" y="424" font-size="16" fill="#a89f96" font-weight="400">북마크부터</text>
+
+      <rect x="508" y="350" width="184" height="96" rx="12" fill="#2a2522" stroke="#6b625a" stroke-width="2"/>
+      <text x="600" y="392" fill="#e8e0d8">재확인</text>
+      <text x="600" y="424" font-size="16" fill="#a89f96" font-weight="400">게시 직전</text>
+
+      <rect x="726" y="350" width="184" height="96" rx="12" fill="#d97757" stroke="#d97757" stroke-width="2"/>
+      <text x="818" y="392" fill="#1c1917">게시 확인</text>
+      <text x="818" y="424" font-size="16" fill="#1c1917" font-weight="400" font-family="Menlo,monospace">ok · ts</text>
+
+      <rect x="944" y="350" width="184" height="96" rx="12" fill="#2a2522" stroke="#6b625a" stroke-width="2"/>
+      <text x="1036" y="392" fill="#e8e0d8">기록 갱신</text>
+      <text x="1036" y="424" font-size="16" fill="#a89f96" font-weight="400">원장 · 북마크</text>
+    </g>
+    <g stroke="#a89f96" stroke-width="3" fill="none">
+      <path d="M258 398 H286 M278 390 L286 398 L278 406"/>
+      <path d="M476 398 H504 M496 390 L504 398 L496 406"/>
+      <path d="M694 398 H722 M714 390 L722 398 L714 406"/>
+      <path d="M912 398 H940 M932 390 L940 398 L932 406"/>
+    </g>
+
+    <!-- failed read note -->
+    <rect x="290" y="482" width="402" height="56" rx="10" fill="none" stroke="#e5534b" stroke-width="2" stroke-dasharray="6 5"/>
+    <text x="491" y="517" font-size="18" fill="#ef7d76" text-anchor="middle">못 읽은 소스는 조용한 날이 아니다</text>
+    <path d="M382 446 V480" stroke="#e5534b" stroke-width="2" stroke-dasharray="4 4" fill="none"/>
+
+    <text x="1128" y="604" font-size="20" fill="#a89f96" text-anchor="end">Building effective agent automations</text>
+  </g>
+</svg>

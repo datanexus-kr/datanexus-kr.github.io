@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-labelledby="t d">
+  <title id="t">Claude Code 클라우드 세션</title>
+  <desc id="d">작업 세 개가 각자의 가상 머신에서 따로 돌아가고, 각각 브랜치로 끝나 풀 리퀘스트로 이어지는 구성</desc>
+  <rect width="1200" height="630" fill="#1c1917"/>
+  <rect x="0" y="0" width="12" height="630" fill="#d97757"/>
+  <g font-family="'Noto Sans KR','Apple SD Gothic Neo',sans-serif">
+    <text x="72" y="78" font-size="24" fill="#d97757" font-weight="700">claude.dev 다이제스트 · 008</text>
+    <text x="72" y="168" font-size="56" fill="#faf6f1" font-weight="700">Claude Code 클라우드 세션</text>
+    <text x="72" y="238" font-size="56" fill="#faf6f1" font-weight="700">노트북을 덮어도 이어지는 작업</text>
+    <text x="72" y="294" font-size="30" fill="#d97757" font-weight="700">작업 하나 · 가상 머신 하나 · 브랜치 하나</text>
+
+    <!-- three VMs: x 72..1128 -->
+    <g font-size="24" font-weight="700">
+      <rect x="72" y="336" width="320" height="150" rx="14" fill="#2a2522" stroke="#d97757" stroke-width="2" stroke-dasharray="8 6"/>
+      <text x="96" y="374" font-size="18" fill="#d97757">VM 1</text>
+      <text x="96" y="412" fill="#faf6f1">불안정한 테스트 수정</text>
+      <text x="96" y="452" font-size="18" fill="#a89f96" font-family="Menlo,monospace">40회 실행 · 실패 0</text>
+
+      <rect x="440" y="336" width="320" height="150" rx="14" fill="#2a2522" stroke="#d97757" stroke-width="2" stroke-dasharray="8 6"/>
+      <text x="464" y="374" font-size="18" fill="#d97757">VM 2</text>
+      <text x="464" y="412" fill="#faf6f1">API 문서 갱신</text>
+      <text x="464" y="452" font-size="18" fill="#a89f96" font-family="Menlo,monospace">문서 오류 5곳</text>
+
+      <rect x="808" y="336" width="320" height="150" rx="14" fill="#2a2522" stroke="#d97757" stroke-width="2" stroke-dasharray="8 6"/>
+      <text x="832" y="374" font-size="18" fill="#d97757">VM 3</text>
+      <text x="832" y="412" fill="#faf6f1">구조화 로그</text>
+      <text x="832" y="452" font-size="18" fill="#a89f96" font-family="Menlo,monospace">새 테스트 5개</text>
+    </g>
+
+    <!-- branches -->
+    <g stroke="#a89f96" stroke-width="3" fill="none">
+      <path d="M232 486 V516 M222 506 L232 516 L242 506"/>
+      <path d="M600 486 V516 M590 506 L600 516 L610 506"/>
+      <path d="M968 486 V516 M958 506 L968 516 L978 506"/>
+    </g>
+    <g font-size="20" fill="#e8e0d8" font-family="Menlo,monospace" text-anchor="middle">
+      <text x="232" y="546">branch</text>
+      <text x="600" y="546">branch</text>
+      <text x="968" y="546">branch</text>
+    </g>
+    <text x="72" y="604" font-size="20" fill="#a89f96">세 작업 모두 87초 안에 완료</text>
+    <text x="1128" y="604" font-size="20" fill="#a89f96" text-anchor="end">Claude Code in the cloud</text>
+  </g>
+</svg>

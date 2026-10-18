@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-labelledby="t d">
+  <title id="t">Claude Code 팀의 코드 리뷰</title>
+  <desc id="d">사전 검증, 필수 CI, AI 리뷰, 보안 리뷰, 위험도별 승인, 머지 큐와 플래그로 이어지는 여섯 겹의 검사와 그 아래 빠른 롤백</desc>
+  <rect width="1200" height="630" fill="#1c1917"/>
+  <rect x="0" y="0" width="12" height="630" fill="#d97757"/>
+  <g font-family="'Noto Sans KR','Apple SD Gothic Neo',sans-serif">
+    <text x="72" y="78" font-size="24" fill="#d97757" font-weight="700">claude.dev 다이제스트 · 010</text>
+    <text x="72" y="168" font-size="56" fill="#faf6f1" font-weight="700">에이전트가 쓴 코드,</text>
+    <text x="72" y="238" font-size="56" fill="#faf6f1" font-weight="700">리뷰는 이렇게 나눠 맡는다</text>
+    <text x="72" y="294" font-size="30" fill="#d97757" font-weight="700">여섯 겹의 검사 · 위험도별 승인 · 빠른 롤백</text>
+
+    <!-- 6 layers: width 160, gap 18 -> 72..1122 -->
+    <g font-size="20" font-weight="700" text-anchor="middle">
+      <rect x="72" y="350" width="160" height="96" rx="12" fill="#2a2522" stroke="#6b625a" stroke-width="2"/>
+      <text x="152" y="392" fill="#e8e0d8">사전 검증</text>
+      <text x="152" y="424" font-size="15" fill="#a89f96" font-weight="400">실행 결과로 증명</text>
+
+      <rect x="250" y="350" width="160" height="96" rx="12" fill="#2a2522" stroke="#6b625a" stroke-width="2"/>
+      <text x="330" y="392" fill="#e8e0d8">필수 CI</text>
+      <text x="330" y="424" font-size="15" fill="#a89f96" font-weight="400">린트 · 타입 · 테스트</text>
+
+      <rect x="428" y="350" width="160" height="96" rx="12" fill="#2a2522" stroke="#6b625a" stroke-width="2"/>
+      <text x="508" y="392" fill="#e8e0d8">AI 리뷰</text>
+      <text x="508" y="424" font-size="15" fill="#a89f96" font-weight="400">투표로 걸러낸 지적</text>
+
+      <rect x="606" y="350" width="160" height="96" rx="12" fill="#2a2522" stroke="#6b625a" stroke-width="2"/>
+      <text x="686" y="392" fill="#e8e0d8">보안 리뷰</text>
+      <text x="686" y="424" font-size="15" fill="#a89f96" font-weight="400">열린 지적은 차단</text>
+
+      <rect x="784" y="350" width="160" height="96" rx="12" fill="#d97757" stroke="#d97757" stroke-width="2"/>
+      <text x="864" y="392" fill="#1c1917">위험도별 승인</text>
+      <text x="864" y="424" font-size="15" fill="#1c1917" font-weight="400">사람 0 · 1 · 2명</text>
+
+      <rect x="962" y="350" width="160" height="96" rx="12" fill="#2a2522" stroke="#6b625a" stroke-width="2"/>
+      <text x="1042" y="392" fill="#e8e0d8">머지 큐 · 플래그</text>
+      <text x="1042" y="424" font-size="15" fill="#a89f96" font-weight="400">main에서 재검증</text>
+    </g>
+
+    <!-- rollback under the layers -->
+    <rect x="72" y="472" width="1050" height="48" rx="10" fill="none" stroke="#d97757" stroke-width="2" stroke-dasharray="6 5"/>
+    <text x="597" y="503" font-size="19" fill="#e8a587" text-anchor="middle">빠져나간 문제는 플래그 끄기와 되돌리기로 빠르게 수습</text>
+
+    <text x="72" y="604" font-size="18" fill="#a89f96">6~9월 병합 PR 2배 이상 · 되돌림 비율 40% 넘게 감소</text>
+    <text x="1128" y="604" font-size="18" fill="#a89f96" text-anchor="end">How the Claude Code team does code review</text>
+  </g>
+</svg>
