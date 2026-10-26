@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640" role="img" aria-labelledby="title desc">
+  <title id="title">taste-skill and AI Design Skills</title>
+  <desc id="desc">An editorial cover comparing visual direction, landing page design and design to motion.</desc>
+  <rect width="1280" height="640" fill="#f2f0e8"/>
+  <path d="M64 102H1216M64 548H1216" stroke="#252823" stroke-width="2"/>
+  <g font-family="Helvetica,Arial,sans-serif" fill="#252823">
+    <text x="64" y="69" font-size="18" letter-spacing="3">DATANEXUS / DESIGN TOOLS</text>
+    <text x="1216" y="69" text-anchor="end" font-size="18" letter-spacing="2">A PRACTICAL COMPARISON</text>
+    <text x="64" y="201" font-size="19" letter-spacing="3">01 / ART DIRECTION</text>
+    <text x="60" y="300" font-size="88" font-weight="700" letter-spacing="-5">taste-skill</text>
+    <text x="64" y="361" font-size="24">Direction. References. Browser checks.</text>
+    <text x="694" y="201" font-size="19" letter-spacing="3">02 / PAGE &amp; MOTION</text>
+    <text x="690" y="282" font-size="66" font-weight="700" letter-spacing="-3">AI Design</text>
+    <text x="690" y="354" font-size="66" font-weight="700" letter-spacing="-3">Skills</text>
+    <text x="694" y="407" font-size="24">Structure. Copy. Animated showcases.</text>
+    <text x="64" y="594" font-size="20" letter-spacing="1">CHOOSE BY THE JOB YOU NEED TO DO.</text>
+    <text x="1216" y="594" text-anchor="end" font-size="20">Claude Code / Cursor / Codex</text>
+  </g>
+  <path d="M640 155V484" stroke="#b6baae" stroke-width="2"/>
+  <rect x="64" y="447" width="148" height="8" fill="#386f50"/>
+  <rect x="694" y="447" width="148" height="8" fill="#b36a3d"/>
+</svg>
