@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-labelledby="t d" font-family="system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif">
+<title id="t">Did Claude's Answers Actually Improve?</title>
+<desc id="d">Four bars showing support ticket accuracy rising from 74.4% to 98.9% on the train split, paired with a 44-dot matrix split into 30 train cases and 14 held-out test cases</desc>
+<rect width="1200" height="630" fill="#1c1917"/>
+<rect x="0" y="0" width="12" height="630" fill="#d97757"/>
+<text x="80" y="88" font-size="24" font-weight="700" fill="#d97757">claude.dev Digest · 006</text>
+<text x="80" y="180" font-size="52" font-weight="700" fill="#faf9f5">Did Claude's Answers</text>
+<text x="80" y="248" font-size="52" font-weight="700" fill="#faf9f5">Actually Improve?</text>
+<text x="80" y="306" font-size="26" fill="#a8a29e">How to build eval sets and verify real improvements</text>
+
+<rect x="80" y="428.6" width="120" height="141.4" rx="6" fill="#78716c"/>
+<text x="140.0" y="418.6" font-size="22" font-weight="700" fill="#faf9f5" text-anchor="middle">74.4%</text>
+<rect x="224" y="403.2" width="120" height="166.8" rx="6" fill="#d97757"/>
+<text x="284.0" y="393.2" font-size="22" font-weight="700" fill="#faf9f5" text-anchor="middle">87.8%</text>
+<rect x="368" y="401.1" width="120" height="168.9" rx="6" fill="#d97757"/>
+<text x="428.0" y="391.1" font-size="22" font-weight="700" fill="#faf9f5" text-anchor="middle">88.9%</text>
+<rect x="512" y="382.1" width="120" height="187.9" rx="6" fill="#d97757"/>
+<text x="572.0" y="372.1" font-size="22" font-weight="700" fill="#faf9f5" text-anchor="middle">98.9%</text>
+<line x1="70" y1="570" x2="642" y2="570" stroke="#57534e" stroke-width="2"/>
+<text x="80" y="606" font-size="20" fill="#a8a29e">Train-split ticket accuracy: 74.4% → 98.9%</text>
+<text x="760" y="405" font-size="22" font-weight="700" fill="#faf9f5">44 support tickets in the eval</text>
+<circle cx="772" cy="452" r="11" fill="#d97757"/>
+<circle cx="805" cy="452" r="11" fill="#d97757"/>
+<circle cx="838" cy="452" r="11" fill="#d97757"/>
+<circle cx="871" cy="452" r="11" fill="#d97757"/>
+<circle cx="904" cy="452" r="11" fill="#d97757"/>
+<circle cx="937" cy="452" r="11" fill="#d97757"/>
+<circle cx="970" cy="452" r="11" fill="#d97757"/>
+<circle cx="1003" cy="452" r="11" fill="#d97757"/>
+<circle cx="1036" cy="452" r="11" fill="#d97757"/>
+<circle cx="1069" cy="452" r="11" fill="#d97757"/>
+<circle cx="1102" cy="452" r="11" fill="#d97757"/>
+<circle cx="772" cy="485" r="11" fill="#d97757"/>
+<circle cx="805" cy="485" r="11" fill="#d97757"/>
+<circle cx="838" cy="485" r="11" fill="#d97757"/>
+<circle cx="871" cy="485" r="11" fill="#d97757"/>
+<circle cx="904" cy="485" r="11" fill="#d97757"/>
+<circle cx="937" cy="485" r="11" fill="#d97757"/>
+<circle cx="970" cy="485" r="11" fill="#d97757"/>
+<circle cx="1003" cy="485" r="11" fill="#d97757"/>
+<circle cx="1036" cy="485" r="11" fill="#d97757"/>
+<circle cx="1069" cy="485" r="11" fill="#d97757"/>
+<circle cx="1102" cy="485" r="11" fill="#d97757"/>
+<circle cx="772" cy="518" r="11" fill="#d97757"/>
+<circle cx="805" cy="518" r="11" fill="#d97757"/>
+<circle cx="838" cy="518" r="11" fill="#d97757"/>
+<circle cx="871" cy="518" r="11" fill="#d97757"/>
+<circle cx="904" cy="518" r="11" fill="#d97757"/>
+<circle cx="937" cy="518" r="11" fill="#d97757"/>
+<circle cx="970" cy="518" r="11" fill="#d97757"/>
+<circle cx="1003" cy="518" r="11" fill="#d97757"/>
+<circle cx="1036" cy="518" r="10" fill="none" stroke="#faf9f5" stroke-width="2.5"/>
+<circle cx="1069" cy="518" r="10" fill="none" stroke="#faf9f5" stroke-width="2.5"/>
+<circle cx="1102" cy="518" r="10" fill="none" stroke="#faf9f5" stroke-width="2.5"/>
+<circle cx="772" cy="551" r="10" fill="none" stroke="#faf9f5" stroke-width="2.5"/>
+<circle cx="805" cy="551" r="10" fill="none" stroke="#faf9f5" stroke-width="2.5"/>
+<circle cx="838" cy="551" r="10" fill="none" stroke="#faf9f5" stroke-width="2.5"/>
+<circle cx="871" cy="551" r="10" fill="none" stroke="#faf9f5" stroke-width="2.5"/>
+<circle cx="904" cy="551" r="10" fill="none" stroke="#faf9f5" stroke-width="2.5"/>
+<circle cx="937" cy="551" r="10" fill="none" stroke="#faf9f5" stroke-width="2.5"/>
+<circle cx="970" cy="551" r="10" fill="none" stroke="#faf9f5" stroke-width="2.5"/>
+<circle cx="1003" cy="551" r="10" fill="none" stroke="#faf9f5" stroke-width="2.5"/>
+<circle cx="1036" cy="551" r="10" fill="none" stroke="#faf9f5" stroke-width="2.5"/>
+<circle cx="1069" cy="551" r="10" fill="none" stroke="#faf9f5" stroke-width="2.5"/>
+<circle cx="1102" cy="551" r="10" fill="none" stroke="#faf9f5" stroke-width="2.5"/>
+<circle cx="772" cy="590" r="8" fill="#d97757"/><text x="790" y="597" font-size="19" fill="#a8a29e">30 train</text>
+<circle cx="920" cy="590" r="7.5" fill="none" stroke="#faf9f5" stroke-width="2.5"/><text x="938" y="597" font-size="19" fill="#a8a29e">14 held-out test</text>
+</svg>

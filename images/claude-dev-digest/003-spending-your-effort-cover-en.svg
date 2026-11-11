@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-labelledby="t d" font-family="system-ui,-apple-system,'Segoe UI',sans-serif">
+  <title id="t">Claude Code Effort: When to Turn It Up</title>
+  <desc id="d">Bar chart comparing Opus 5.5 runtime on the same workout tracker prompt across effort levels: 1.5m at low, 4m at medium, 11m at high, and 67m at max</desc>
+  <rect width="1200" height="630" fill="#1c1917"/>
+  <rect x="0" y="0" width="12" height="630" fill="#d97757"/>
+
+  <!-- Left column -->
+  <text x="70" y="96" font-size="26" font-weight="700" fill="#d97757">claude.dev Digest · 003</text>
+  <text x="70" y="224" font-size="46" font-weight="700" fill="#fafaf9">Claude Code Effort:</text>
+  <text x="70" y="288" font-size="46" font-weight="700" fill="#d97757">When to Turn It Up</text>
+  <text x="70" y="362" font-size="25" fill="#d6d3d1">Choosing the right level for each task</text>
+  <line x1="70" y1="414" x2="150" y2="414" stroke="#d97757" stroke-width="4"/>
+  <text x="70" y="462" font-size="26" fill="#a8a29e">Using Claude Code:</text>
+  <text x="70" y="498" font-size="26" fill="#a8a29e">Spending your effort</text>
+  <text x="70" y="580" font-size="22" fill="#78716c">Thariq Shihipar · 2026-09-25</text>
+
+  <!-- Right bars: runtime on the same prompt (minutes), 67m = 340px -->
+  <text x="710" y="96" font-size="22" font-weight="700" fill="#fafaf9">Runtime by effort level (minutes)</text>
+  <line x1="700" y1="520" x2="1140" y2="520" stroke="#57534e" stroke-width="2"/>
+
+  <rect x="710" y="512.4" width="76" height="7.6" fill="#78716c"/>
+  <text x="748" y="500" font-size="26" font-weight="700" fill="#d6d3d1" text-anchor="middle">1.5m</text>
+  <text x="748" y="552" font-size="22" fill="#d6d3d1" text-anchor="middle">low</text>
+
+  <rect x="808" y="499.7" width="76" height="20.3" fill="#a8a29e"/>
+  <text x="846" y="487" font-size="26" font-weight="700" fill="#d6d3d1" text-anchor="middle">4m</text>
+  <text x="846" y="552" font-size="22" fill="#d6d3d1" text-anchor="middle">medium</text>
+
+  <rect x="906" y="464.2" width="76" height="55.8" fill="#e8a58b"/>
+  <text x="944" y="451" font-size="26" font-weight="700" fill="#d6d3d1" text-anchor="middle">11m</text>
+  <text x="944" y="552" font-size="22" fill="#d6d3d1" text-anchor="middle">high</text>
+
+  <rect x="1004" y="180" width="76" height="340" fill="#d97757"/>
+  <text x="1042" y="166" font-size="26" font-weight="700" fill="#fafaf9" text-anchor="middle">67m</text>
+  <text x="1042" y="552" font-size="22" fill="#d6d3d1" text-anchor="middle">max</text>
+
+  <text x="710" y="590" font-size="19" fill="#78716c">Workout tracker app prompt on Opus 5.5</text>
+</svg>

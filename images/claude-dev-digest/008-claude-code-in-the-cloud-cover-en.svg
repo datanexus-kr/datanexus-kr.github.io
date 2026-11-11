@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-labelledby="t d">
+  <title id="t">Claude Code Cloud Sessions</title>
+  <desc id="d">Three parallel tasks running in separate virtual machines and each finishing on its own Git branch ready for a pull request</desc>
+  <rect width="1200" height="630" fill="#1c1917"/>
+  <rect x="0" y="0" width="12" height="630" fill="#d97757"/>
+  <g font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif">
+    <text x="72" y="78" font-size="24" fill="#d97757" font-weight="700">claude.dev Digest · 008</text>
+    <text x="72" y="168" font-size="52" fill="#faf6f1" font-weight="700">Claude Code Cloud Sessions:</text>
+    <text x="72" y="238" font-size="50" fill="#faf6f1" font-weight="700">Keep Working With the Lid Closed</text>
+    <text x="72" y="294" font-size="28" fill="#d97757" font-weight="700">One task · One fresh VM · One isolated branch</text>
+
+    <!-- three VMs: x 72..1128 -->
+    <g font-size="22" font-weight="700">
+      <rect x="72" y="336" width="320" height="150" rx="14" fill="#2a2522" stroke="#d97757" stroke-width="2" stroke-dasharray="8 6"/>
+      <text x="96" y="374" font-size="18" fill="#d97757">VM 1</text>
+      <text x="96" y="412" fill="#faf6f1">Fix flaky cache test</text>
+      <text x="96" y="452" font-size="18" fill="#a89f96" font-family="Menlo,monospace">40 runs · 0 fails</text>
+
+      <rect x="440" y="336" width="320" height="150" rx="14" fill="#2a2522" stroke="#d97757" stroke-width="2" stroke-dasharray="8 6"/>
+      <text x="464" y="374" font-size="18" fill="#d97757">VM 2</text>
+      <text x="464" y="412" fill="#faf6f1">Update API docs</text>
+      <text x="464" y="452" font-size="18" fill="#a89f96" font-family="Menlo,monospace">5 doc mismatches</text>
+
+      <rect x="808" y="336" width="320" height="150" rx="14" fill="#2a2522" stroke="#d97757" stroke-width="2" stroke-dasharray="8 6"/>
+      <text x="832" y="374" font-size="18" fill="#d97757">VM 3</text>
+      <text x="832" y="412" fill="#faf6f1">Structured JSON logs</text>
+      <text x="832" y="452" font-size="18" fill="#a89f96" font-family="Menlo,monospace">5 new tests</text>
+    </g>
+
+    <!-- branches -->
+    <g stroke="#a89f96" stroke-width="3" fill="none">
+      <path d="M232 486 V516 M222 506 L232 516 L242 506"/>
+      <path d="M600 486 V516 M590 506 L600 516 L610 506"/>
+      <path d="M968 486 V516 M958 506 L968 516 L978 506"/>
+    </g>
+    <g font-size="20" fill="#e8e0d8" font-family="Menlo,monospace" text-anchor="middle">
+      <text x="232" y="546">branch</text>
+      <text x="600" y="546">branch</text>
+      <text x="968" y="546">branch</text>
+    </g>
+    <text x="72" y="604" font-size="20" fill="#a89f96">All three tasks finished within 87 seconds</text>
+    <text x="1128" y="604" font-size="20" fill="#a89f96" text-anchor="end">Claude Code in the cloud</text>
+  </g>
+</svg>
