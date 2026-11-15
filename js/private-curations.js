@@ -72,13 +72,16 @@
     new MutationObserver(() => { renderPrivateBody().catch(error => { status.textContent = error.message; }); })
       .observe(document.body, {attributes: true, attributeFilter: ['class']});
   }
+  const isEn = document.documentElement.lang === 'en';
   function updateAuthFlow() {
     const flow = document.getElementById('private-auth-flow');
     if (!flow) return;
     const state = authorized ? (toggle?.checked ? 'visible' : 'hidden') : (token ? 'checking' : 'signed-out');
     flow.dataset.state = state;
     const stages = {'signed-out': 'login', checking: 'verify', hidden: 'toggle', visible: 'read'};
-    const labels = {'signed-out': '로그인 전', checking: '권한 확인 중', hidden: '목록에서 숨김', visible: '비공개 글 포함'};
+    const labels = isEn
+      ? {'signed-out': 'Signed out', checking: 'Verifying access', hidden: 'Hidden from list', visible: 'Showing private posts'}
+      : {'signed-out': '로그인 전', checking: '권한 확인 중', hidden: '목록에서 숨김', visible: '비공개 글 포함'};
     document.getElementById('private-auth-state').textContent = labels[state];
     flow.querySelectorAll('[data-step]').forEach(step => {
       if (step.dataset.step === stages[state]) step.setAttribute('aria-current', 'step');
@@ -92,7 +95,7 @@
     updateAuthFlow();
     removePrivateRows();
     if (authorized && toggle?.checked && list) {
-      const month = (box.dataset.path || '').match(/^\/curations\/(\d{4}-\d{2})\//)?.[1];
+      const month = (box.dataset.path || '').match(/^(?:\/en)?\/curations\/(\d{4}-\d{2})\//)?.[1];
       for (const article of privateArticles.filter(a => !month || a.date.startsWith(month))) {
         const row = document.createElement('article'); row.className = 'post-entry';
         row.dataset.privateEntry = article.id; row.dataset.published = article.date;
@@ -102,8 +105,8 @@
         const summary = document.createElement('div'); summary.className = 'entry-content';
         const paragraph = document.createElement('p'); paragraph.textContent = article.summary; summary.append(paragraph);
         const a = document.createElement('a'); a.className = 'entry-link';
-        a.href = '/private-reader/?id=' + encodeURIComponent(article.id);
-        a.setAttribute('aria-label', '비공개 글: ' + article.title);
+        a.href = (isEn ? '/en' : '') + '/private-reader/?id=' + encodeURIComponent(article.id);
+        a.setAttribute('aria-label', (isEn ? 'Private post: ' : '비공개 글: ') + article.title);
         row.append(header, summary, a);
         const following = [...list.children].find(el => el.matches('article.post-entry') && Date.parse(el.dataset.published) <= Date.parse(article.date));
         if (following) list.insertBefore(row, following); else list.append(row);
