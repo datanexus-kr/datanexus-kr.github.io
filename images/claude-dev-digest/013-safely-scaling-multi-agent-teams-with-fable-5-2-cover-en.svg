@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-labelledby="t d">
+  <title id="t">1,000 agents and one shared database</title>
+  <desc id="d">One lead and 999 helpers coordinate through the Announce, Assign, Notes, Subtasks, and Landed tables, surrounded by a sandbox, a real-time classifier, and an offline monitor</desc>
+  <rect width="1200" height="630" fill="#1c1917"/>
+  <rect x="0" y="0" width="12" height="630" fill="#d97757"/>
+  <g font-family="'Noto Sans KR','Apple SD Gothic Neo',sans-serif">
+    <text x="72" y="78" font-size="24" fill="#d97757" font-weight="700">Claude Dev Notes / 013</text>
+    <text x="72" y="162" font-size="52" fill="#faf6f1" font-weight="700">1,000 Agents, One Shared Database</text>
+    <text x="72" y="230" font-size="52" fill="#faf6f1" font-weight="700">Fermat's Last Theorem, Reproduced</text>
+    <text x="72" y="288" font-size="26" fill="#d97757" font-weight="700">Five tables built by the lead, three safety layers around the team</text>
+
+    <!-- team: lead / five tables / helpers (x 72..760) -->
+    <g text-anchor="middle">
+      <rect x="72" y="326" width="688" height="38" rx="10" fill="#2a2522" stroke="#8a7f9e" stroke-width="2"/>
+      <text x="416" y="352" font-size="18" fill="#e8e0d8" font-weight="700">1 lead</text>
+
+      <line x1="136" y1="364" x2="136" y2="378" stroke="#6b625a" stroke-width="2"/>
+      <line x1="276" y1="364" x2="276" y2="378" stroke="#6b625a" stroke-width="2"/>
+      <line x1="416" y1="364" x2="416" y2="378" stroke="#6b625a" stroke-width="2"/>
+      <line x1="556" y1="364" x2="556" y2="378" stroke="#6b625a" stroke-width="2"/>
+      <line x1="696" y1="364" x2="696" y2="378" stroke="#6b625a" stroke-width="2"/>
+
+      <rect x="72" y="378" width="128" height="98" rx="12" fill="#2a2522" stroke="#6b625a" stroke-width="2"/>
+      <text x="136" y="418" font-size="18" fill="#faf6f1" font-weight="700">Announce</text>
+      <text x="136" y="448" font-size="14" fill="#b8afa6">Team orders</text>
+
+      <rect x="212" y="378" width="128" height="98" rx="12" fill="#2a2522" stroke="#6b625a" stroke-width="2"/>
+      <text x="276" y="418" font-size="18" fill="#faf6f1" font-weight="700">Assign</text>
+      <text x="276" y="448" font-size="14" fill="#b8afa6">Who owns what</text>
+
+      <rect x="352" y="378" width="128" height="98" rx="12" fill="#2a2522" stroke="#6b625a" stroke-width="2"/>
+      <text x="416" y="418" font-size="18" fill="#faf6f1" font-weight="700">Notes</text>
+      <text x="416" y="448" font-size="14" fill="#b8afa6">Open board</text>
+
+      <rect x="492" y="378" width="128" height="98" rx="12" fill="#d97757" stroke="#d97757" stroke-width="2"/>
+      <text x="556" y="418" font-size="18" fill="#1c1917" font-weight="700">Subtasks</text>
+      <text x="556" y="448" font-size="14" fill="#1c1917">To-do list</text>
+
+      <rect x="632" y="378" width="128" height="98" rx="12" fill="#2a2522" stroke="#6b625a" stroke-width="2"/>
+      <text x="696" y="418" font-size="18" fill="#faf6f1" font-weight="700">Landed</text>
+      <text x="696" y="448" font-size="14" fill="#b8afa6">Finished work</text>
+
+      <line x1="136" y1="476" x2="136" y2="490" stroke="#6b625a" stroke-width="2"/>
+      <line x1="276" y1="476" x2="276" y2="490" stroke="#6b625a" stroke-width="2"/>
+      <line x1="416" y1="476" x2="416" y2="490" stroke="#6b625a" stroke-width="2"/>
+      <line x1="556" y1="476" x2="556" y2="490" stroke="#6b625a" stroke-width="2"/>
+      <line x1="696" y1="476" x2="696" y2="490" stroke="#6b625a" stroke-width="2"/>
+
+      <rect x="72" y="490" width="688" height="38" rx="10" fill="#2a2522" stroke="#8a7f9e" stroke-width="2"/>
+      <text x="416" y="516" font-size="18" fill="#e8e0d8" font-weight="700">999 helpers</text>
+    </g>
+
+    <!-- safety layers (x 792..1128) -->
+    <g>
+      <rect x="792" y="326" width="336" height="60" rx="10" fill="none" stroke="#d97757" stroke-width="2" stroke-dasharray="6 5"/>
+      <text x="812" y="352" font-size="19" fill="#faf6f1" font-weight="700">① Sandbox</text>
+      <text x="812" y="375" font-size="14" fill="#b8afa6">No network, one pipe to the gateway</text>
+
+      <rect x="792" y="397" width="336" height="60" rx="10" fill="none" stroke="#d97757" stroke-width="2" stroke-dasharray="6 5"/>
+      <text x="812" y="423" font-size="19" fill="#faf6f1" font-weight="700">② Real-time classifier</text>
+      <text x="812" y="446" font-size="14" fill="#b8afa6">Can block each tool call before it runs</text>
+
+      <rect x="792" y="468" width="336" height="60" rx="10" fill="none" stroke="#d97757" stroke-width="2" stroke-dasharray="6 5"/>
+      <text x="812" y="494" font-size="19" fill="#faf6f1" font-weight="700">③ Offline monitor</text>
+      <text x="812" y="517" font-size="14" fill="#b8afa6">Reviews actions across agents</text>
+    </g>
+
+    <text x="72" y="600" font-size="18" fill="#a89f96">Final theorem proved at hour 28.7</text>
+    <text x="1128" y="600" font-size="18" fill="#a89f96" text-anchor="end">Safely scaling multi-agent teams with Claude Fable 5.2</text>
+  </g>
+</svg>

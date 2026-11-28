@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-labelledby="t d">
+  <title id="t">Claude Docs 출시와 카오스 루프</title>
+  <desc id="d">부하와 장애 주입, 텔레메트리 읽기, 원인 추적과 수정, 사람 승인, 스테이징 배포가 2주 동안 반복되는 카오스 루프. 사람은 되돌리기 어려운 변경만 승인한다.</desc>
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#a89f96"/>
+    </marker>
+    <marker id="ahO" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#d97757"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="630" fill="#1c1917"/>
+  <rect x="0" y="0" width="12" height="630" fill="#d97757"/>
+  <g font-family="'Noto Sans KR','Apple SD Gothic Neo',sans-serif">
+    <text x="72" y="78" font-size="24" fill="#d97757" font-weight="700">Claude Dev 노트 / 015</text>
+    <text x="72" y="162" font-size="52" fill="#faf6f1" font-weight="700">출시 전 2주, Claude가</text>
+    <text x="72" y="230" font-size="52" fill="#faf6f1" font-weight="700">스테이징을 부수고 고쳤다</text>
+    <text x="72" y="288" font-size="27" fill="#d97757" font-weight="700">카오스 루프에서 사람은 되돌리기 어려운 결정만</text>
+
+    <!-- 5 steps: width 186, gap 30 -> 72..1122 -->
+    <g text-anchor="middle" font-weight="700">
+      <rect x="72" y="336" width="186" height="104" rx="12" fill="#2a2522" stroke="#6b625a" stroke-width="2"/>
+      <text x="165" y="380" font-size="21" fill="#e8e0d8">부하와 장애 주입</text>
+      <text x="165" y="412" font-size="15" fill="#a89f96" font-weight="400">서버 종료, DB 정지</text>
+
+      <rect x="288" y="336" width="186" height="104" rx="12" fill="#2a2522" stroke="#6b625a" stroke-width="2"/>
+      <text x="381" y="380" font-size="21" fill="#e8e0d8">텔레메트리 읽기</text>
+      <text x="381" y="412" font-size="15" fill="#a89f96" font-weight="400">Datadog MCP</text>
+
+      <rect x="504" y="336" width="186" height="104" rx="12" fill="#2a2522" stroke="#6b625a" stroke-width="2"/>
+      <text x="597" y="380" font-size="21" fill="#e8e0d8">원인 추적과 수정</text>
+      <text x="597" y="412" font-size="15" fill="#a89f96" font-weight="400">빠진 계측도 추가</text>
+
+      <rect x="720" y="336" width="186" height="104" rx="12" fill="#d97757" stroke="#d97757" stroke-width="2"/>
+      <text x="813" y="380" font-size="21" fill="#1c1917">사람 승인</text>
+      <text x="813" y="412" font-size="14" fill="#1c1917" font-weight="400">되돌리기 어려운 변경만</text>
+
+      <rect x="936" y="336" width="186" height="104" rx="12" fill="#2a2522" stroke="#6b625a" stroke-width="2"/>
+      <text x="1029" y="380" font-size="21" fill="#e8e0d8">스테이징 배포</text>
+      <text x="1029" y="412" font-size="15" fill="#a89f96" font-weight="400">테스트 다시 실행</text>
+    </g>
+
+    <!-- forward arrows -->
+    <g stroke="#a89f96" stroke-width="2" marker-end="url(#ah)">
+      <line x1="261" y1="388" x2="284" y2="388"/>
+      <line x1="477" y1="388" x2="500" y2="388"/>
+      <line x1="693" y1="388" x2="716" y2="388"/>
+      <line x1="909" y1="388" x2="932" y2="388"/>
+    </g>
+
+    <!-- loop back -->
+    <path d="M1029,442 L1029,478 L165,478 L165,446" fill="none" stroke="#d97757" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#ahO)"/>
+    <rect x="472" y="462" width="250" height="32" fill="#1c1917"/>
+    <text x="597" y="485" font-size="19" fill="#e8a587" text-anchor="middle">2주 동안 쉬지 않고 반복</text>
+
+    <text x="72" y="548" font-size="22" fill="#e8e0d8" font-weight="700">요청 20억 건, 서버 오류 60건, 롤백 없음</text>
+    <text x="1128" y="604" font-size="17" fill="#a89f96" text-anchor="end">Using a &quot;chaos loop&quot; to harden the Claude Docs launch: 60 server errors across billions of requests</text>
+  </g>
+</svg>

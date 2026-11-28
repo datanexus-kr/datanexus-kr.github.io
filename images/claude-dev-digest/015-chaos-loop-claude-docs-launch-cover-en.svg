@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-labelledby="t d">
+  <title id="t">The Claude Docs Launch and the Chaos Loop</title>
+  <desc id="d">A chaos loop of load and fault injection, telemetry reading, tracing and fixing, human approval, and staging deploys that repeated for two weeks, with a person approving only hard-to-undo changes.</desc>
+  <defs>
+    <marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#a89f96"/>
+    </marker>
+    <marker id="ahO" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#d97757"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="630" fill="#1c1917"/>
+  <rect x="0" y="0" width="12" height="630" fill="#d97757"/>
+  <g font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif">
+    <text x="72" y="78" font-size="24" fill="#d97757" font-weight="700">Claude Dev Notes / 015</text>
+    <text x="72" y="160" font-size="48" fill="#faf6f1" font-weight="700">Two Weeks of Claude Breaking</text>
+    <text x="72" y="224" font-size="48" fill="#faf6f1" font-weight="700">and Fixing Staging</text>
+    <text x="72" y="284" font-size="24" fill="#d97757" font-weight="700">A chaos loop where humans make only the hard-to-undo calls</text>
+
+    <!-- 5 steps: width 186, gap 30 -> 72..1122 -->
+    <g text-anchor="middle" font-weight="700">
+      <rect x="72" y="336" width="186" height="104" rx="12" fill="#2a2522" stroke="#6b625a" stroke-width="2"/>
+      <text x="165" y="380" font-size="18" fill="#e8e0d8">Load + Faults</text>
+      <text x="165" y="412" font-size="13.5" fill="#a89f96" font-weight="400">Kill a server, stall DB</text>
+
+      <rect x="288" y="336" width="186" height="104" rx="12" fill="#2a2522" stroke="#6b625a" stroke-width="2"/>
+      <text x="381" y="380" font-size="18" fill="#e8e0d8">Read Telemetry</text>
+      <text x="381" y="412" font-size="13.5" fill="#a89f96" font-weight="400">Datadog MCP</text>
+
+      <rect x="504" y="336" width="186" height="104" rx="12" fill="#2a2522" stroke="#6b625a" stroke-width="2"/>
+      <text x="597" y="380" font-size="18" fill="#e8e0d8">Trace and Fix</text>
+      <text x="597" y="412" font-size="13.5" fill="#a89f96" font-weight="400">Add missing telemetry</text>
+
+      <rect x="720" y="336" width="186" height="104" rx="12" fill="#d97757" stroke="#d97757" stroke-width="2"/>
+      <text x="813" y="380" font-size="18" fill="#1c1917">Human Approval</text>
+      <text x="813" y="412" font-size="13.5" fill="#1c1917" font-weight="400">Hard-to-undo only</text>
+
+      <rect x="936" y="336" width="186" height="104" rx="12" fill="#2a2522" stroke="#6b625a" stroke-width="2"/>
+      <text x="1029" y="380" font-size="18" fill="#e8e0d8">Deploy to Staging</text>
+      <text x="1029" y="412" font-size="13.5" fill="#a89f96" font-weight="400">Rerun the test</text>
+    </g>
+
+    <!-- forward arrows -->
+    <g stroke="#a89f96" stroke-width="2" marker-end="url(#ah)">
+      <line x1="261" y1="388" x2="284" y2="388"/>
+      <line x1="477" y1="388" x2="500" y2="388"/>
+      <line x1="693" y1="388" x2="716" y2="388"/>
+      <line x1="909" y1="388" x2="932" y2="388"/>
+    </g>
+
+    <!-- loop back -->
+    <path d="M1029,442 L1029,478 L165,478 L165,446" fill="none" stroke="#d97757" stroke-width="2" stroke-dasharray="7 5" marker-end="url(#ahO)"/>
+    <rect x="452" y="462" width="290" height="32" fill="#1c1917"/>
+    <text x="597" y="485" font-size="18" fill="#e8a587" text-anchor="middle">Running nonstop for two weeks</text>
+
+    <text x="72" y="548" font-size="22" fill="#e8e0d8" font-weight="700">2 billion requests, 60 server errors, no rollbacks</text>
+    <text x="1128" y="604" font-size="17" fill="#a89f96" text-anchor="end">Using a &quot;chaos loop&quot; to harden the Claude Docs launch: 60 server errors across billions of requests</text>
+  </g>
+</svg>

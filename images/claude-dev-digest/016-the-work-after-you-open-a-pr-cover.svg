@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-labelledby="t d">
+  <title id="t">PR을 연 다음의 일은 Claude Code에 맡긴다</title>
+  <desc id="d">문제 찾기와 고치기, 반복 지적을 적는 규칙 파일, 병합 결정을 차례로 잇고 승인 정책은 observe 모드로 먼저 시험하는 흐름</desc>
+  <rect width="1200" height="630" fill="#1c1917"/>
+  <rect x="0" y="0" width="12" height="630" fill="#d97757"/>
+  <g font-family="'Noto Sans KR','Apple SD Gothic Neo',sans-serif">
+    <text x="72" y="78" font-size="24" fill="#d97757" font-weight="700">Claude Dev 노트 / 016</text>
+    <text x="72" y="168" font-size="56" fill="#faf6f1" font-weight="700">PR을 연 다음의 일은</text>
+    <text x="72" y="238" font-size="56" fill="#faf6f1" font-weight="700">Claude Code에 맡긴다</text>
+    <text x="72" y="294" font-size="30" fill="#d97757" font-weight="700">찾기, 고치기, 결정을 나눠 맡는 Claude Ship</text>
+
+    <!-- 4 stages: width 240, gap 30 -> 72..1122 -->
+    <g font-size="21" font-weight="700" text-anchor="middle">
+      <rect x="72" y="350" width="240" height="96" rx="12" fill="#2a2522" stroke="#6b625a" stroke-width="2"/>
+      <text x="192" y="392" fill="#e8e0d8">문제 찾기</text>
+      <text x="192" y="424" font-size="16" fill="#a89f96" font-weight="400">/code-review</text>
+
+      <rect x="342" y="350" width="240" height="96" rx="12" fill="#2a2522" stroke="#6b625a" stroke-width="2"/>
+      <text x="462" y="392" fill="#e8e0d8">문제 고치기</text>
+      <text x="462" y="424" font-size="16" fill="#a89f96" font-weight="400">/ship, /steward 감시</text>
+
+      <rect x="612" y="350" width="240" height="96" rx="12" fill="#2a2522" stroke="#6b625a" stroke-width="2"/>
+      <text x="732" y="392" fill="#e8e0d8">규칙 파일</text>
+      <text x="732" y="424" font-size="16" fill="#a89f96" font-weight="400">CLAUDE.md, REVIEW.md, 스킬</text>
+
+      <rect x="882" y="350" width="240" height="96" rx="12" fill="#d97757" stroke="#d97757" stroke-width="2"/>
+      <text x="1002" y="392" fill="#1c1917">병합 결정</text>
+      <text x="1002" y="424" font-size="16" fill="#1c1917" font-weight="400">approvals.yml</text>
+    </g>
+
+    <!-- arrows between stages -->
+    <g fill="#d97757">
+      <path d="M319 389 L333 398 L319 407 Z"/>
+      <path d="M589 389 L603 398 L589 407 Z"/>
+      <path d="M859 389 L873 398 L859 407 Z"/>
+    </g>
+
+    <!-- observe mode note under the stages -->
+    <rect x="72" y="472" width="1050" height="48" rx="10" fill="none" stroke="#d97757" stroke-width="2" stroke-dasharray="6 5"/>
+    <text x="597" y="503" font-size="19" fill="#e8a587" text-anchor="middle">승인 정책은 observe 모드로 판단을 기록하고 리뷰어와 비교한 뒤 강제</text>
+
+    <text x="72" y="604" font-size="18" fill="#a89f96">감시 최대 7일 / 같은 문제 푸시 최대 3회</text>
+    <text x="1128" y="604" font-size="18" fill="#a89f96" text-anchor="end">A practical guide to shipping with Claude Code</text>
+  </g>
+</svg>

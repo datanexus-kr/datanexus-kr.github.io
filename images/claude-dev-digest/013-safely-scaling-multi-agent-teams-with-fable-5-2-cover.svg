@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-labelledby="t d">
+  <title id="t">에이전트 1,000개와 공유 DB 하나</title>
+  <desc id="d">리드 1개와 헬퍼 999개가 Announce, Assign, Notes, Subtasks, Landed 테이블로 협업하고, 샌드박스, 실시간 분류기, 오프라인 모니터가 세 겹으로 감싸는 구조</desc>
+  <rect width="1200" height="630" fill="#1c1917"/>
+  <rect x="0" y="0" width="12" height="630" fill="#d97757"/>
+  <g font-family="'Noto Sans KR','Apple SD Gothic Neo',sans-serif">
+    <text x="72" y="78" font-size="24" fill="#d97757" font-weight="700">Claude Dev 노트 / 013</text>
+    <text x="72" y="162" font-size="52" fill="#faf6f1" font-weight="700">에이전트 1,000개, 공유 DB 하나로</text>
+    <text x="72" y="230" font-size="52" fill="#faf6f1" font-weight="700">페르마의 마지막 정리를 다시 증명</text>
+    <text x="72" y="288" font-size="27" fill="#d97757" font-weight="700">리드가 만든 테이블 다섯 개, 그 둘레의 세 겹 안전 장치</text>
+
+    <!-- team: lead / five tables / helpers (x 72..760) -->
+    <g text-anchor="middle">
+      <rect x="72" y="326" width="688" height="38" rx="10" fill="#2a2522" stroke="#8a7f9e" stroke-width="2"/>
+      <text x="416" y="352" font-size="18" fill="#e8e0d8" font-weight="700">리드 1개</text>
+
+      <!-- cards: width 128, gap 12 -->
+      <line x1="136" y1="364" x2="136" y2="378" stroke="#6b625a" stroke-width="2"/>
+      <line x1="276" y1="364" x2="276" y2="378" stroke="#6b625a" stroke-width="2"/>
+      <line x1="416" y1="364" x2="416" y2="378" stroke="#6b625a" stroke-width="2"/>
+      <line x1="556" y1="364" x2="556" y2="378" stroke="#6b625a" stroke-width="2"/>
+      <line x1="696" y1="364" x2="696" y2="378" stroke="#6b625a" stroke-width="2"/>
+
+      <rect x="72" y="378" width="128" height="98" rx="12" fill="#2a2522" stroke="#6b625a" stroke-width="2"/>
+      <text x="136" y="418" font-size="18" fill="#faf6f1" font-weight="700">Announce</text>
+      <text x="136" y="448" font-size="14" fill="#b8afa6">팀 전체 지시</text>
+
+      <rect x="212" y="378" width="128" height="98" rx="12" fill="#2a2522" stroke="#6b625a" stroke-width="2"/>
+      <text x="276" y="418" font-size="18" fill="#faf6f1" font-weight="700">Assign</text>
+      <text x="276" y="448" font-size="14" fill="#b8afa6">누가 무엇을</text>
+
+      <rect x="352" y="378" width="128" height="98" rx="12" fill="#2a2522" stroke="#6b625a" stroke-width="2"/>
+      <text x="416" y="418" font-size="18" fill="#faf6f1" font-weight="700">Notes</text>
+      <text x="416" y="448" font-size="14" fill="#b8afa6">열린 게시판</text>
+
+      <rect x="492" y="378" width="128" height="98" rx="12" fill="#d97757" stroke="#d97757" stroke-width="2"/>
+      <text x="556" y="418" font-size="18" fill="#1c1917" font-weight="700">Subtasks</text>
+      <text x="556" y="448" font-size="14" fill="#1c1917">할 일 목록</text>
+
+      <rect x="632" y="378" width="128" height="98" rx="12" fill="#2a2522" stroke="#6b625a" stroke-width="2"/>
+      <text x="696" y="418" font-size="18" fill="#faf6f1" font-weight="700">Landed</text>
+      <text x="696" y="448" font-size="14" fill="#b8afa6">끝난 작업 기록</text>
+
+      <line x1="136" y1="476" x2="136" y2="490" stroke="#6b625a" stroke-width="2"/>
+      <line x1="276" y1="476" x2="276" y2="490" stroke="#6b625a" stroke-width="2"/>
+      <line x1="416" y1="476" x2="416" y2="490" stroke="#6b625a" stroke-width="2"/>
+      <line x1="556" y1="476" x2="556" y2="490" stroke="#6b625a" stroke-width="2"/>
+      <line x1="696" y1="476" x2="696" y2="490" stroke="#6b625a" stroke-width="2"/>
+
+      <rect x="72" y="490" width="688" height="38" rx="10" fill="#2a2522" stroke="#8a7f9e" stroke-width="2"/>
+      <text x="416" y="516" font-size="18" fill="#e8e0d8" font-weight="700">헬퍼 999개</text>
+    </g>
+
+    <!-- safety layers (x 792..1128) -->
+    <g>
+      <rect x="792" y="326" width="336" height="60" rx="10" fill="none" stroke="#d97757" stroke-width="2" stroke-dasharray="6 5"/>
+      <text x="812" y="352" font-size="19" fill="#faf6f1" font-weight="700">① 샌드박스</text>
+      <text x="812" y="375" font-size="14" fill="#b8afa6">네트워크 없음, 게이트웨이 파이프만</text>
+
+      <rect x="792" y="397" width="336" height="60" rx="10" fill="none" stroke="#d97757" stroke-width="2" stroke-dasharray="6 5"/>
+      <text x="812" y="423" font-size="19" fill="#faf6f1" font-weight="700">② 실시간 분류기</text>
+      <text x="812" y="446" font-size="14" fill="#b8afa6">도구 호출마다 실행 전에 차단 가능</text>
+
+      <rect x="792" y="468" width="336" height="60" rx="10" fill="none" stroke="#d97757" stroke-width="2" stroke-dasharray="6 5"/>
+      <text x="812" y="494" font-size="19" fill="#faf6f1" font-weight="700">③ 오프라인 모니터</text>
+      <text x="812" y="517" font-size="14" fill="#b8afa6">다른 에이전트 행동까지 찾아 분석</text>
+    </g>
+
+    <text x="72" y="600" font-size="18" fill="#a89f96">28.7시간 만에 최종 정리까지 증명</text>
+    <text x="1128" y="600" font-size="18" fill="#a89f96" text-anchor="end">Safely scaling multi-agent teams with Claude Fable 5.2</text>
+  </g>
+</svg>

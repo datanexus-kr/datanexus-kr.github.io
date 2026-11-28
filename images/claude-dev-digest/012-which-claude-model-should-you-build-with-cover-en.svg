@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-labelledby="t d">
+  <title id="t">Which Claude Model to Build With</title>
+  <desc id="d">Haiku 5.5, Sonnet 5.5, Opus 5.5, and Fable 5.2 shown in order of input and output token price, with Opus 5.5 at medium effort marked as the starting point and the steps to try before switching models: self-verification, one effort level up, then the next model at lower effort</desc>
+  <rect width="1200" height="630" fill="#1c1917"/>
+  <rect x="0" y="0" width="12" height="630" fill="#d97757"/>
+  <g font-family="-apple-system,BlinkMacSystemFont,'Segoe UI','Helvetica Neue',Arial,sans-serif">
+    <text x="72" y="78" font-size="24" fill="#d97757" font-weight="700">Claude Dev Notes / 012</text>
+    <text x="72" y="160" font-size="50" fill="#faf6f1" font-weight="700">Which Claude Model to Build With</text>
+    <text x="72" y="228" font-size="50" fill="#faf6f1" font-weight="700">Start on Opus 5.5 at Medium</text>
+    <text x="72" y="284" font-size="27" fill="#d97757" font-weight="700">Tune effort first, compare cost per finished task</text>
+
+    <!-- 4 model cards: width 246, gap 24 -> 72..1128 -->
+    <g text-anchor="middle">
+      <rect x="72" y="324" width="246" height="134" rx="14" fill="#2a2522" stroke="#6b625a" stroke-width="2"/>
+      <text x="195" y="364" font-size="26" fill="#faf6f1" font-weight="700">Haiku 5.5</text>
+      <text x="195" y="403" font-size="22" fill="#e8a587" font-weight="700">$0.10 / $0.50</text>
+      <text x="195" y="436" font-size="16" fill="#b8afa6">Classify, route, extract</text>
+
+      <rect x="342" y="324" width="246" height="134" rx="14" fill="#2a2522" stroke="#6b625a" stroke-width="2"/>
+      <text x="465" y="364" font-size="26" fill="#faf6f1" font-weight="700">Sonnet 5.5</text>
+      <text x="465" y="403" font-size="22" fill="#e8a587" font-weight="700">$2 / $10</text>
+      <text x="465" y="436" font-size="16" fill="#b8afa6">Well-scoped tasks</text>
+
+      <rect x="612" y="324" width="246" height="134" rx="14" fill="#d97757" stroke="#d97757" stroke-width="2"/>
+      <text x="735" y="364" font-size="26" fill="#1c1917" font-weight="700">Opus 5.5</text>
+      <text x="735" y="403" font-size="22" fill="#1c1917" font-weight="700">$4 / $20</text>
+      <text x="735" y="436" font-size="16" fill="#29211d" font-weight="600">Start here, medium effort</text>
+
+      <rect x="882" y="324" width="246" height="134" rx="14" fill="#2a2522" stroke="#6b625a" stroke-width="2"/>
+      <text x="1005" y="364" font-size="26" fill="#faf6f1" font-weight="700">Fable 5.2</text>
+      <text x="1005" y="403" font-size="22" fill="#e8a587" font-weight="700">$8 / $40</text>
+      <text x="1005" y="436" font-size="16" fill="#b8afa6">Hardest technical work</text>
+    </g>
+
+    <text x="72" y="484" font-size="15" fill="#8f867e">Input/output per 1M tokens, Claude API list prices (Haiku 5.5: prompts up to 100K tokens)</text>
+
+    <!-- escalation bar -->
+    <rect x="72" y="502" width="1056" height="52" rx="10" fill="none" stroke="#d97757" stroke-width="2" stroke-dasharray="6 5"/>
+    <text x="600" y="535" font-size="19" fill="#e8a587" text-anchor="middle">Before switching: self-verification → one effort level up → next model at lower effort</text>
+
+    <text x="72" y="602" font-size="17" fill="#a89f96">Addy Osmani, claude.dev Playbooks</text>
+    <text x="1128" y="602" font-size="17" fill="#a89f96" text-anchor="end">Which Claude model should you build with? Fable, Opus, Sonnet, or Haiku</text>
+  </g>
+</svg>

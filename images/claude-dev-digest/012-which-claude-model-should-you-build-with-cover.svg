@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-labelledby="t d">
+  <title id="t">어떤 Claude 모델로 만들까</title>
+  <desc id="d">Haiku 5.5, Sonnet 5.5, Opus 5.5, Fable 5.2 네 모델을 입력과 출력 토큰 가격 순으로 놓고 Opus 5.5 medium을 출발점으로 표시한 뒤, 모델을 바꾸기 전에 자기 검증 수단, effort 한 단계, 낮은 effort의 상위 모델 순으로 시도하라는 흐름을 적은 커버</desc>
+  <rect width="1200" height="630" fill="#1c1917"/>
+  <rect x="0" y="0" width="12" height="630" fill="#d97757"/>
+  <g font-family="'Noto Sans KR','Apple SD Gothic Neo',sans-serif">
+    <text x="72" y="78" font-size="24" fill="#d97757" font-weight="700">Claude Dev 노트 / 012</text>
+    <text x="72" y="160" font-size="52" fill="#faf6f1" font-weight="700">어떤 Claude 모델로 만들까</text>
+    <text x="72" y="228" font-size="52" fill="#faf6f1" font-weight="700">출발점은 Opus 5.5 medium</text>
+    <text x="72" y="284" font-size="27" fill="#d97757" font-weight="700">effort부터 조정하고 작업당 비용으로 비교한다</text>
+
+    <!-- 4 model cards: width 246, gap 24 -> 72..1128 -->
+    <g text-anchor="middle">
+      <rect x="72" y="324" width="246" height="134" rx="14" fill="#2a2522" stroke="#6b625a" stroke-width="2"/>
+      <text x="195" y="364" font-size="26" fill="#faf6f1" font-weight="700">Haiku 5.5</text>
+      <text x="195" y="403" font-size="22" fill="#e8a587" font-weight="700">$0.10 / $0.50</text>
+      <text x="195" y="436" font-size="16" fill="#b8afa6">분류, 라우팅, 추출</text>
+
+      <rect x="342" y="324" width="246" height="134" rx="14" fill="#2a2522" stroke="#6b625a" stroke-width="2"/>
+      <text x="465" y="364" font-size="26" fill="#faf6f1" font-weight="700">Sonnet 5.5</text>
+      <text x="465" y="403" font-size="22" fill="#e8a587" font-weight="700">$2 / $10</text>
+      <text x="465" y="436" font-size="16" fill="#b8afa6">범위가 정해진 작업</text>
+
+      <rect x="612" y="324" width="246" height="134" rx="14" fill="#d97757" stroke="#d97757" stroke-width="2"/>
+      <text x="735" y="364" font-size="26" fill="#1c1917" font-weight="700">Opus 5.5</text>
+      <text x="735" y="403" font-size="22" fill="#1c1917" font-weight="700">$4 / $20</text>
+      <text x="735" y="436" font-size="16" fill="#29211d" font-weight="600">출발점, effort medium</text>
+
+      <rect x="882" y="324" width="246" height="134" rx="14" fill="#2a2522" stroke="#6b625a" stroke-width="2"/>
+      <text x="1005" y="364" font-size="26" fill="#faf6f1" font-weight="700">Fable 5.2</text>
+      <text x="1005" y="403" font-size="22" fill="#e8a587" font-weight="700">$8 / $40</text>
+      <text x="1005" y="436" font-size="16" fill="#b8afa6">가장 어려운 기술 작업</text>
+    </g>
+
+    <text x="72" y="484" font-size="15" fill="#8f867e">입력/출력 가격, 100만 토큰당 Claude API 정가 (Haiku 5.5는 100K 이하 프롬프트 기준)</text>
+
+    <!-- escalation bar -->
+    <rect x="72" y="502" width="1056" height="52" rx="10" fill="none" stroke="#d97757" stroke-width="2" stroke-dasharray="6 5"/>
+    <text x="600" y="535" font-size="19" fill="#e8a587" text-anchor="middle">모델을 바꾸기 전에: 자기 검증 수단 → effort 한 단계 → 상위 모델은 낮은 effort로</text>
+
+    <text x="72" y="602" font-size="17" fill="#a89f96">Addy Osmani, claude.dev Playbooks</text>
+    <text x="1128" y="602" font-size="17" fill="#a89f96" text-anchor="end">Which Claude model should you build with? Fable, Opus, Sonnet, or Haiku</text>
+  </g>
+</svg>
